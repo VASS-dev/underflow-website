@@ -41,10 +41,14 @@ async function loadDownloadLinks() {
     if (downloads.mac_intel) {
       dlMacX.href = `${API}${downloads.mac_intel}`;
       dlMacX.classList.remove('btn-disabled');
+    } else {
+      dlMacX.querySelector('.btn-note').textContent = 'Coming soon';
     }
     if (downloads.mac_silicon) {
       dlMacA.href = `${API}${downloads.mac_silicon}`;
       dlMacA.classList.remove('btn-disabled');
+    } else {
+      dlMacA.querySelector('.btn-note').textContent = 'Coming soon';
     }
   } catch {
     versionEl.textContent = 'Download';
