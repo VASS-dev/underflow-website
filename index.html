@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Underflow — DJ Track Discovery</title>
+  <title>Underflow — Music Discovery for DJs & Collectors</title>
   <meta name="description" content="Find tracks up to 100× faster. Underflow aggregates Bandcamp, Juno, Beatport, Decks.de and Discogs in one place for DJs and record collectors.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Underflow — Search 5 Music Platforms at Once">
-  <meta property="og:description" content="Find DJ tracks 100x faster. Bandcamp, Juno, Beatport, Decks.de, Discogs — all searched simultaneously.">
+  <meta property="og:description" content="Find tracks 100x faster. Bandcamp, Juno, Beatport, Decks.de, Discogs — all searched simultaneously.">
   <meta property="og:image" content="https://underflow.music/og-image.png">
   <meta property="og:url" content="https://underflow.music">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Underflow — DJ Track Discovery">
+  <meta name="twitter:title" content="Underflow — Music Discovery for DJs & Collectors">
   <meta name="twitter:description" content="One app. Five platforms. Find tracks 100x faster.">
   <meta name="twitter:image" content="https://underflow.music/og-image.png">
 
@@ -37,7 +37,7 @@
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "DJ track discovery tool that searches Bandcamp, Juno Records, Beatport, Decks.de and Discogs simultaneously."
+    "description": "Music discovery tool for DJs and record collectors. Searches Bandcamp, Juno Records, Beatport, Decks.de and Discogs simultaneously."
   }
   </script>
 
@@ -70,7 +70,7 @@
   <section class="hero">
     <div class="hero-glow"></div>
     <div class="container">
-      <div class="badge" data-i18n="hero.badge">DJ Track Discovery Tool</div>
+      <div class="badge" data-i18n="hero.badge">Music Discovery for DJs & Collectors</div>
       <h1 class="hero-title"><span data-i18n="hero.title_1">Find tracks</span><br><span class="accent" data-i18n="hero.title_2">100× faster.</span></h1>
       <p class="hero-sub" data-i18n="hero.sub">
         One app. Five platforms. Digital and vinyl-only releases from Bandcamp, Juno, Beatport, Decks.de, Discogs —
@@ -112,10 +112,15 @@
       <div class="trust-label" data-i18n="trust.faster">Faster than manual</div>
     </div>
     <div class="trust-item">
+      <div class="trust-number" data-i18n="trust.tracks_number">1,000+</div>
+      <div class="trust-label" data-i18n="trust.tracks_label">Tracks per search session</div>
+    </div>
+    <div class="trust-item">
       <div class="trust-number" data-i18n="trust.free_number">Free</div>
       <div class="trust-label" data-i18n="trust.free_label">To get started</div>
     </div>
   </div>
+  <div class="trust-note" data-i18n="trust.note">* Data collection speed across 5 platforms with batch search</div>
 
   <!-- How It Works -->
   <section class="section section-dark" id="how-it-works">
@@ -146,7 +151,7 @@
   <section class="section" id="features">
     <div class="container">
       <h2 class="section-title" data-i18n="features.title">Everything you need in one place</h2>
-      <p class="section-sub" data-i18n="features.sub">Built for DJs who are serious about their record collection.</p>
+      <p class="section-sub" data-i18n="features.sub">Built for DJs and record collectors who take their music seriously.</p>
       <div class="features-grid">
         <div class="card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.5-4.5"/><path d="M8 10.5h5M10.5 8v5"/></svg></div>
@@ -155,7 +160,7 @@
         </div>
         <div class="card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><circle cx="4.5" cy="19.5" r="2.5"/><circle cx="19.5" cy="19.5" r="2.5"/><path d="m12 7-5.8 10M12 7l5.8 10"/></svg></div>
-          <h3 data-i18n="features.card2_title">AI Artist Discovery</h3>
+          <h3 data-i18n="features.card2_title">Smart Artist Discovery</h3>
           <p data-i18n="features.card2_desc">Our algorithm analyzes every track to map remixers, collaborators, and featured artists. Color-coded relation badges (R/F/C/O). Follow the chain — discover music you'd never find manually.</p>
         </div>
         <div class="card">
@@ -176,7 +181,7 @@
         <div class="card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg></div>
           <h3 data-i18n="features.card6_title">Local Database</h3>
-          <p data-i18n="features.card6_desc">Your collection lives on your machine in a SQLite database. Works offline. No cloud dependency, no lock-in. Your data, your rules.</p>
+          <p data-i18n="features.card6_desc">Your collection lives on your machine in a SQLite database. No cloud storage — your data stays local. Your data, your rules.</p>
         </div>
       </div>
     </div>
@@ -199,20 +204,6 @@
           <div>
             <strong data-i18n="more.filters_title">Advanced Filters</strong>
             <p data-i18n="more.filters_desc">Date range, source, tags, preview, AND/OR logic</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polygon points="10,7 10,13 15,10"/></svg></span>
-          <div>
-            <strong data-i18n="more.mini_title">Mini Player</strong>
-            <p data-i18n="more.mini_desc">Floating always-on-top window</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 21V15M7 21V11M11 21V7M15 21V12M19 21V9M23 21V14"/></svg></span>
-          <div>
-            <strong data-i18n="more.spectrum_title">Spectrum Analyzer</strong>
-            <p data-i18n="more.spectrum_desc">Real-time 64-band frequency visualization</p>
           </div>
         </div>
         <div class="more-item">
@@ -243,48 +234,6 @@
             <p data-i18n="more.multidb_desc">Switch between multiple collections</p>
           </div>
         </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span>
-          <div>
-            <strong data-i18n="more.twofa_title">2FA Security</strong>
-            <p data-i18n="more.twofa_desc">Two-factor authentication via email OTP</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
-          <div>
-            <strong data-i18n="more.devices_title">Device Management</strong>
-            <p data-i18n="more.devices_desc">Manage authorized devices, revoke access</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-          <div>
-            <strong data-i18n="more.buy_title">Direct Buy Links</strong>
-            <p data-i18n="more.buy_desc">One click to purchase on any platform</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></span>
-          <div>
-            <strong data-i18n="more.lang_title">Multi-Language</strong>
-            <p data-i18n="more.lang_desc">Full EN/RU interface localization</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></span>
-          <div>
-            <strong data-i18n="more.updates_title">Auto Updates</strong>
-            <p data-i18n="more.updates_desc">Automatic version checking and installation</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
-          <div>
-            <strong data-i18n="more.cross_title">Cross-Platform</strong>
-            <p data-i18n="more.cross_desc">Windows 10/11, macOS Intel &amp; Apple Silicon</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -293,7 +242,7 @@
   <section class="section" id="comparison">
     <div class="container">
       <h2 class="section-title" data-i18n="comparison.title">Stop Wasting Time</h2>
-      <p class="section-sub" data-i18n="comparison.sub">What searching for 10 artists looks like.</p>
+      <p class="section-sub" data-i18n="comparison.sub">10 artists. 5 platforms. Same Saturday afternoon.</p>
       <div class="comparison-table">
         <div class="comparison-row comparison-header">
           <div class="comparison-cell"></div>
@@ -301,44 +250,29 @@
           <div class="comparison-cell comparison-highlight" data-i18n="comparison.col_underflow">Underflow</div>
         </div>
         <div class="comparison-row">
-          <div class="comparison-cell comparison-label" data-i18n="comparison.row1_label">Browser tabs</div>
-          <div class="comparison-cell" data-i18n="comparison.row1_manual">50+</div>
-          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row1_uf">1 app</div>
+          <div class="comparison-cell comparison-label" data-i18n="comparison.row1_label">Searches needed</div>
+          <div class="comparison-cell" data-i18n="comparison.row1_manual">50 separate searches</div>
+          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row1_uf">1 batch search</div>
         </div>
         <div class="comparison-row">
-          <div class="comparison-cell comparison-label" data-i18n="comparison.row2_label">Time for 10 artists</div>
-          <div class="comparison-cell" data-i18n="comparison.row2_manual">2–3 hours</div>
-          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row2_uf">15 minutes</div>
+          <div class="comparison-cell comparison-label" data-i18n="comparison.row2_label">Pages to browse</div>
+          <div class="comparison-cell" data-i18n="comparison.row2_manual">150+ pages of results</div>
+          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row2_uf">Only relevant results</div>
         </div>
         <div class="comparison-row">
-          <div class="comparison-cell comparison-label" data-i18n="comparison.row3_label">Related artists</div>
-          <div class="comparison-cell" data-i18n="comparison.row3_manual">Manual guesswork</div>
-          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row3_uf">Automatic (R/F/C/O)</div>
+          <div class="comparison-cell comparison-label" data-i18n="comparison.row3_label">Tracks collected</div>
+          <div class="comparison-cell" data-i18n="comparison.row3_manual">A few you'll remember</div>
+          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row3_uf">~1,000 in your database</div>
         </div>
         <div class="comparison-row">
-          <div class="comparison-cell comparison-label" data-i18n="comparison.row4_label">Track organization</div>
-          <div class="comparison-cell" data-i18n="comparison.row4_manual">Spreadsheets</div>
-          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row4_uf">Tags, wishlist, buy list</div>
+          <div class="comparison-cell comparison-label" data-i18n="comparison.row4_label">Related artists</div>
+          <div class="comparison-cell" data-i18n="comparison.row4_manual">Hours of extra searching</div>
+          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row4_uf">Already mapped, one click</div>
         </div>
         <div class="comparison-row">
-          <div class="comparison-cell comparison-label" data-i18n="comparison.row5_label">Price comparison</div>
-          <div class="comparison-cell" data-i18n="comparison.row5_manual">Open each store</div>
-          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row5_uf">Side by side</div>
-        </div>
-        <div class="comparison-row">
-          <div class="comparison-cell comparison-label" data-i18n="comparison.row6_label">Audio preview</div>
-          <div class="comparison-cell" data-i18n="comparison.row6_manual">Each platform separately</div>
-          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row6_uf">Built-in player</div>
-        </div>
-        <div class="comparison-row">
-          <div class="comparison-cell comparison-label" data-i18n="comparison.row7_label">Vinyl-only releases</div>
-          <div class="comparison-cell" data-i18n="comparison.row7_manual">Easy to miss</div>
-          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row7_uf">Found automatically</div>
-        </div>
-        <div class="comparison-row">
-          <div class="comparison-cell comparison-label" data-i18n="comparison.row8_label">Offline access</div>
-          <div class="comparison-cell" data-i18n="comparison.row8_manual">None</div>
-          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row8_uf">Local database</div>
+          <div class="comparison-cell comparison-label" data-i18n="comparison.row5_label">A week later</div>
+          <div class="comparison-cell" data-i18n="comparison.row5_manual">Tabs closed, nothing saved</div>
+          <div class="comparison-cell comparison-highlight" data-i18n="comparison.row5_uf">Full collection with search &amp; tags</div>
         </div>
       </div>
     </div>
@@ -352,14 +286,14 @@
       <div class="faq-list">
         <details class="faq-item">
           <summary class="faq-question" data-i18n="faq.q1">Is Underflow free?</summary>
-          <p class="faq-answer" data-i18n="faq.a1">Yes. The free plan includes daily searches across all 5 platforms with audio previews and collection management. Upgrade for higher daily limits when you need more.</p>
+          <p class="faq-answer" data-i18n="faq.a1">Underflow is free with limits. The free plan is enough to try the service and maintain a small collection. If you want to grow your collection seriously, upgrade your plan or purchase extra usage tokens. This model ensures fair usage and stable server performance for everyone.</p>
         </details>
         <details class="faq-item">
           <summary class="faq-question" data-i18n="faq.q2">Does Underflow sell music?</summary>
           <p class="faq-answer" data-i18n="faq.a2">No. Underflow is a search and discovery tool. When you find a track you want, you click through to purchase it directly on Bandcamp, Juno Records, Beatport, Decks.de, or Discogs.</p>
         </details>
         <details class="faq-item">
-          <summary class="faq-question" data-i18n="faq.q3">How does AI artist discovery work?</summary>
+          <summary class="faq-question" data-i18n="faq.q3">How does smart artist discovery work?</summary>
           <p class="faq-answer" data-i18n="faq.a3">Our algorithm analyzes track metadata to identify remixers, collaborators, and featured artists. You get a visual network of related artists with color-coded relation types: R (remixer), F (featuring), C (collaborator), O (original).</p>
         </details>
         <details class="faq-item">
@@ -398,7 +332,7 @@
         </div>
         <div class="platform-card">
           <div class="platform-name">Decks.de</div>
-          <div class="platform-desc" data-i18n="platforms.decks">Vinyl &amp; digital for serious DJs</div>
+          <div class="platform-desc" data-i18n="platforms.decks">Vinyl &amp; digital for serious collectors</div>
         </div>
         <div class="platform-card">
           <div class="platform-name">Discogs</div>
