@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Artist Connections — Underflow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="explore.css">
+</head>
+<body>
+  <!-- Header -->
+  <nav class="nav">
+    <a href="index.html" class="logo">Underflow</a>
+    <div class="nav-right">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#download" class="nav-cta">Download</a>
+    </div>
+  </nav>
+
+  <!-- Search -->
+  <div id="search-container" class="search-container">
+    <h1 class="search-title">Explore Artist Connections</h1>
+    <p class="search-sub">See how artists are connected through remixes, collaborations, and features.</p>
+    <form id="search-form" class="search-form">
+      <input type="text" id="artist-input" class="search-input" placeholder="Enter artist name..." autocomplete="off" spellcheck="false">
+      <button type="submit" class="search-btn">Explore</button>
+    </form>
+    <div class="search-hints">
+      Try: <button class="hint-btn" data-artist="Sepp">Sepp</button>
+      <button class="hint-btn" data-artist="Arapu">Arapu</button>
+      <button class="hint-btn" data-artist="Priku">Priku</button>
+    </div>
+  </div>
+
+  <!-- Graph -->
+  <div id="graph-container" class="graph-container hidden">
+    <svg id="graph-svg"></svg>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip hidden">
+      <div class="tooltip-name"></div>
+      <div class="tooltip-details"></div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item"><span class="legend-dot" style="background:#a855f7"></span>Remixer</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span>Collaborator</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#22c55e"></span>Featured</div>
+    </div>
+
+    <!-- Back button -->
+    <button id="back-btn" class="back-btn hidden">← Back</button>
+
+    <!-- Current artist indicator -->
+    <div id="current-artist" class="current-artist"></div>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="explore.js"></script>
+</body>
+</html>
