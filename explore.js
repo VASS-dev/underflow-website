@@ -114,7 +114,6 @@ let links = [];
 let nodeElements, linkElements, labelElements, glowElements;
 let centerArtist = null;
 let history = [];
-let visitedArtists = new Set();
 let width, height;
 
 // ---- DOM Elements ----
@@ -269,7 +268,6 @@ function startExploration(artistName) {
   nodes = [];
   links = [];
   history = [];
-  visitedArtists.clear();
   g.selectAll('*').remove();
 
   // Re-add layer groups in correct order
@@ -282,111 +280,84 @@ function startExploration(artistName) {
 }
 
 async function loadArtist(artistName, isInitial = false) {
-  if (visitedArtists.has(artistName.toLowerCase())) {
-    // Already loaded — just recenter
-    recenterOn(artistName);
-    return;
-  }
-
   const relations = await fetchRelations(artistName);
   if (!relations) {
-    // Artist not found — could show message
     showNotFound(artistName);
     return;
   }
 
-  visitedArtists.add(artistName.toLowerCase());
-
-  if (centerArtist) {
+  if (centerArtist && centerArtist.toLowerCase() !== artistName.toLowerCase()) {
     history.push(centerArtist);
     backBtn.classList.remove('hidden');
   }
   centerArtist = artistName;
   currentArtistEl.textContent = artistName;
 
-  // Add center node if new
-  let centerNode = nodes.find(n => n.id.toLowerCase() === artistName.toLowerCase());
-  if (!centerNode) {
-    centerNode = {
-      id: artistName,
-      isCenter: true,
-      relationType: 'center',
-      radius: CENTER_RADIUS,
-      trackCount: 0,
-      x: width / 2,
-      y: height / 2,
-      fx: isInitial ? width / 2 : null,
-      fy: isInitial ? height / 2 : null
-    };
-    nodes.push(centerNode);
-  }
+  // Clear old graph completely — each view is center + direct connections only
+  nodes = [];
+  links = [];
 
-  // Mark all nodes as non-center, restore their natural radius
-  nodes.forEach(n => {
-    if (n.isCenter && n !== centerNode) {
-      n.radius = n.trackCount > 0 ? scaleRadius(n.trackCount) : MIN_RADIUS + 8;
-    }
-    n.isCenter = false;
-    n.fx = null;
-    n.fy = null;
-  });
-  centerNode.isCenter = true;
-  centerNode.radius = CENTER_RADIUS;
+  // Center node
+  const centerNode = {
+    id: artistName,
+    isCenter: true,
+    relationType: 'center',
+    radius: CENTER_RADIUS,
+    trackCount: 0,
+    x: width / 2,
+    y: height / 2
+  };
+  nodes.push(centerNode);
 
-  // Add related nodes and links
+  // Related nodes + links
   relations.forEach(rel => {
-    const existingNode = nodes.find(n => n.id.toLowerCase() === rel.name.toLowerCase());
-    if (!existingNode) {
-      const r = scaleRadius(rel.track_count);
+    // Avoid duplicate nodes (API may return same artist with different relation types)
+    if (!nodes.find(n => n.id.toLowerCase() === rel.name.toLowerCase())) {
       nodes.push({
         id: rel.name,
         isCenter: false,
-        radius: r,
+        radius: scaleRadius(rel.track_count),
         trackCount: rel.track_count,
         relationType: rel.type,
-        // Start from center position for animation
-        x: centerNode.x + (Math.random() - 0.5) * 20,
-        y: centerNode.y + (Math.random() - 0.5) * 20
+        x: width / 2 + (Math.random() - 0.5) * 20,
+        y: height / 2 + (Math.random() - 0.5) * 20
       });
-    } else {
-      // Update track count if higher
-      if (rel.track_count > existingNode.trackCount) {
-        existingNode.trackCount = rel.track_count;
-        existingNode.radius = scaleRadius(rel.track_count);
-      }
     }
 
-    // Add link if not exists
-    const linkId = [artistName, rel.name].sort().join('---');
-    if (!links.find(l => l.id === linkId)) {
-      links.push({
-        id: linkId,
-        source: artistName,
-        target: rel.name,
-        type: rel.type,
-        trackCount: rel.track_count
-      });
-    }
+    links.push({
+      id: [artistName, rel.name].sort().join('---') + '-' + rel.type,
+      source: artistName,
+      target: rel.name,
+      type: rel.type,
+      trackCount: rel.track_count
+    });
   });
 
-  updateGraph(isInitial);
+  // Fade out old, then render new
+  if (!isInitial) {
+    await fadeOutGraph();
+  }
+  // Clear SVG layers
+  g.select('.links-layer').selectAll('*').remove();
+  g.select('.nodes-layer').selectAll('*').remove();
+  g.select('.labels-layer').selectAll('*').remove();
+
+  updateGraph(true);
 }
 
-function recenterOn(artistName) {
-  if (centerArtist) {
-    history.push(centerArtist);
-    backBtn.classList.remove('hidden');
-  }
-  centerArtist = artistName;
-  currentArtistEl.textContent = artistName;
-
-  nodes.forEach(n => {
-    n.isCenter = n.id.toLowerCase() === artistName.toLowerCase();
-    n.fx = null;
-    n.fy = null;
+function fadeOutGraph() {
+  return new Promise(resolve => {
+    const duration = 250;
+    g.select('.nodes-layer').selectAll('*')
+      .transition().duration(duration).style('opacity', 0);
+    g.select('.links-layer').selectAll('*')
+      .transition().duration(duration).style('opacity', 0);
+    g.select('.labels-layer').selectAll('*')
+      .transition().duration(duration).style('opacity', 0)
+      .on('end', resolve);
+    // Fallback in case no elements exist
+    setTimeout(resolve, duration + 50);
   });
-
-  updateGraph(false);
 }
 
 function goBack() {
@@ -394,16 +365,9 @@ function goBack() {
   const prev = history.pop();
   if (history.length === 0) backBtn.classList.add('hidden');
 
-  centerArtist = prev;
-  currentArtistEl.textContent = prev;
-
-  nodes.forEach(n => {
-    n.isCenter = n.id.toLowerCase() === prev.toLowerCase();
-    n.fx = null;
-    n.fy = null;
-  });
-
-  updateGraph(false);
+  // Don't push to history again — override centerArtist before loadArtist
+  centerArtist = null;
+  loadArtist(prev);
 }
 
 function showNotFound(artistName) {
@@ -663,20 +627,6 @@ function dragEnded(event, d) {
 
 function nodeColor(d) {
   if (d.isCenter) return COLORS.center;
-  // For visited center nodes, find their most common relation type from links
-  if (d.relationType === 'center') {
-    const nodeLinks = links.filter(l =>
-      (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id
-    );
-    if (nodeLinks.length > 0) {
-      // Use the most frequent relation type
-      const typeCounts = {};
-      nodeLinks.forEach(l => { typeCounts[l.type] = (typeCounts[l.type] || 0) + 1; });
-      const topType = Object.entries(typeCounts).sort((a, b) => b[1] - a[1])[0][0];
-      return COLORS[topType] || COLORS.default;
-    }
-    return COLORS.default;
-  }
   return COLORS[d.relationType] || COLORS.default;
 }
 
