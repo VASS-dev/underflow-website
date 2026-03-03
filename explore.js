@@ -106,6 +106,16 @@ const CENTER_RADIUS = 56;
 const LABEL_SIZE_MIN = 10;
 const LABEL_SIZE_MAX = 15;
 
+// ---- Embed Mode ----
+
+const _params = new URLSearchParams(window.location.search);
+const IS_EMBED = _params.get('embed') === '1';
+const AUTO_ARTIST = _params.get('artist');
+
+if (IS_EMBED) {
+  document.body.classList.add('embed-mode');
+}
+
 // ---- State ----
 
 let svg, g, simulation;
@@ -435,6 +445,11 @@ function updateGraph(isInitial) {
     .style('cursor', 'pointer')
     .on('click', (event, d) => {
       event.stopPropagation();
+      if (IS_EMBED) {
+        // In embed mode, open full explore page in new tab
+        window.open(`explore.html?artist=${encodeURIComponent(d.id)}`, '_blank');
+        return;
+      }
       if (!d.isCenter) {
         loadArtist(d.id);
       }
@@ -642,3 +657,8 @@ function scaleLabel(radius) {
 // ---- Start ----
 
 init();
+
+// Auto-start from URL params
+if (AUTO_ARTIST) {
+  startExploration(AUTO_ARTIST);
+}
