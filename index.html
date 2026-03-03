@@ -93,7 +93,7 @@
       </div>
       <div class="hero-screenshot">
         <iframe
-          src="explore.html?embed=1&artist=Sepp"
+          id="hero-graph"
           class="hero-graph-iframe"
           loading="lazy"
           title="Interactive artist connections graph demo"
@@ -101,6 +101,25 @@
           frameborder="0"
           scrolling="no">
         </iframe>
+        <script>
+          (function() {
+            var a = [
+              'Octave','Enzo Leep','Ricardo Villalobos','Fedo','Herck','Nima Gorji',
+              'Silat Beksi','Traumer','Dubphone','wAFF','Andrey Djackonda','Sepp',
+              'CL-ljud','Guy From Downstairs','Janeret','Dubfound','Matheiu',
+              'Max Jacobson','Cap','Cosmin Horatiu','Alffie','Wyro','dOP','Nu Zau',
+              'Swoy','Patrick Weblin','Miroloja','Etzu Mahkayah','Nibaaldo',
+              'Constratti','Mene','rares','Pedro','Rominimal','Giuseppe Cennamo',
+              'Claudio PRC','Tripmastaz','SIT','Wareika','Daniel Broesecke',
+              'Timid Boy','Vera','Franco Cinelli','David Gtronic','Luis Bravo',
+              'Guti','Priku','Ray Mono','Yulia Niko','Cristi Cons','Los Suruba',
+              'Sade','Stiven Escarraga','Martinez','Mancini','DeWalta',
+              'Cesare vs Disorder','Meet','Neverdogs'
+            ];
+            document.getElementById('hero-graph').src =
+              'explore.html?embed=1&artist=' + encodeURIComponent(a[Math.floor(Math.random()*a.length)]);
+          })();
+        </script>
         <div class="hero-graph-footer">
           <a href="explore.html" class="hero-graph-cta" data-i18n="hero.explore_cta">Explore artist connections &rarr;</a>
         </div>

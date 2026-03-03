@@ -134,7 +134,8 @@ const searchForm = document.getElementById('search-form');
 const artistInput = document.getElementById('artist-input');
 const tooltip = document.getElementById('tooltip');
 const backBtn = document.getElementById('back-btn');
-const currentArtistEl = document.getElementById('current-artist');
+const graphSearchForm = document.getElementById('graph-search-form');
+const graphSearchInput = document.getElementById('graph-search-input');
 
 // ---- Init ----
 
@@ -211,6 +212,16 @@ function setupEvents() {
     if (name) startExploration(name);
   });
 
+  // Graph search bar (visible while graph is shown)
+  graphSearchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = graphSearchInput.value.trim();
+    if (name) {
+      loadArtist(name);
+      graphSearchInput.blur();
+    }
+  });
+
   document.querySelectorAll('.hint-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const artist = btn.dataset.artist;
@@ -248,7 +259,8 @@ async function fetchRelations(artistName) {
         }
       }
       if (res.status === 429) {
-        currentArtistEl.textContent = 'Rate limit — try again later';
+        graphSearchInput.value = '';
+        graphSearchInput.placeholder = 'Rate limit — try again later';
         return null;
       }
     } catch (e) {
@@ -301,7 +313,7 @@ async function loadArtist(artistName, isInitial = false) {
     backBtn.classList.remove('hidden');
   }
   centerArtist = artistName;
-  currentArtistEl.textContent = artistName;
+  graphSearchInput.value = artistName;
 
   // Clear old graph completely — each view is center + direct connections only
   nodes = [];
@@ -382,11 +394,11 @@ function goBack() {
 
 function showNotFound(artistName) {
   // Don't change navigation state — just show temporary message
-  const prev = currentArtistEl.textContent;
-  currentArtistEl.textContent = `"${artistName}" — not found`;
+  const prev = graphSearchInput.value;
+  graphSearchInput.value = `"${artistName}" — not found`;
   setTimeout(() => {
-    if (currentArtistEl.textContent.includes('not found')) {
-      currentArtistEl.textContent = prev;
+    if (graphSearchInput.value.includes('not found')) {
+      graphSearchInput.value = prev;
     }
   }, 3000);
 }
@@ -445,11 +457,6 @@ function updateGraph(isInitial) {
     .style('cursor', 'pointer')
     .on('click', (event, d) => {
       event.stopPropagation();
-      if (IS_EMBED) {
-        // In embed mode, open full explore page in new tab
-        window.open(`explore.html?artist=${encodeURIComponent(d.id)}`, '_blank');
-        return;
-      }
       if (!d.isCenter) {
         loadArtist(d.id);
       }

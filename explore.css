@@ -307,22 +307,41 @@ body {
   color: var(--text);
 }
 
-/* ---- Current Artist ---- */
+/* ---- Graph Search (top bar) ---- */
 
-.current-artist {
+.graph-search {
   position: fixed;
   top: 72px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-muted);
-  background: rgba(10, 10, 15, 0.8);
-  backdrop-filter: blur(8px);
-  padding: 8px 20px;
-  border-radius: 8px;
+}
+
+.graph-search-input {
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font);
+  color: var(--text);
+  width: 260px;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.25s, width 0.3s, box-shadow 0.25s;
+}
+
+.graph-search-input::placeholder {
+  color: var(--text-faint);
+}
+
+.graph-search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(224, 85, 136, 0.15);
+  width: 320px;
+  text-align: left;
 }
 
 /* ---- SVG Filters (defined in JS) ---- */
@@ -355,7 +374,7 @@ body.embed-mode .nav,
 body.embed-mode .search-container,
 body.embed-mode .legend,
 body.embed-mode .back-btn,
-body.embed-mode .current-artist {
+body.embed-mode .graph-search {
   display: none !important;
 }
 
