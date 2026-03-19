@@ -20,6 +20,8 @@ async function loadTranslations(lang) {
       if (text == null) return;
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
         el.placeholder = text;
+      } else if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = text;
       } else {
         el.textContent = text;
       }

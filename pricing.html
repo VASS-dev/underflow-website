@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — Underflow</title>
+  <meta name="description" content="Underflow pricing plans. Free, Basic, and Pro plans for DJs and record collectors.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Underflow</a>
+      <div class="nav-right">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+        <a href="index.html#download" class="nav-cta" data-i18n="nav.download">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="legal-page">
+    <div class="container">
+      <h1 data-i18n="pricing.title">Pricing</h1>
+      <p data-i18n="pricing.sub">Choose a plan that fits your workflow.</p>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Free</h3>
+          <div class="pricing-price" data-i18n="pricing.free_price">$0</div>
+          <ul class="pricing-features">
+            <li data-i18n="pricing.free_f1">Limited searches per month</li>
+            <li data-i18n="pricing.free_f2">All 5 platforms</li>
+            <li data-i18n="pricing.free_f3">Local database</li>
+            <li data-i18n="pricing.free_f4">Built-in audio player</li>
+          </ul>
+          <a href="index.html#download" class="btn btn-ghost" data-i18n="pricing.free_btn">Get Started</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <h3>Basic</h3>
+          <div class="pricing-price" data-i18n="pricing.basic_price">$15/mo</div>
+          <ul class="pricing-features">
+            <li data-i18n="pricing.basic_f1">Extended search limits</li>
+            <li data-i18n="pricing.basic_f2">All 5 platforms</li>
+            <li data-i18n="pricing.basic_f3">Related artist discovery</li>
+            <li data-i18n="pricing.basic_f4">Batch search up to 10</li>
+            <li data-i18n="pricing.basic_f5">Priority server access</li>
+          </ul>
+          <a href="index.html#download" class="btn btn-primary" data-i18n="pricing.basic_btn">Download & Subscribe</a>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Pro</h3>
+          <div class="pricing-price" data-i18n="pricing.pro_price">$30/mo</div>
+          <ul class="pricing-features">
+            <li data-i18n="pricing.pro_f1">Maximum search limits</li>
+            <li data-i18n="pricing.pro_f2">All 5 platforms</li>
+            <li data-i18n="pricing.pro_f3">Unlimited related artists</li>
+            <li data-i18n="pricing.pro_f4">Batch search up to 10</li>
+            <li data-i18n="pricing.pro_f5">Priority support</li>
+          </ul>
+          <a href="index.html#download" class="btn btn-ghost" data-i18n="pricing.pro_btn">Download & Subscribe</a>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: 40px;">
+        <p style="font-size: 14px; color: var(--text-muted);" data-i18n="pricing.tokens_note">Need more searches without upgrading? Purchase usage tokens directly in the app.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <a href="index.html" class="footer-logo">Underflow</a>
+        <div class="footer-links">
+          <a href="index.html#features" data-i18n="nav.features">Features</a>
+          <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+          <a href="mailto:hello@underflow.music" data-i18n="footer.contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <div class="footer-legal-links">
+          <a href="terms.html" data-i18n="footer.terms">Terms</a>
+          <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+          <a href="refund.html" data-i18n="footer.refund">Refund Policy</a>
+        </div>
+        <div class="footer-entity">
+          <span data-i18n="footer.legal_entity">IE Papanov A.S.</span>
+        </div>
+      </div>
+      <div class="footer-copy">&copy; Underflow 2026</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
