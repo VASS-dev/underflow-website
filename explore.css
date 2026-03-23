@@ -56,6 +56,14 @@ body {
   color: var(--text);
   text-decoration: none;
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  height: 28px;
+  width: auto;
 }
 
 .nav-right {
