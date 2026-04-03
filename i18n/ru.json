@@ -113,6 +113,8 @@
   "download": {
     "title": "Скачать Underflow",
     "sub": "Бесплатно. Доступен для Windows и macOS.",
+    "win_label": "Скачать для Windows",
+    "mac_label": "Скачать для Mac",
     "notify_text": "Не готов скачивать? Получи уведомление об обновлениях.",
     "notify_btn": "Уведомить",
     "notify_success": "Ты в списке!"

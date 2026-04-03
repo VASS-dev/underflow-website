@@ -184,14 +184,25 @@ a { color: inherit; text-decoration: none; }
 
 .btn-ghost {
   background: transparent;
-  color: var(--text-muted);
-  border-color: var(--border);
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .btn-ghost:hover {
   color: var(--text);
   border-color: var(--border-hover);
   background: var(--bg-card);
+}
+
+.btn-accent {
+  background: transparent;
+  color: var(--accent);
+  border-color: rgba(224, 85, 136, 0.35);
+}
+
+.btn-accent:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent);
 }
 
 .btn-small {
@@ -909,6 +920,42 @@ a { color: inherit; text-decoration: none; }
 
 /* ---- Pricing Page ---- */
 
+.currency-switch {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.currency-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.currency-btn.active {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+.currency-btn:hover:not(.active) {
+  color: var(--text);
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -938,6 +985,17 @@ a { color: inherit; text-decoration: none; }
 .pricing-card.featured {
   border-color: var(--accent);
   box-shadow: 0 0 40px rgba(224, 85, 136, 0.1);
+}
+
+.pricing-card.featured .btn {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.pricing-card.featured .btn:hover {
+  background: #c94478;
+  border-color: #c94478;
 }
 
 .pricing-card h3 {

@@ -113,6 +113,8 @@
   "download": {
     "title": "Download Underflow",
     "sub": "Free to download. Available for Windows and macOS.",
+    "win_label": "Download for Windows",
+    "mac_label": "Download for Mac",
     "notify_text": "Not ready to download? Get notified of updates.",
     "notify_btn": "Notify Me",
     "notify_success": "You're on the list!"
