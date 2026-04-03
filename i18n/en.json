@@ -16,7 +16,7 @@
   },
   "trust": {
     "platforms": "Platforms searched",
-    "faster": "Search instead of 5",
+    "faster": "Faster than manual*",
     "tracks_number": "1,000+",
     "tracks_label": "Tracks per search session",
     "free_number": "Free",
