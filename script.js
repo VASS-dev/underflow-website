@@ -31,6 +31,8 @@ async function loadTranslations(lang) {
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
+    // Re-apply currency after translations (in case i18n overwrote prices)
+    if (typeof applyCurrency === 'function') applyCurrency(currentCurrency);
   } catch { /* silent */ }
 }
 
@@ -39,10 +41,43 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     currentLang = btn.dataset.lang;
     localStorage.setItem('uf-lang', currentLang);
     loadTranslations(currentLang);
+    // Auto-switch currency with language (unless user manually picked one)
+    if (!localStorage.getItem('uf-currency')) {
+      syncCurrencyWithLang(currentLang);
+    }
   });
 });
 
 loadTranslations(currentLang);
+
+// ---- Currency switcher ----
+
+const DEFAULT_CURRENCY = navigator.language.startsWith('ru') ? 'rub' : 'usd';
+let currentCurrency = localStorage.getItem('uf-currency') || DEFAULT_CURRENCY;
+
+function applyCurrency(currency) {
+  currentCurrency = currency;
+  localStorage.setItem('uf-currency', currency);
+  document.querySelectorAll('.pricing-price[data-price-' + currency + ']').forEach(el => {
+    el.textContent = el.getAttribute('data-price-' + currency);
+  });
+  document.querySelectorAll('.currency-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.currency === currency);
+  });
+}
+
+document.querySelectorAll('.currency-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyCurrency(btn.dataset.currency));
+});
+
+// Auto-set currency on lang switch
+function syncCurrencyWithLang(lang) {
+  const langCurrency = lang === 'ru' ? 'rub' : 'usd';
+  applyCurrency(langCurrency);
+}
+
+// Apply initial currency
+applyCurrency(currentCurrency);
 
 // ---- Nav: glassmorphism on scroll ----
 

@@ -126,6 +126,9 @@ let centerArtist = null;
 let history = [];
 let width, height;
 
+let isLoading = false;          // block new requests while one is in flight
+let currentAbortController = null; // cancel previous fetch on new request
+
 // ---- DOM Elements ----
 
 const searchContainer = document.getElementById('search-container');
@@ -216,7 +219,7 @@ function setupEvents() {
   graphSearchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = graphSearchInput.value.trim();
-    if (name) {
+    if (name && !isLoading) {
       loadArtist(name);
       graphSearchInput.blur();
     }
@@ -236,17 +239,24 @@ function setupEvents() {
 // ---- Config ----
 
 // API base URL
-const API_BASE = 'https://musicapp-api.fly.dev/api/public';
+const API_BASE = 'https://api.underflow.music/api/public';
 
 const USE_MOCK = false; // Set true to use mock data instead of API
 
 // ---- Data Fetching ----
 
 async function fetchRelations(artistName) {
+  // Cancel any in-flight request
+  if (currentAbortController) {
+    currentAbortController.abort();
+  }
+  currentAbortController = new AbortController();
+  const signal = currentAbortController.signal;
+
   // Try real API first
   if (!USE_MOCK) {
     try {
-      const res = await fetch(`${API_BASE}/explore/${encodeURIComponent(artistName)}`);
+      const res = await fetch(`${API_BASE}/explore/${encodeURIComponent(artistName)}`, { signal });
       if (res.ok) {
         const data = await res.json();
         if (data.success && data.relations && data.relations.length > 0) {
@@ -264,6 +274,7 @@ async function fetchRelations(artistName) {
         return null;
       }
     } catch (e) {
+      if (e.name === 'AbortError') return null; // request was cancelled — silently exit
       console.warn('API unavailable, falling back to mock data:', e.message);
     }
   }
@@ -282,6 +293,15 @@ async function fetchRelations(artistName) {
 // ---- Graph Logic ----
 
 function startExploration(artistName) {
+  // Cancel any in-flight request and reset loading state
+  // so the new exploration always takes over
+  if (currentAbortController) {
+    currentAbortController.abort();
+    currentAbortController = null;
+  }
+  isLoading = false;
+  setGraphLoading(false);
+
   // Hide search, show graph
   searchContainer.classList.add('hidden');
   graphContainer.classList.remove('hidden');
@@ -302,9 +322,17 @@ function startExploration(artistName) {
 }
 
 async function loadArtist(artistName, isInitial = false) {
+  if (isLoading) return; // ignore clicks while loading
+  isLoading = true;
+  setGraphLoading(true);
+
   const relations = await fetchRelations(artistName);
+
+  isLoading = false;
+  setGraphLoading(false);
+
   if (!relations) {
-    showNotFound(artistName);
+    if (centerArtist) showNotFound(artistName); // don't show error on abort
     return;
   }
 
@@ -383,13 +411,24 @@ function fadeOutGraph() {
 }
 
 function goBack() {
-  if (history.length === 0) return;
+  if (history.length === 0 || isLoading) return;
   const prev = history.pop();
   if (history.length === 0) backBtn.classList.add('hidden');
 
   // Don't push to history again — override centerArtist before loadArtist
   centerArtist = null;
   loadArtist(prev);
+}
+
+function setGraphLoading(loading) {
+  // Dim the graph and show cursor spinner during fetch
+  if (graphContainer) {
+    graphContainer.style.cursor = loading ? 'wait' : '';
+    graphContainer.style.pointerEvents = loading ? 'none' : '';
+  }
+  if (graphSearchInput) {
+    graphSearchInput.style.opacity = loading ? '0.5' : '';
+  }
 }
 
 function showNotFound(artistName) {
