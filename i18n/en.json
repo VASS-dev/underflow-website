@@ -1,4 +1,9 @@
 {
+  "beta_banner": {
+    "badge": "Beta test",
+    "message": "<strong>Open beta:</strong> search and analysis quotas are temporarily multiplied by <strong>×5</strong> while we gather feedback — expect rough edges and rate limits tightening after launch.",
+    "aria_close": "Close beta banner"
+  },
   "nav": {
     "features": "Features",
     "faq": "FAQ",
