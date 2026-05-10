@@ -119,34 +119,46 @@ const notifyForm = document.getElementById('notify-form');
 if (notifyForm) {
   notifyForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const input = notifyForm.querySelector('input[type="email"]');
-    const btn = notifyForm.querySelector('button');
-    const email = input.value;
+    const input = notifyForm.querySelector('input[name="email"]');
+    const hp = notifyForm.querySelector('input[name="website"]');
+    const btn = notifyForm.querySelector('button[type="submit"]');
+    const email = input.value.trim();
+    const notifyLabel =
+      translations?.download?.notify_btn || 'Notify Me';
     btn.disabled = true;
     btn.style.minWidth = btn.offsetWidth + 'px';
 
     try {
-      // TODO: Replace with actual API endpoint when ready
-      // await fetch(`${API}/api/newsletter`, {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email })
-      // });
-      const successText = translations?.download?.notify_success || "You're on the list!";
+      const res = await fetch(`${API}/api/marketing/notify-update`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          website: hp ? hp.value : '',
+        }),
+      });
+      if (!res.ok) {
+        throw new Error(`notify ${res.status}`);
+      }
+      const successText =
+        translations?.download?.notify_success || "You're on the list!";
       btn.textContent = successText;
       btn.style.background = '#10b981';
       btn.style.borderColor = '#10b981';
       input.disabled = true;
+      if (hp) hp.disabled = true;
     } catch {
-      btn.textContent = 'Error';
+      const errText =
+        translations?.download?.notify_error || 'Error — try later';
+      btn.textContent = errText;
       btn.style.background = '#e05555';
       btn.style.borderColor = '#e05555';
       setTimeout(() => {
-        btn.textContent = translations?.download?.notify_btn || 'Notify Me';
+        btn.textContent = notifyLabel;
         btn.style.background = '';
         btn.style.borderColor = '';
         btn.disabled = false;
-      }, 2000);
+      }, 2600);
     }
   });
 }

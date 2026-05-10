@@ -116,8 +116,10 @@
     "win_label": "Скачать для Windows",
     "mac_label": "Скачать для Mac",
     "notify_text": "Не готов скачивать? Получи уведомление об обновлениях.",
+    "notify_placeholder": "you@email.ru",
     "notify_btn": "Уведомить",
-    "notify_success": "Ты в списке!"
+    "notify_success": "Ты в списке!",
+    "notify_error": "Не удалось отправить — попробуй позже"
   },
   "pricing": {
     "title": "Тарифы",
@@ -234,6 +236,6 @@
     "terms": "Оферта",
     "privacy": "Конфиденциальность",
     "refund": "Возврат",
-    "legal_entity": "ИП Папанов А.С."
+    "legal_entity": "hello@underflow.music"
   }
 }

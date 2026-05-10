@@ -116,8 +116,10 @@
     "win_label": "Download for Windows",
     "mac_label": "Download for Mac",
     "notify_text": "Not ready to download? Get notified of updates.",
+    "notify_placeholder": "your@email.com",
     "notify_btn": "Notify Me",
-    "notify_success": "You're on the list!"
+    "notify_success": "You're on the list!",
+    "notify_error": "Could not send — try again later"
   },
   "pricing": {
     "title": "Pricing",
@@ -234,6 +236,6 @@
     "terms": "Terms",
     "privacy": "Privacy",
     "refund": "Refund Policy",
-    "legal_entity": "IE Papanov A.S."
+    "legal_entity": "hello@underflow.music"
   }
 }
