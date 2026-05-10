@@ -47,8 +47,11 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     currentLang = btn.dataset.lang;
     localStorage.setItem('uf-lang', currentLang);
     loadTranslations(currentLang);
-    // Auto-switch currency with language (unless user manually picked one)
-    if (!localStorage.getItem('uf-currency')) {
+    // Keep currency in sync with visible language unless user chose a currency tab manually
+    if (localStorage.getItem(CURRENCY_MANUAL_KEY) !== '1') {
+      syncCurrencyWithLang(currentLang);
+    } else if (currentLang === 'en' && localStorage.getItem('uf-currency') === 'rub') {
+      localStorage.removeItem(CURRENCY_MANUAL_KEY);
       syncCurrencyWithLang(currentLang);
     }
   });
@@ -57,9 +60,31 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 loadTranslations(currentLang);
 
 // ---- Currency switcher ----
+// `uf-currency-manual=1` means the user explicitly picked a currency tab; otherwise
+// we keep currency aligned with the active UI language (en → USD, ru → RUB) and fix
+// stale pairs like EN + ₽ from older versions.
 
-const DEFAULT_CURRENCY = navigator.language.startsWith('ru') ? 'rub' : 'usd';
-let currentCurrency = localStorage.getItem('uf-currency') || DEFAULT_CURRENCY;
+const CURRENCY_MANUAL_KEY = 'uf-currency-manual';
+
+const deriveDefaultCurrencyForLang = (lang) => (lang === 'ru' ? 'rub' : 'usd');
+
+let currentCurrency;
+const manualCurrency = localStorage.getItem(CURRENCY_MANUAL_KEY) === '1';
+const storedCurrency = localStorage.getItem('uf-currency');
+
+if (
+  manualCurrency &&
+  storedCurrency &&
+  !(currentLang === 'en' && storedCurrency === 'rub')
+) {
+  currentCurrency = storedCurrency;
+} else {
+  if (manualCurrency && currentLang === 'en' && storedCurrency === 'rub') {
+    localStorage.removeItem(CURRENCY_MANUAL_KEY);
+  }
+  currentCurrency = deriveDefaultCurrencyForLang(currentLang);
+  localStorage.setItem('uf-currency', currentCurrency);
+}
 
 function applyCurrency(currency) {
   currentCurrency = currency;
@@ -73,13 +98,15 @@ function applyCurrency(currency) {
 }
 
 document.querySelectorAll('.currency-btn').forEach(btn => {
-  btn.addEventListener('click', () => applyCurrency(btn.dataset.currency));
+  btn.addEventListener('click', () => {
+    localStorage.setItem(CURRENCY_MANUAL_KEY, '1');
+    applyCurrency(btn.dataset.currency);
+  });
 });
 
-// Auto-set currency on lang switch
+// Auto-set currency on lang switch (unless user locked a non-default choice)
 function syncCurrencyWithLang(lang) {
-  const langCurrency = lang === 'ru' ? 'rub' : 'usd';
-  applyCurrency(langCurrency);
+  applyCurrency(deriveDefaultCurrencyForLang(lang));
 }
 
 // Apply initial currency
