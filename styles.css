@@ -173,9 +173,20 @@ a { color: inherit; text-decoration: none; }
   max-width: none;
   margin: 0;
   padding: 18px max(24px, calc((100% - 1080px) / 2));
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px 28px;
+}
+
+/* Pricing / legal pages: no middle nav — logo left, actions right */
+.nav-inner:not(:has(.nav-links)) {
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+}
+
+.nav-inner:not(:has(.nav-links)) .logo {
+  justify-self: start;
 }
 
 .logo {
@@ -187,16 +198,24 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .logo-icon {
   height: 28px;
   width: auto;
+  flex-shrink: 0;
 }
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 28px;
+  justify-content: center;
+  justify-self: center;
+  min-width: 0;
 }
 
 .nav-links a {
@@ -214,6 +233,8 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
+  justify-self: end;
 }
 
 .lang-switch {
@@ -1226,6 +1247,10 @@ a { color: inherit; text-decoration: none; }
     top: 8px;
     right: 10px;
     transform: none;
+  }
+  .nav-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px 16px;
   }
   .nav-links { display: none; }
   .features-grid { grid-template-columns: 1fr; }
