@@ -251,3 +251,37 @@ function initBetaBanner() {
 }
 
 initBetaBanner();
+
+// ---- Fixed-nav height ----
+//
+// .nav is position:fixed, so every page has to start below it. That offset
+// used to be hardcoded (176px on .hero, 196px on .legal-page) against a nav
+// that is not a fixed height at all: the beta banner inside it wraps to two
+// or three lines on narrow screens and in longer locales, and it disappears
+// entirely once dismissed. Measured on the RU pricing page at 375px the nav
+// was 212px against the 196px offset — the heading rendered underneath the
+// banner. Publish --nav-h and let the CSS add its own breathing room on top.
+function syncNavHeight() {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+  const h = Math.round(nav.getBoundingClientRect().height);
+  if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
+}
+
+// A ResizeObserver covers every cause at once — viewport width, a language
+// switch that relayouts the banner text, and the dismiss click — without
+// each of them having to remember to call this.
+(function watchNavHeight() {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+  syncNavHeight();
+  if (typeof ResizeObserver === 'function') {
+    new ResizeObserver(syncNavHeight).observe(nav);
+  } else {
+    window.addEventListener('resize', syncNavHeight);
+  }
+  // Webfonts land after first paint and change the banner's line count.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncNavHeight).catch(() => {});
+  }
+})();
