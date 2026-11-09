@@ -1,7 +1,7 @@
 {
   "beta_banner": {
     "badge": "Beta test",
-    "message": "<strong>Open beta:</strong> search and analysis quotas are temporarily multiplied by <strong>×5</strong> while we gather feedback — expect rough edges and rate limits tightening after launch.",
+    "message": "<strong>Open beta:</strong> Underflow is free while we gather feedback — expect rough edges, and daily limits that keep the service up.",
     "aria_close": "Close beta banner"
   },
   "nav": {
@@ -128,7 +128,7 @@
   },
   "pricing": {
     "title": "Pricing",
-    "sub": "Choose a plan that fits your workflow.",
+    "sub": "Underflow is free while it is in beta.",
     "free_price": "$0",
     "free_f1": "All 5 platforms",
     "free_f2": "Local database",
@@ -149,7 +149,16 @@
     "pro_f4": "5 devices",
     "pro_f5": "New releases — auto (coming soon)",
     "pro_btn": "Download & Subscribe",
-    "tokens_note": "Need more searches without upgrading? Purchase usage tokens directly in the app."
+    "tokens_note": "Need more searches without upgrading? Purchase usage tokens directly in the app.",
+    "beta_name": "Beta",
+    "beta_price": "Free",
+    "beta_f1": "All 5 platforms in one search",
+    "beta_f2": "Batch search up to 10 artists",
+    "beta_f3": "Related artists discovery",
+    "beta_f4": "Local database, works offline",
+    "beta_f5": "Built-in player, wishlist, tags",
+    "beta_limits": "Daily usage limits apply so the service stays fast for everyone. You will see your remaining balance in the app.",
+    "beta_future": "Paid plans will arrive later, once the app has earned them. Accounts created during the beta keep their beta terms."
   },
   "terms": {
     "title": "Terms of Service (Public Offer)",

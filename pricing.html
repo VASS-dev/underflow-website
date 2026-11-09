@@ -37,56 +37,26 @@
   <section class="legal-page">
     <div class="container">
       <h1 data-i18n="pricing.title">Pricing</h1>
-      <p data-i18n="pricing.sub">Choose a plan that fits your workflow.</p>
+      <p data-i18n="pricing.sub">Underflow is free while it is in beta.</p>
 
-      <div class="currency-switch">
-        <button class="currency-btn" data-currency="rub">₽</button>
-        <button class="currency-btn active" data-currency="usd">$</button>
-        <button class="currency-btn" data-currency="eur">€</button>
-      </div>
-
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3>Free</h3>
-          <div class="pricing-price" data-price-rub="Бесплатно" data-price-usd="$0" data-price-eur="€0">$0</div>
+      <div class="pricing-grid pricing-grid-single">
+        <div class="pricing-card featured">
+          <h3 data-i18n="pricing.beta_name">Beta</h3>
+          <div class="pricing-price" data-i18n="pricing.beta_price">Free</div>
           <ul class="pricing-features">
-            <li data-i18n="pricing.free_f1">All 5 platforms</li>
-            <li data-i18n="pricing.free_f2">Local database</li>
-            <li data-i18n="pricing.free_f3">Built-in audio player</li>
-            <li data-i18n="pricing.free_f4">1 device</li>
+            <li data-i18n="pricing.beta_f1">All 5 platforms in one search</li>
+            <li data-i18n="pricing.beta_f2">Batch search up to 10 artists</li>
+            <li data-i18n="pricing.beta_f3">Related artists discovery</li>
+            <li data-i18n="pricing.beta_f4">Local database, works offline</li>
+            <li data-i18n="pricing.beta_f5">Built-in player, wishlist, tags</li>
           </ul>
           <a href="index.html#download" class="btn btn-accent" data-i18n="pricing.free_btn">Get Started</a>
         </div>
-
-        <div class="pricing-card featured">
-          <h3>Basic</h3>
-          <div class="pricing-price" data-price-rub="1 200 ₽/мес" data-price-usd="$15/mo" data-price-eur="€13/mo">$15/mo</div>
-          <ul class="pricing-features">
-            <li data-i18n="pricing.basic_f1">+350% monthly usage</li>
-            <li data-i18n="pricing.basic_f2">25% discount on extra</li>
-            <li data-i18n="pricing.basic_f3">Batch up to 10 artists</li>
-            <li data-i18n="pricing.basic_f4">3 devices</li>
-            <li data-i18n="pricing.basic_f5">New releases — manual (coming soon)</li>
-          </ul>
-          <a href="index.html#download" class="btn btn-accent" data-i18n="pricing.basic_btn">Download & Subscribe</a>
-        </div>
-
-        <div class="pricing-card">
-          <h3>Pro</h3>
-          <div class="pricing-price" data-price-rub="2 400 ₽/мес" data-price-usd="$30/mo" data-price-eur="€26/mo">$30/mo</div>
-          <ul class="pricing-features">
-            <li data-i18n="pricing.pro_f1">+900% monthly usage</li>
-            <li data-i18n="pricing.pro_f2">50% discount on extra</li>
-            <li data-i18n="pricing.pro_f3">Batch up to 30 artists</li>
-            <li data-i18n="pricing.pro_f4">5 devices</li>
-            <li data-i18n="pricing.pro_f5">New releases — auto (coming soon)</li>
-          </ul>
-          <a href="index.html#download" class="btn btn-accent" data-i18n="pricing.pro_btn">Download & Subscribe</a>
-        </div>
       </div>
 
-      <div style="text-align:center; margin-top: 40px;">
-        <p style="font-size: 14px; color: var(--text-muted);" data-i18n="pricing.tokens_note">Need more searches without upgrading? Purchase usage tokens directly in the app.</p>
+      <div style="text-align:center; margin-top: 40px; max-width: 620px; margin-left: auto; margin-right: auto;">
+        <p style="font-size: 14px; color: var(--text-muted);" data-i18n="pricing.beta_limits">Daily usage limits apply so the service stays fast for everyone. You will see your remaining balance in the app.</p>
+        <p style="font-size: 14px; color: var(--text-muted);" data-i18n="pricing.beta_future">Paid plans will arrive later, once the app has earned them. Accounts created during the beta keep their beta terms.</p>
       </div>
     </div>
   </section>

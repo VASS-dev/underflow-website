@@ -1118,6 +1118,13 @@ a { color: inherit; text-decoration: none; }
   margin-top: 40px;
 }
 
+/* Beta: one plan instead of three. Keep the card its normal width rather
+   than letting it stretch across the full grid. */
+.pricing-grid-single {
+  grid-template-columns: minmax(0, 360px);
+  justify-content: center;
+}
+
 .pricing-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
