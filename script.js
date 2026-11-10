@@ -10,7 +10,13 @@ let translations = {};
 
 async function loadTranslations(lang) {
   try {
-    const res = await fetch(`i18n/${lang}.json`);
+    // GitHub Pages serves these with max-age=600, so after a deploy a
+    // returning visitor kept the old strings for up to ten minutes while
+    // the HTML was already new — the pricing page rendered Russian chrome
+    // around an English card. cache: 'no-cache' revalidates against the
+    // ETag on every load: a 304 when nothing changed, fresh copy when it
+    // did. These files are a few KB, so the round trip costs nothing.
+    const res = await fetch(`i18n/${lang}.json`, { cache: 'no-cache' });
     if (!res.ok) return;
     translations = await res.json();
 
