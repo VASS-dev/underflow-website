@@ -210,6 +210,12 @@ async function loadDownloadLinks() {
   const dlMacX    = document.getElementById('dl-mac-intel');
   const dlMacA    = document.getElementById('dl-mac-arm');
 
+  // Only the landing page carries the download block. Everywhere else
+  // these are null, and writing to versionEl threw — inside the try, so
+  // the catch ran and threw again on the same null. Every page except
+  // index logged an uncaught TypeError on load.
+  if (!versionEl) return;
+
   try {
     const res  = await fetch(`${API}/api/updates/info`, { cache: 'no-cache' });
     if (!res.ok) throw new Error(res.status);
