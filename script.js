@@ -56,6 +56,12 @@ async function loadTranslations(lang) {
       if (text != null) el.setAttribute('aria-label', text);
     });
 
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      const key = el.getAttribute('data-i18n-alt');
+      const text = key.split('.').reduce((obj, k) => obj?.[k], translations);
+      if (text != null) el.setAttribute('alt', text);
+    });
+
     document.documentElement.lang = lang;
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
