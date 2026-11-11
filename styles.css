@@ -1391,6 +1391,8 @@ a { color: inherit; text-decoration: none; }
 .tour-card--player,
 .tour-card--labels { grid-column: 1 / span 7; }
 .tour-card--related { grid-column: 8 / span 5; grid-row: 1 / span 3; }
+.tour-card--owned { grid-column: 1 / span 6; }
+.tour-card--buylist { grid-column: 7 / span 6; }
 
 .tour-shot {
   border: 1px solid var(--border);
@@ -1412,6 +1414,8 @@ a { color: inherit; text-decoration: none; }
   .tour-card--stores,
   .tour-card--player,
   .tour-card--labels,
-  .tour-card--related { grid-column: 1 / -1; grid-row: auto; }
+  .tour-card--related,
+  .tour-card--owned,
+  .tour-card--buylist { grid-column: 1 / -1; grid-row: auto; }
   .tour-shot--tall { max-width: 300px; margin: 0 auto; }
 }

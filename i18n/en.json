@@ -241,7 +241,13 @@
     "alt_stores": "The store menu in Underflow listing Bandcamp, Decks.de, Beatport, Juno Records, Discogs and Local, above tracks with store badges",
     "alt_related": "Related artists panel with the relation type letter next to each artist",
     "alt_player": "Underflow's built-in player bar with a waveform, heart and buy-list buttons",
-    "alt_labels": "The Labels tab in Underflow with a list of labels next to their tracks"
+    "alt_labels": "The Labels tab in Underflow with a list of labels next to their tracks",
+    "card5_title": "Know what you already own",
+    "card5_desc": "Tracks matched to your local files get an OWNED badge with the file format, so you do not buy the same release twice.",
+    "card6_title": "A buy list, not a pile of tabs",
+    "card6_desc": "Mark a track once and it waits on your buy list with its store badge. Review the list, then buy store by store.",
+    "alt_owned": "Favorite tracks in Underflow with OWNED badges showing the file format, such as WAV or AIFF, and a LOC marker for local files",
+    "alt_buylist": "The Buy List view in Underflow: tracks with store badges and buy-list icons"
   },
   "explore": {
     "meta_title": "Explore Artist Connections — Underflow",
