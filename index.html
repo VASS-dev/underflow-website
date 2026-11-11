@@ -23,7 +23,6 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://underflow.music">
   <link rel="alternate" hreflang="en" href="https://underflow.music">
-  <link rel="alternate" hreflang="ru" href="https://underflow.music">
   <link rel="alternate" hreflang="x-default" href="https://underflow.music">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
@@ -44,6 +43,63 @@
   }
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Underflow free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Underflow is free during the open beta, with daily limits while we gather feedback."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Underflow sell music?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Underflow is a search and discovery tool. The service does not store or distribute music. Audio previews are streamed directly from the platform servers (Bandcamp, Juno, Beatport, Decks.de, Discogs). When you find a track you want, you click through to purchase it on the respective platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does smart artist discovery work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our algorithm analyzes track metadata to identify remixers, collaborators, and featured artists. You get a visual network of related artists with color-coded relation types: R (remixer), F (featuring), C (collaborator), O (original)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What platforms are searched?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bandcamp, Juno Records, Beatport, Decks.de, and Discogs. All five are searched simultaneously with unified results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is my data stored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Locally on your machine in a SQLite database. Your tags, wishlists, and collection never leave your computer. Search requests go through our server for speed and platform compatibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What operating systems are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Windows 10/11 (x64), macOS with Intel processors, and macOS with Apple Silicon (M1/M2/M3)."
+      }
+    }
+  ]
+}
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -56,7 +112,7 @@
     <div id="beta-banner" class="beta-banner-row" role="region" aria-labelledby="beta-banner-title">
       <div class="beta-banner-inner">
         <span id="beta-banner-title" class="beta-banner-badge" data-i18n="beta_banner.badge">Beta test</span>
-        <p class="beta-banner-msg" data-i18n="beta_banner.message" data-i18n-html><strong>Open beta:</strong> quotas ×5.</p>
+        <p class="beta-banner-msg" data-i18n="beta_banner.message" data-i18n-html><strong>Open beta:</strong> Underflow is free while we gather feedback. Daily limits apply.</p>
         <button type="button" class="beta-banner-close" data-i18n-aria-label="beta_banner.aria_close" aria-label="Close">&times;</button>
       </div>
     </div>
@@ -83,10 +139,7 @@
     <div class="container">
       <div class="badge" data-i18n="hero.badge">Music Discovery for DJs & Collectors</div>
       <h1 class="hero-title"><span data-i18n="hero.title_1">Dig deeper.</span><br><span class="accent" data-i18n="hero.title_2">Find more.</span></h1>
-      <p class="hero-sub" data-i18n="hero.sub">
-        One search. Five platforms. All the music. Bandcamp, Juno, Beatport, Decks.de, Discogs —
-        digital and vinyl in one query. Never miss a release again.
-      </p>
+      <p class="hero-sub" data-i18n="hero.sub">One search instead of ten tabs. Type an artist and get results from Bandcamp, Juno, Beatport, Decks.de and Discogs — digital and vinyl — then listen, tag and save, all in one app.</p>
       <div class="hero-actions">
         <a href="#download" class="btn btn-primary" data-i18n="hero.btn_download">Download Free</a>
         <a href="#features" class="btn btn-ghost" data-i18n="hero.btn_features">See Features</a>
@@ -157,7 +210,7 @@
       <div class="trust-label" data-i18n="trust.free_label">To get started</div>
     </div>
   </div>
-  <div class="trust-note" data-i18n="trust.note">* Approximate speed and coverage improvement vs searching each platform manually</div>
+  <div class="trust-note" data-i18n="trust.note">* Data collection speed across 5 platforms with batch search</div>
 
   <!-- How It Works -->
   <section class="section section-dark" id="how-it-works">
@@ -167,18 +220,18 @@
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-number">1</div>
-          <h3 data-i18n="how.step1_title">Search Once</h3>
-          <p data-i18n="how.step1_desc">Type an artist name. Underflow searches Bandcamp, Juno, Beatport, Decks.de, and Discogs simultaneously.</p>
+          <h3 data-i18n="how.step1_title">Search once, not ten times</h3>
+          <p data-i18n="how.step1_desc">Type an artist name. Underflow queries Bandcamp, Juno, Beatport, Decks.de and Discogs at the same time — no tab-hopping, no store-by-store searching.</p>
         </div>
         <div class="step-card">
           <div class="step-number">2</div>
-          <h3 data-i18n="how.step2_title">Preview & Compare</h3>
-          <p data-i18n="how.step2_desc">Listen to previews, compare results across platforms, and discover related artists you've never heard of.</p>
+          <h3 data-i18n="how.step2_title">Listen straight through</h3>
+          <p data-i18n="how.step2_desc">Play previews one after another in the built-in player — no new tab per release. Compare an artist across platforms and follow remixers and collaborators to names you haven't heard.</p>
         </div>
         <div class="step-card">
           <div class="step-number">3</div>
-          <h3 data-i18n="how.step3_title">Save & Buy</h3>
-          <p data-i18n="how.step3_desc">Add tracks to your wishlist, tag them your way, and click through to purchase on any platform.</p>
+          <h3 data-i18n="how.step3_title">Save it, tag it, buy it</h3>
+          <p data-i18n="how.step3_desc">Heart a track, tag it your way, move it to your buy list, then click through to purchase on the right store. Your whole collection stays searchable and exports to CSV.</p>
         </div>
       </div>
     </div>
@@ -192,33 +245,33 @@
       <div class="features-grid">
         <div class="card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.5-4.5"/><path d="M8 10.5h5M10.5 8v5"/></svg></div>
-          <h3 data-i18n="features.card1_title">Multi-Source Search</h3>
-          <p data-i18n="features.card1_desc">Type an artist name. Get digital and vinyl-only results from Bandcamp, Juno, Beatport, Decks.de, and Discogs — all at once. Find vinyl-only releases you'd never see on digital stores.</p>
+          <h3 data-i18n="features.card1_title">Every store, one search</h3>
+          <p data-i18n="features.card1_desc">Type an artist name and get results from Bandcamp, Juno, Beatport, Decks.de and Discogs in one list — including vinyl-only releases you'd never see in digital stores.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><circle cx="4.5" cy="19.5" r="2.5"/><circle cx="19.5" cy="19.5" r="2.5"/><path d="m12 7-5.8 10M12 7l5.8 10"/></svg></div>
-          <h3 data-i18n="features.card2_title">Smart Artist Discovery</h3>
-          <p data-i18n="features.card2_desc">Our algorithm analyzes every track to map remixers, collaborators, and featured artists. Color-coded relation badges (R/F/C/O). Follow the chain — discover music you'd never find manually.</p>
+          <h3 data-i18n="features.card2_title">Remixers and collaborators</h3>
+          <p data-i18n="features.card2_desc">Underflow analyzes every track to map remixers, collaborators and featured artists, with color-coded relation badges (R/F/C/O). Follow the chain to artists you'd never find by hand.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 1 1 18 0v6"/><rect x="3" y="15" width="3" height="5" rx="1"/><rect x="18" y="15" width="3" height="5" rx="1"/></svg></div>
-          <h3 data-i18n="features.card3_title">Built-in Audio Player</h3>
-          <p data-i18n="features.card3_desc">Preview tracks without leaving the app. Full transport controls, seek bar, volume. Floating mini-player stays on top while you work. Real-time spectrum analyzer.</p>
+          <h3 data-i18n="features.card3_title">Listen without leaving the app</h3>
+          <p data-i18n="features.card3_desc">Play previews right in the app — no new tab per release. Full transport controls, seek bar and volume, a floating mini-player that stays on top while you work, and a real-time spectrum analyzer.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/></svg></div>
           <h3 data-i18n="features.card4_title">Wishlist &rarr; Buy List</h3>
-          <p data-i18n="features.card4_desc">Spot a track? Heart it. Ready to buy? Move to buy list. Purchased? It's in your collection. Every step tracked, nothing lost.</p>
+          <p data-i18n="features.card4_desc">Heart a track when you spot it. Ready to buy? Move it to your buy list. Purchased? It's in your collection. Every step tracked — nothing lost between tabs.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z"/><circle cx="7" cy="7" r="1.5"/></svg></div>
-          <h3 data-i18n="features.card5_title">Custom Tags</h3>
-          <p data-i18n="features.card5_desc">Create your own tag groups with colors. Organize by mood, tempo, key, genre — whatever fits your workflow. Filter by tags with AND/OR logic.</p>
+          <h3 data-i18n="features.card5_title">Tags that fit how you dig</h3>
+          <p data-i18n="features.card5_desc">Create your own tag groups with colors — mood, tempo, key, genre, whatever fits your workflow — and filter by them with AND/OR logic.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg></div>
           <h3 data-i18n="features.card6_title">Local Database</h3>
-          <p data-i18n="features.card6_desc">Your collection lives on your machine in a SQLite database. No cloud storage — your data stays local. Your data, your rules.</p>
+          <p data-i18n="features.card6_desc">Your collection lives on your machine in a SQLite database — searchable, exportable to CSV, and yours. No cloud lock-in.</p>
         </div>
       </div>
     </div>
@@ -323,11 +376,11 @@
       <div class="faq-list">
         <details class="faq-item">
           <summary class="faq-question" data-i18n="faq.q1">Is Underflow free?</summary>
-          <p class="faq-answer" data-i18n="faq.a1">Underflow is free with limits. The free plan is enough to try the service and maintain a small collection. If you want to grow your collection seriously, upgrade your plan or purchase extra usage tokens. This model ensures fair usage and stable server performance for everyone.</p>
+          <p class="faq-answer" data-i18n="faq.a1">Yes. Underflow is free during the open beta, with daily limits while we gather feedback.</p>
         </details>
         <details class="faq-item">
           <summary class="faq-question" data-i18n="faq.q2">Does Underflow sell music?</summary>
-          <p class="faq-answer" data-i18n="faq.a2">No. Underflow is a search and discovery tool. When you find a track you want, you click through to purchase it directly on Bandcamp, Juno Records, Beatport, Decks.de, or Discogs.</p>
+          <p class="faq-answer" data-i18n="faq.a2">No. Underflow is a search and discovery tool. The service does not store or distribute music. Audio previews are streamed directly from the platform servers (Bandcamp, Juno, Beatport, Decks.de, Discogs). When you find a track you want, you click through to purchase it on the respective platform.</p>
         </details>
         <details class="faq-item">
           <summary class="faq-question" data-i18n="faq.q3">How does smart artist discovery work?</summary>
