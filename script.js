@@ -2,6 +2,23 @@
 
 const API = 'https://api.underflow.music';
 
+// ---- Analytics (Plausible) ----
+// The Plausible script is loaded with `defer` after this file, so a queue stub
+// is defined first: any event fired before the real script arrives is replayed
+// by it. track() swallows errors on purpose — analytics must never break a page.
+// Event names must be added as Goals (and `os` / `location` / `lang` as custom
+// properties) in the Plausible dashboard before they show up in reports.
+
+window.plausible = window.plausible || function () {
+  (window.plausible.q = window.plausible.q || []).push(arguments);
+};
+
+function track(name, props) {
+  try {
+    window.plausible(name, props ? { props } : undefined);
+  } catch { /* ignore */ }
+}
+
 // ---- i18n ----
 
 const DEFAULT_LANG = navigator.language.startsWith('ru') ? 'ru' : 'en';
@@ -52,6 +69,7 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     currentLang = btn.dataset.lang;
     localStorage.setItem('uf-lang', currentLang);
+    track('Language Switch', { lang: currentLang });
     loadTranslations(currentLang);
     // Keep currency in sync with visible language unless user chose a currency tab manually
     if (localStorage.getItem(CURRENCY_MANUAL_KEY) !== '1') {
@@ -179,6 +197,7 @@ if (notifyForm) {
       if (!res.ok) {
         throw new Error(`notify ${res.status}`);
       }
+      track('Notify Signup');
       const successText =
         translations?.download?.notify_success || "You're on the list!";
       btn.textContent = successText;
@@ -201,6 +220,38 @@ if (notifyForm) {
     }
   });
 }
+
+// ---- Funnel events ----
+
+// Any link into the download block ("Download" in the nav, "Download Free" in
+// the hero, the same links on the other pages): where on the page was it?
+document.querySelectorAll('a[href$="#download"]').forEach(a => {
+  a.addEventListener('click', () => {
+    const where = a.classList.contains('nav-cta') ? 'nav'
+      : a.classList.contains('btn-primary') ? 'hero'
+      : 'other';
+    track("Download CTA", { location: where });
+  });
+});
+
+// The actual download buttons. Disabled ones (API not answered yet, or an OS
+// with no build) have no real href and must not count.
+document.querySelectorAll('.btn-download').forEach(a => {
+  a.addEventListener('click', () => {
+    if (a.classList.contains('btn-disabled')) return;
+    const os = a.id === 'dl-win' ? 'windows'
+      : a.id === 'dl-mac-arm' ? 'mac-arm'
+      : 'mac-intel';
+    track('Download', { os });
+  });
+});
+
+// Landing -> explore
+document.querySelectorAll('a[href="explore.html"]').forEach(a => {
+  a.addEventListener('click', () => {
+    track('Explore CTA', { location: a.classList.contains('hero-graph-cta') ? 'hero' : 'other' });
+  });
+});
 
 // ---- Populate download buttons from server ----
 

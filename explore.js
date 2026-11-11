@@ -116,6 +116,30 @@ if (IS_EMBED) {
   document.body.classList.add('embed-mode');
 }
 
+// ---- Analytics (Plausible) ----
+
+// Explore does not load script.js, so it sets up its own tracking. It must stay
+// OFF in embed mode: the landing page shows this page in an iframe, and loading
+// Plausible there would count every landing view as an explore pageview.
+
+function track(name, props) {
+  if (IS_EMBED) return;
+  try {
+    window.plausible(name, props ? { props } : undefined);
+  } catch { /* ignore */ }
+}
+
+if (!IS_EMBED) {
+  window.plausible = window.plausible || function () {
+    (window.plausible.q = window.plausible.q || []).push(arguments);
+  };
+  const plausibleScript = document.createElement('script');
+  plausibleScript.defer = true;
+  plausibleScript.dataset.domain = 'underflow.music';
+  plausibleScript.src = 'https://plausible.io/js/script.js';
+  document.head.appendChild(plausibleScript);
+}
+
 // ---- State ----
 
 let svg, g, simulation;
@@ -325,10 +349,15 @@ function setupEvents() {
 
   backBtn.addEventListener('click', goBack);
 
+  document.querySelector('.nav-cta')?.addEventListener('click', () => {
+    track('Download CTA', { location: 'explore' });
+  });
+
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       currentLang = btn.dataset.lang;
       localStorage.setItem('uf-lang', currentLang);
+      track('Language Switch', { lang: currentLang });
       loadTranslations(currentLang);
     });
   });
@@ -391,6 +420,7 @@ async function fetchRelations(artistName) {
 // ---- Graph Logic ----
 
 function startExploration(artistName) {
+  track('Explore Search');
   // Cancel any in-flight request and reset loading state
   // so the new exploration always takes over
   if (currentAbortController) {
