@@ -223,6 +223,26 @@
     "privacy": "Privacy",
     "legal_entity": "hello@underflow.music"
   },
+  "tour": {
+    "eyebrow": "Product tour",
+    "title": "See it work",
+    "sub": "Real screens from the app, not mockups.",
+    "stage_cap": "A real session: filter the collection by artist, press play, filter by store, switch to labels.",
+    "card1_title": "Five stores, one list",
+    "card1_desc": "Bandcamp, Decks.de, Beatport, Juno Records and Discogs side by side. Badges show where each track was found, and one menu filters by store, vinyl or digital.",
+    "card2_title": "Who remixed whom",
+    "card2_desc": "Related artists with the relation type next to each name: collaborator, remixer, featuring. Click a name to follow the scene.",
+    "card3_title": "Listen straight through",
+    "card3_desc": "One player for every store, with a waveform and heart and buy-list buttons. No new tab per release.",
+    "card4_title": "Labels, not only artists",
+    "card4_desc": "Browse by label too: your favorite labels and their releases in one list, next to your artists.",
+    "cta": "Download Free",
+    "alt_main": "Underflow app: the collection filtered by an artist, tracks from several stores, the related artists panel and the built-in player playing a track",
+    "alt_stores": "The store menu in Underflow listing Bandcamp, Decks.de, Beatport, Juno Records, Discogs and Local, above tracks with store badges",
+    "alt_related": "Related artists panel with the relation type letter next to each artist",
+    "alt_player": "Underflow's built-in player bar with a waveform, heart and buy-list buttons",
+    "alt_labels": "The Labels tab in Underflow with a list of labels next to their tracks"
+  },
   "explore": {
     "meta_title": "Explore Artist Connections — Underflow",
     "nav_home": "Home",

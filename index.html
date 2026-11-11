@@ -212,6 +212,66 @@
   </div>
   <div class="trust-note" data-i18n="trust.note">* Data collection speed across 5 platforms with batch search</div>
 
+  <!-- Product tour -->
+  <section class="section tour" id="tour">
+    <div class="container tour-container">
+      <div class="tour-head">
+        <span class="tour-eyebrow" data-i18n="tour.eyebrow">Product tour</span>
+        <h2 class="section-title" data-i18n="tour.title">See it work</h2>
+        <p class="section-sub" data-i18n="tour.sub">Real screens from the app, not mockups.</p>
+      </div>
+
+      <figure class="tour-stage">
+        <div class="tour-window">
+          <div class="tour-chrome" aria-hidden="true"><i></i><i></i><i></i><span>Underflow</span></div>
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="screens/tour-main.webp">
+            <img src="screens/tour-walkthrough.webp" width="1120" height="604" loading="lazy" decoding="async" alt="Underflow app: the collection filtered by an artist, tracks from several stores, the related artists panel and the built-in player playing a track" data-i18n-alt="tour.alt_main">
+          </picture>
+        </div>
+        <figcaption class="tour-stage-cap" data-i18n="tour.stage_cap">A real session: filter the collection by artist, press play, filter by store, switch to labels.</figcaption>
+      </figure>
+
+      <div class="tour-grid">
+        <article class="tour-card tour-card--stores">
+          <div class="tour-shot"><img src="screens/tour-stores.webp" width="1200" height="453" loading="lazy" decoding="async" alt="The store menu in Underflow listing Bandcamp, Decks.de, Beatport, Juno Records, Discogs and Local, above tracks with store badges" data-i18n-alt="tour.alt_stores"></div>
+          <div class="tour-copy">
+            <h3 data-i18n="tour.card1_title">Five stores, one list</h3>
+            <p data-i18n="tour.card1_desc">Bandcamp, Decks.de, Beatport, Juno Records and Discogs side by side. Badges show where each track was found, and one menu filters by store, vinyl or digital.</p>
+          </div>
+        </article>
+
+        <article class="tour-card tour-card--related">
+          <div class="tour-copy">
+            <h3 data-i18n="tour.card2_title">Who remixed whom</h3>
+            <p data-i18n="tour.card2_desc">Related artists with the relation type next to each name: collaborator, remixer, featuring. Click a name to follow the scene.</p>
+          </div>
+          <div class="tour-shot tour-shot--tall"><img src="screens/tour-related.webp" width="305" height="820" loading="lazy" decoding="async" alt="Related artists panel with the relation type letter next to each artist" data-i18n-alt="tour.alt_related"></div>
+        </article>
+
+        <article class="tour-card tour-card--player">
+          <div class="tour-shot"><img src="screens/tour-player.webp" width="1400" height="87" loading="lazy" decoding="async" alt="Underflow&#x27;s built-in player bar with a waveform, heart and buy-list buttons" data-i18n-alt="tour.alt_player"></div>
+          <div class="tour-copy">
+            <h3 data-i18n="tour.card3_title">Listen straight through</h3>
+            <p data-i18n="tour.card3_desc">One player for every store, with a waveform and heart and buy-list buttons. No new tab per release.</p>
+          </div>
+        </article>
+
+        <article class="tour-card tour-card--labels">
+          <div class="tour-shot"><img src="screens/tour-labels.webp" width="1200" height="787" loading="lazy" decoding="async" alt="The Labels tab in Underflow with a list of labels next to their tracks" data-i18n-alt="tour.alt_labels"></div>
+          <div class="tour-copy">
+            <h3 data-i18n="tour.card4_title">Labels, not only artists</h3>
+            <p data-i18n="tour.card4_desc">Browse by label too: your favorite labels and their releases in one list, next to your artists.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="tour-cta">
+        <a href="#download" class="btn btn-primary" data-i18n="tour.cta">Download Free</a>
+      </div>
+    </div>
+  </section>
+
   <!-- How It Works -->
   <section class="section section-dark" id="how-it-works">
     <div class="container">
