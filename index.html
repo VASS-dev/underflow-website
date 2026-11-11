@@ -103,7 +103,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261111b">
+  <link rel="stylesheet" href="styles.css?v=20261111d">
 </head>
 <body>
 
@@ -212,78 +212,118 @@
   </div>
   <div class="trust-note" data-i18n="trust.note">* Data collection speed across 5 platforms with batch search</div>
 
-  <!-- Product tour -->
-  <section class="section tour" id="tour">
-    <div class="container tour-container">
-      <div class="tour-head">
-        <span class="tour-eyebrow" data-i18n="tour.eyebrow">Product tour</span>
-        <h2 class="section-title" data-i18n="tour.title">See it work</h2>
-        <p class="section-sub" data-i18n="tour.sub">Real screens from the app, not mockups.</p>
+  <!-- Product tour / app gallery -->
+  <section class="section gallery" id="gallery">
+    <div class="container gallery-container">
+      <div class="gallery-head">
+        <span class="gallery-eyebrow" data-i18n="gallery.eyebrow">Product tour</span>
+        <h2 class="section-title" data-i18n="gallery.title">See it work</h2>
+        <p class="section-sub" data-i18n="gallery.sub">Real screens from the app, not mockups.</p>
       </div>
 
-      <figure class="tour-stage">
-        <div class="tour-window">
-          <div class="tour-chrome" aria-hidden="true"><i></i><i></i><i></i><span>Underflow</span></div>
-          <picture>
-            <source media="(prefers-reduced-motion: reduce)" srcset="screens/tour-main.webp">
-            <img src="screens/tour-walkthrough.webp" width="1120" height="604" loading="lazy" decoding="async" alt="Underflow app: the collection filtered by an artist, tracks from several stores, the related artists panel and the built-in player playing a track" data-i18n-alt="tour.alt_main">
-          </picture>
+      <div class="gallery-tabs" role="tablist" aria-label="Product tour screens" data-i18n-aria-label="gallery.tabs_label">
+        <button type="button" class="gallery-tab" role="tab" id="gtab-mass" aria-controls="gpanel-mass" aria-selected="true"><b>1</b><span data-i18n="gallery.tab_mass">Mass search</span></button>
+        <button type="button" class="gallery-tab" role="tab" id="gtab-stores" aria-controls="gpanel-stores" aria-selected="false" tabindex="-1"><b>2</b><span data-i18n="gallery.tab_stores">Five stores</span></button>
+        <button type="button" class="gallery-tab" role="tab" id="gtab-related" aria-controls="gpanel-related" aria-selected="false" tabindex="-1"><b>3</b><span data-i18n="gallery.tab_related">Who remixed whom</span></button>
+        <button type="button" class="gallery-tab" role="tab" id="gtab-labels" aria-controls="gpanel-labels" aria-selected="false" tabindex="-1"><b>4</b><span data-i18n="gallery.tab_labels">Labels</span></button>
+        <button type="button" class="gallery-tab" role="tab" id="gtab-owned" aria-controls="gpanel-owned" aria-selected="false" tabindex="-1"><b>5</b><span data-i18n="gallery.tab_owned">Already owned</span></button>
+        <button type="button" class="gallery-tab" role="tab" id="gtab-buylist" aria-controls="gpanel-buylist" aria-selected="false" tabindex="-1"><b>6</b><span data-i18n="gallery.tab_buylist">Buy list</span></button>
+        <button type="button" class="gallery-tab" role="tab" id="gtab-motion" aria-controls="gpanel-motion" aria-selected="false" tabindex="-1"><b>7</b><span data-i18n="gallery.tab_motion">In motion</span></button>
+      </div>
+
+      <div class="gallery-stage">
+        <div class="gallery-window">
+          <div class="gallery-chrome" aria-hidden="true"><i></i><i></i><i></i><span>Underflow</span></div>
+        <figure class="gallery-panel" role="tabpanel" id="gpanel-mass" aria-labelledby="gtab-mass">
+          <div class="gallery-shot">
+            <img src="screens/gallery-mass.webp" width="2000" height="1078" decoding="async" alt="Underflow after a mass search: four artists in the list on the left, Rhadoo tracks from Bandcamp, Beatport and Decks in one list, related artists on the right and the player playing" data-i18n-alt="gallery.alt_mass">
+            <div class="gallery-pin" style="left:4.2%;top:62.5%"><i>1</i><span data-i18n="gallery.p_mass1">Four artists, one search</span></div>
+            <div class="gallery-pin" style="left:34.5%;top:17.5%"><i>2</i><span data-i18n="gallery.p_mass2">The store each track came from</span></div>
+            <div class="gallery-pin gallery-pin--l" style="left:92.8%;top:12.0%"><i>3</i><span data-i18n="gallery.p_mass3">Related artists, built from the tracks</span></div>
+            <button type="button" class="gallery-zoom" aria-label="Enlarge screenshot" data-i18n-aria-label="gallery.zoom"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+          </div>
+          <figcaption class="gallery-caption">
+            <h3 data-i18n="gallery.h_mass">Search many artists in one go</h3>
+            <p data-i18n="gallery.d_mass">Tick several artists, press Mass search, and their tracks from Bandcamp, Beatport, Decks and more arrive in one list. A test run on four artists returned 59, 88, 130 and 58 tracks.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-panel" role="tabpanel" id="gpanel-stores" aria-labelledby="gtab-stores" hidden>
+          <div class="gallery-shot">
+            <img src="screens/gallery-stores.webp" width="2000" height="1078" loading="lazy" decoding="async" alt="Underflow with the store menu open, listing Bandcamp, Decks.de, Beatport, Juno Records, Discogs and Local" data-i18n-alt="gallery.alt_stores">
+            <div class="gallery-pin" style="left:64.2%;top:22.0%"><i>1</i><span data-i18n="gallery.p_stores1">Five stores plus your local files</span></div>
+            <button type="button" class="gallery-zoom" aria-label="Enlarge screenshot" data-i18n-aria-label="gallery.zoom"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+          </div>
+          <figcaption class="gallery-caption">
+            <h3 data-i18n="gallery.h_stores">Five stores, one list</h3>
+            <p data-i18n="gallery.d_stores">Bandcamp, Decks.de, Beatport, Juno Records and Discogs side by side. Badges show where each track was found, and one menu filters by store, vinyl or digital.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-panel" role="tabpanel" id="gpanel-related" aria-labelledby="gtab-related" hidden>
+          <div class="gallery-shot">
+            <img src="screens/gallery-related.webp" width="2000" height="1078" loading="lazy" decoding="async" alt="Underflow with the related artists panel, showing a relation type letter next to each artist, and the player playing" data-i18n-alt="gallery.alt_related">
+            <div class="gallery-pin gallery-pin--l" style="left:92.0%;top:20.0%"><i>1</i><span data-i18n="gallery.p_related1">C collaborator · R remixer · F featuring</span></div>
+            <button type="button" class="gallery-zoom" aria-label="Enlarge screenshot" data-i18n-aria-label="gallery.zoom"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+          </div>
+          <figcaption class="gallery-caption">
+            <h3 data-i18n="gallery.h_related">Who remixed whom</h3>
+            <p data-i18n="gallery.d_related">Related artists with the relation type next to each name, built from the tracks themselves. Click a name to follow the scene.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-panel" role="tabpanel" id="gpanel-labels" aria-labelledby="gtab-labels" hidden>
+          <div class="gallery-shot">
+            <img src="screens/gallery-labels.webp" width="2000" height="1078" loading="lazy" decoding="async" alt="Underflow with the Labels tab open next to the tracks of the selected label" data-i18n-alt="gallery.alt_labels">
+            <div class="gallery-pin" style="left:10.2%;top:7.4%"><i>1</i><span data-i18n="gallery.p_labels1">Browse by label too</span></div>
+            <button type="button" class="gallery-zoom" aria-label="Enlarge screenshot" data-i18n-aria-label="gallery.zoom"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+          </div>
+          <figcaption class="gallery-caption">
+            <h3 data-i18n="gallery.h_labels">Labels, not only artists</h3>
+            <p data-i18n="gallery.d_labels">Browse by label too: your favorite labels and their releases in one list, next to your artists.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-panel" role="tabpanel" id="gpanel-owned" aria-labelledby="gtab-owned" hidden>
+          <div class="gallery-shot">
+            <img src="screens/gallery-owned.webp" width="2000" height="1078" loading="lazy" decoding="async" alt="Favorite tracks in Underflow with OWNED badges showing the file format, such as WAV or AIFF" data-i18n-alt="gallery.alt_owned">
+            <div class="gallery-pin gallery-pin--up" style="left:39.2%;top:38.4%"><i>1</i><span data-i18n="gallery.p_owned1">OWNED, with the file format</span></div>
+            <button type="button" class="gallery-zoom" aria-label="Enlarge screenshot" data-i18n-aria-label="gallery.zoom"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+          </div>
+          <figcaption class="gallery-caption">
+            <h3 data-i18n="gallery.h_owned">Know what you already own</h3>
+            <p data-i18n="gallery.d_owned">Tracks matched to your local files get an OWNED badge with the file format, so you do not buy the same release twice.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-panel" role="tabpanel" id="gpanel-buylist" aria-labelledby="gtab-buylist" hidden>
+          <div class="gallery-shot">
+            <img src="screens/gallery-buylist.webp" width="2000" height="1078" loading="lazy" decoding="async" alt="The Buy List view in Underflow with store badges and one track marked OWNED" data-i18n-alt="gallery.alt_buylist">
+            <div class="gallery-pin" style="left:16.8%;top:7.8%"><i>1</i><span data-i18n="gallery.p_buylist1">Your buy list</span></div>
+            <div class="gallery-pin gallery-pin--up" style="left:37.2%;top:61.8%"><i>2</i><span data-i18n="gallery.p_buylist2">Already own it? It says so</span></div>
+            <button type="button" class="gallery-zoom" aria-label="Enlarge screenshot" data-i18n-aria-label="gallery.zoom"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+          </div>
+          <figcaption class="gallery-caption">
+            <h3 data-i18n="gallery.h_buylist">A buy list, not a pile of tabs</h3>
+            <p data-i18n="gallery.d_buylist">Mark a track once and it waits on your buy list with its store badge. Review the list, then buy store by store.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-panel" role="tabpanel" id="gpanel-motion" aria-labelledby="gtab-motion" hidden>
+          <div class="gallery-shot">
+            <img src="screens/gallery-motion.webp" width="1120" height="604" loading="lazy" decoding="async" alt="Looping screen recording of Underflow: filtering the collection by artist, playing a track, opening the store menu and switching to labels" data-i18n-alt="gallery.alt_motion">
+            <button type="button" class="gallery-zoom" aria-label="Enlarge screenshot" data-i18n-aria-label="gallery.zoom"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+          </div>
+          <figcaption class="gallery-caption">
+            <h3 data-i18n="gallery.h_motion">A real session</h3>
+            <p data-i18n="gallery.d_motion">Filter the collection by artist, press play, open the store menu, switch to labels.</p>
+          </figcaption>
+        </figure>
         </div>
-        <figcaption class="tour-stage-cap" data-i18n="tour.stage_cap">A real session: filter the collection by artist, press play, filter by store, switch to labels.</figcaption>
-      </figure>
-
-      <div class="tour-grid">
-        <article class="tour-card tour-card--stores">
-          <div class="tour-shot"><img src="screens/tour-stores.webp" width="1200" height="453" loading="lazy" decoding="async" alt="The store menu in Underflow listing Bandcamp, Decks.de, Beatport, Juno Records, Discogs and Local, above tracks with store badges" data-i18n-alt="tour.alt_stores"></div>
-          <div class="tour-copy">
-            <h3 data-i18n="tour.card1_title">Five stores, one list</h3>
-            <p data-i18n="tour.card1_desc">Bandcamp, Decks.de, Beatport, Juno Records and Discogs side by side. Badges show where each track was found, and one menu filters by store, vinyl or digital.</p>
-          </div>
-        </article>
-
-        <article class="tour-card tour-card--related">
-          <div class="tour-copy">
-            <h3 data-i18n="tour.card2_title">Who remixed whom</h3>
-            <p data-i18n="tour.card2_desc">Related artists with the relation type next to each name: collaborator, remixer, featuring. Click a name to follow the scene.</p>
-          </div>
-          <div class="tour-shot tour-shot--tall"><img src="screens/tour-related.webp" width="305" height="820" loading="lazy" decoding="async" alt="Related artists panel with the relation type letter next to each artist" data-i18n-alt="tour.alt_related"></div>
-        </article>
-
-        <article class="tour-card tour-card--player">
-          <div class="tour-shot"><img src="screens/tour-player.webp" width="1400" height="87" loading="lazy" decoding="async" alt="Underflow&#x27;s built-in player bar with a waveform, heart and buy-list buttons" data-i18n-alt="tour.alt_player"></div>
-          <div class="tour-copy">
-            <h3 data-i18n="tour.card3_title">Listen straight through</h3>
-            <p data-i18n="tour.card3_desc">One player for every store, with a waveform and heart and buy-list buttons. No new tab per release.</p>
-          </div>
-        </article>
-
-        <article class="tour-card tour-card--labels">
-          <div class="tour-shot"><img src="screens/tour-labels.webp" width="1200" height="787" loading="lazy" decoding="async" alt="The Labels tab in Underflow with a list of labels next to their tracks" data-i18n-alt="tour.alt_labels"></div>
-          <div class="tour-copy">
-            <h3 data-i18n="tour.card4_title">Labels, not only artists</h3>
-            <p data-i18n="tour.card4_desc">Browse by label too: your favorite labels and their releases in one list, next to your artists.</p>
-          </div>
-        </article>
-
-        <article class="tour-card tour-card--owned">
-          <div class="tour-shot"><img src="screens/tour-owned.webp" width="960" height="722" loading="lazy" decoding="async" alt="Favorite tracks in Underflow with OWNED badges showing the file format, such as WAV or AIFF, and a LOC marker for local files" data-i18n-alt="tour.alt_owned"></div>
-          <div class="tour-copy">
-            <h3 data-i18n="tour.card5_title">Know what you already own</h3>
-            <p data-i18n="tour.card5_desc">Tracks matched to your local files get an OWNED badge with the file format, so you do not buy the same release twice.</p>
-          </div>
-        </article>
-
-        <article class="tour-card tour-card--buylist">
-          <div class="tour-shot"><img src="screens/tour-buylist.webp" width="960" height="720" loading="lazy" decoding="async" alt="The Buy List view in Underflow: tracks with store badges and buy-list icons" data-i18n-alt="tour.alt_buylist"></div>
-          <div class="tour-copy">
-            <h3 data-i18n="tour.card6_title">A buy list, not a pile of tabs</h3>
-            <p data-i18n="tour.card6_desc">Mark a track once and it waits on your buy list with its store badge. Review the list, then buy store by store.</p>
-          </div>
-        </article>
       </div>
 
-      <div class="tour-cta">
-        <a href="#download" class="btn btn-primary" data-i18n="tour.cta">Download Free</a>
+      <div class="gallery-cta">
+        <a href="#download" class="btn btn-primary" data-i18n="gallery.cta">Download Free</a>
       </div>
     </div>
   </section>
@@ -577,7 +617,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261111b"></script>
+  <script src="script.js?v=20261111d"></script>
   <script defer data-domain="underflow.music" src="https://plausible.io/js/script.js"></script>
 </body>
 </html>
