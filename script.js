@@ -147,7 +147,18 @@ window.addEventListener('scroll', () => {
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
-    const target = document.querySelector(link.getAttribute('href'));
+    const href = link.getAttribute('href');
+    // The listener is attached to every a[href^="#"] at load, but the href can
+    // change later: the download buttons start as a bare "#" and get a real
+    // https URL once the API answers. Only a real in-page anchor ("#faq") is a
+    // selector; passing "#" or a URL to querySelector throws a SyntaxError on
+    // every click. A bare "#" is a placeholder (a disabled button): swallow the
+    // click instead of letting it jump the page to the top.
+    if (!href || href.length < 2 || href[0] !== '#') {
+      if (href === '#') e.preventDefault();
+      return;
+    }
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
