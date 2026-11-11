@@ -389,8 +389,10 @@ function initGallery() {
       tabs[idx].scrollIntoView({ inline: 'center', block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
     }
   }
-  function stop() { if (timer) { clearInterval(timer); timer = null; } }
-  function start() { if (reduce || manual || timer) return; timer = setInterval(() => show(idx + 1, false), 7000); }
+  function stop() { if (timer) { clearTimeout(timer); timer = null; } }
+  function dwell() { return Number(panels[idx].dataset.dwell) || 7000; }
+  function tick() { timer = setTimeout(() => { show(idx + 1, false); tick(); }, dwell()); }
+  function start() { if (reduce || manual || timer) return; tick(); }
 
   tabs.forEach((tab, k) => {
     tab.addEventListener('click', () => show(k, true));
