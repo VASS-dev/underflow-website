@@ -222,5 +222,33 @@
     "terms": "Terms",
     "privacy": "Privacy",
     "legal_entity": "hello@underflow.music"
+  },
+  "explore": {
+    "meta_title": "Explore Artist Connections — Underflow",
+    "nav_home": "Home",
+    "title": "Explore Artist Connections",
+    "subtitle": "See how artists are connected through remixes, collaborations, and features.",
+    "input_placeholder": "Enter artist name...",
+    "submit": "Explore",
+    "hints_label": "Try:",
+    "rel_remixer": "Remixer",
+    "rel_collaborator": "Collaborator",
+    "rel_featuring": "Featured",
+    "back": "← Back",
+    "graph_search_placeholder": "Search artist...",
+    "rate_limit": "Rate limit — try again later",
+    "not_found": "“{artist}” — not found",
+    "click_to_explore": "Click to explore",
+    "connections": {
+      "one": "{count} connection",
+      "few": "{count} connections",
+      "many": "{count} connections"
+    },
+    "shared_tracks": {
+      "one": "{count} shared track",
+      "few": "{count} shared tracks",
+      "many": "{count} shared tracks"
+    },
+    "more": "+{count} more"
   }
 }

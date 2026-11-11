@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore Artist Connections — Underflow</title>
+  <title data-i18n="explore.meta_title">Explore Artist Connections — Underflow</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,21 +15,25 @@
   <nav class="nav">
     <a href="index.html" class="logo"><img src="logo-white.png" alt="Underflow" class="logo-icon">Underflow</a>
     <div class="nav-right">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#download" class="nav-cta">Download</a>
+      <a href="index.html" class="nav-link" data-i18n="explore.nav_home">Home</a>
+      <div class="lang-switch">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="ru">RU</button>
+      </div>
+      <a href="index.html#download" class="nav-cta" data-i18n="nav.download">Download</a>
     </div>
   </nav>
 
   <!-- Search -->
   <div id="search-container" class="search-container">
-    <h1 class="search-title">Explore Artist Connections</h1>
-    <p class="search-sub">See how artists are connected through remixes, collaborations, and features.</p>
+    <h1 class="search-title" data-i18n="explore.title">Explore Artist Connections</h1>
+    <p class="search-sub" data-i18n="explore.subtitle">See how artists are connected through remixes, collaborations, and features.</p>
     <form id="search-form" class="search-form">
-      <input type="text" id="artist-input" class="search-input" placeholder="Enter artist name..." autocomplete="off" spellcheck="false">
-      <button type="submit" class="search-btn">Explore</button>
+      <input type="text" id="artist-input" class="search-input" placeholder="Enter artist name..." data-i18n="explore.input_placeholder" autocomplete="off" spellcheck="false">
+      <button type="submit" class="search-btn" data-i18n="explore.submit">Explore</button>
     </form>
     <div class="search-hints">
-      Try: <button class="hint-btn" data-artist="Sepp">Sepp</button>
+      <span data-i18n="explore.hints_label">Try:</span> <button class="hint-btn" data-artist="Sepp">Sepp</button>
       <button class="hint-btn" data-artist="Arapu">Arapu</button>
       <button class="hint-btn" data-artist="Priku">Priku</button>
     </div>
@@ -47,17 +51,17 @@
 
     <!-- Legend -->
     <div class="legend">
-      <div class="legend-item"><span class="legend-dot" style="background:#a855f7"></span>Remixer</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span>Collaborator</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#22c55e"></span>Featured</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#a855f7"></span><span data-i18n="explore.rel_remixer">Remixer</span></div>
+      <div class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span><span data-i18n="explore.rel_collaborator">Collaborator</span></div>
+      <div class="legend-item"><span class="legend-dot" style="background:#22c55e"></span><span data-i18n="explore.rel_featuring">Featured</span></div>
     </div>
 
     <!-- Back button -->
-    <button id="back-btn" class="back-btn hidden">← Back</button>
+    <button id="back-btn" class="back-btn hidden" data-i18n="explore.back">← Back</button>
 
     <!-- Graph search bar (top center) -->
     <form id="graph-search-form" class="graph-search">
-      <input type="text" id="graph-search-input" class="graph-search-input" placeholder="Search artist..." autocomplete="off" spellcheck="false">
+      <input type="text" id="graph-search-input" class="graph-search-input" placeholder="Search artist..." data-i18n="explore.graph_search_placeholder" autocomplete="off" spellcheck="false">
     </form>
   </div>
 

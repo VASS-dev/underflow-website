@@ -140,9 +140,99 @@ const backBtn = document.getElementById('back-btn');
 const graphSearchForm = document.getElementById('graph-search-form');
 const graphSearchInput = document.getElementById('graph-search-input');
 
+// ---- i18n ----
+
+// Explore carries its own chrome (own nav, own CSS) and does not load
+// script.js, so it has its own small loader over the same i18n/*.json files
+// and the same `uf-lang` key the landing page writes — a language picked on
+// either side carries over to the other.
+
+const DEFAULT_LANG = navigator.language.startsWith('ru') ? 'ru' : 'en';
+let currentLang = localStorage.getItem('uf-lang') || DEFAULT_LANG;
+let translations = {};
+
+function t(key, vars) {
+  let text = key.split('.').reduce((obj, k) => obj?.[k], translations);
+  if (typeof text !== 'string') return '';
+  if (vars) {
+    for (const [name, value] of Object.entries(vars)) {
+      text = text.replaceAll(`{${name}}`, value);
+    }
+  }
+  return text;
+}
+
+// Russian needs three forms (1 связь / 2 связи / 5 связей). English fills
+// `one` and leaves `few` equal to `many`, so one lookup serves both.
+function plural(key, count) {
+  const forms = key.split('.').reduce((obj, k) => obj?.[k], translations);
+  if (!forms) return String(count);
+
+  let form;
+  if (currentLang === 'ru') {
+    const tens = Math.abs(count) % 100;
+    const ones = tens % 10;
+    if (tens > 10 && tens < 20) form = 'many';
+    else if (ones === 1) form = 'one';
+    else if (ones >= 2 && ones <= 4) form = 'few';
+    else form = 'many';
+  } else {
+    form = count === 1 ? 'one' : 'many';
+  }
+
+  return String(forms[form] ?? forms.many ?? count).replaceAll('{count}', count);
+}
+
+// Relation types come from the API as lowercase slugs; `featured` and
+// `featuring` both appear in the data, so both map to the same label.
+const REL_LABEL_KEYS = {
+  remixer:      'explore.rel_remixer',
+  collaborator: 'explore.rel_collaborator',
+  featuring:    'explore.rel_featuring',
+  featured:     'explore.rel_featuring'
+};
+
+function relLabel(type) {
+  return t(REL_LABEL_KEYS[type] || '') || type;
+}
+
+function applyTranslations() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const text = t(el.getAttribute('data-i18n'));
+    if (!text) return;
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.placeholder = text;
+    } else {
+      el.textContent = text;
+    }
+  });
+
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === currentLang);
+  });
+}
+
+async function loadTranslations(lang) {
+  try {
+    // Same no-cache revalidation as the landing page: GitHub Pages serves
+    // these with max-age, so a returning visitor would otherwise keep stale
+    // strings for minutes after a deploy.
+    const res = await fetch(`i18n/${lang}.json`, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(res.status);
+    translations = await res.json();
+    applyTranslations();
+  } catch {
+    // Fall back to English once; if that fails too the markup's own English
+    // text stays on screen.
+    if (lang !== 'en') loadTranslations('en');
+  }
+}
+
 // ---- Init ----
 
 function init() {
+  loadTranslations(currentLang);
   setupSVG();
   setupEvents();
 }
@@ -234,6 +324,14 @@ function setupEvents() {
   });
 
   backBtn.addEventListener('click', goBack);
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentLang = btn.dataset.lang;
+      localStorage.setItem('uf-lang', currentLang);
+      loadTranslations(currentLang);
+    });
+  });
 }
 
 // ---- Config ----
@@ -270,7 +368,7 @@ async function fetchRelations(artistName) {
       }
       if (res.status === 429) {
         graphSearchInput.value = '';
-        graphSearchInput.placeholder = 'Rate limit — try again later';
+        graphSearchInput.placeholder = t('explore.rate_limit');
         return null;
       }
     } catch (e) {
@@ -432,11 +530,14 @@ function setGraphLoading(loading) {
 }
 
 function showNotFound(artistName) {
-  // Don't change navigation state — just show temporary message
+  // Don't change navigation state — just show temporary message.
+  // Compare against the exact message we wrote rather than matching English
+  // text, so the restore still skips a name the user typed meanwhile.
   const prev = graphSearchInput.value;
-  graphSearchInput.value = `"${artistName}" — not found`;
+  const message = t('explore.not_found', { artist: artistName });
+  graphSearchInput.value = message;
   setTimeout(() => {
-    if (graphSearchInput.value.includes('not found')) {
+    if (graphSearchInput.value === message) {
       graphSearchInput.value = prev;
     }
   }, 3000);
@@ -629,16 +730,16 @@ function showTooltip(event, d) {
   nameEl.textContent = d.id;
 
   if (d.isCenter) {
-    detailsEl.innerHTML = `<div style="margin-bottom:4px">${types.length} connections</div>` +
-      types.slice(0, 5).map(t =>
-        `<span class="tooltip-badge" style="background:${COLORS[t.type]}22;color:${COLORS[t.type]}">${t.type}</span> ${t.artist} (${t.count})`
+    detailsEl.innerHTML = `<div style="margin-bottom:4px">${plural('explore.connections', types.length)}</div>` +
+      types.slice(0, 5).map(rel =>
+        `<span class="tooltip-badge" style="background:${COLORS[rel.type]}22;color:${COLORS[rel.type]}">${relLabel(rel.type)}</span> ${rel.artist} (${rel.count})`
       ).join('<br>') +
-      (types.length > 5 ? `<br><span style="color:var(--text-faint)">+${types.length - 5} more</span>` : '');
+      (types.length > 5 ? `<br><span style="color:var(--text-faint)">${t('explore.more', { count: types.length - 5 })}</span>` : '');
   } else {
     detailsEl.innerHTML =
-      `<span class="tooltip-badge" style="background:${COLORS[d.relationType]}22;color:${COLORS[d.relationType]}">${d.relationType}</span><br>` +
-      `${d.trackCount} shared tracks<br>` +
-      `<span style="color:var(--text-faint);font-size:11px">Click to explore</span>`;
+      `<span class="tooltip-badge" style="background:${COLORS[d.relationType]}22;color:${COLORS[d.relationType]}">${relLabel(d.relationType)}</span><br>` +
+      `${plural('explore.shared_tracks', d.trackCount)}<br>` +
+      `<span style="color:var(--text-faint);font-size:11px">${t('explore.click_to_explore')}</span>`;
   }
 
   tooltip.classList.remove('hidden');
@@ -696,8 +797,9 @@ function scaleRadius(trackCount) {
 }
 
 function scaleLabel(radius) {
-  const t = (radius - MIN_RADIUS) / (MAX_RADIUS - MIN_RADIUS);
-  return Math.round(LABEL_SIZE_MIN + t * (LABEL_SIZE_MAX - LABEL_SIZE_MIN)) + 'px';
+  // named `ratio`, not `t`, so it does not shadow the t() translation helper
+  const ratio = (radius - MIN_RADIUS) / (MAX_RADIUS - MIN_RADIUS);
+  return Math.round(LABEL_SIZE_MIN + ratio * (LABEL_SIZE_MAX - LABEL_SIZE_MIN)) + 'px';
 }
 
 // ---- Start ----

@@ -222,5 +222,33 @@
     "terms": "Оферта",
     "privacy": "Конфиденциальность",
     "legal_entity": "hello@underflow.music"
+  },
+  "explore": {
+    "meta_title": "Связи артистов — Underflow",
+    "nav_home": "Главная",
+    "title": "Связи артистов",
+    "subtitle": "Посмотрите, как артисты связаны ремиксами, совместными релизами и участием в треках.",
+    "input_placeholder": "Введите имя артиста...",
+    "submit": "Исследовать",
+    "hints_label": "Попробуйте:",
+    "rel_remixer": "Ремиксер",
+    "rel_collaborator": "Соавтор",
+    "rel_featuring": "Участие",
+    "back": "← Назад",
+    "graph_search_placeholder": "Поиск артиста...",
+    "rate_limit": "Слишком много запросов — попробуйте позже",
+    "not_found": "«{artist}» — не найдено",
+    "click_to_explore": "Нажмите, чтобы исследовать",
+    "connections": {
+      "one": "{count} связь",
+      "few": "{count} связи",
+      "many": "{count} связей"
+    },
+    "shared_tracks": {
+      "one": "{count} общий трек",
+      "few": "{count} общих трека",
+      "many": "{count} общих треков"
+    },
+    "more": "+ещё {count}"
   }
 }
