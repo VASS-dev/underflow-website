@@ -94,7 +94,8 @@ const MOCK_DATA = {
 const COLORS = {
   remixer:      '#a855f7',
   collaborator: '#3b82f6',
-  featured:     '#22c55e',
+  featuring:    '#22c55e',
+  featured:     '#22c55e',  // alias: the API sends both slugs
   original:     '#f59e0b',
   center:       '#e05588',
   default:      '#8b5cf6'
