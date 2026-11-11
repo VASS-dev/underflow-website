@@ -1,0 +1,23 @@
+/* Guides: article layout on top of styles.css (.legal-page) */
+.legal-page.guide { padding-top: 128px; }
+.guide h1 { font-size: 34px; line-height: 1.2; margin-bottom: 18px; }
+.guide .guide-crumbs { font-size: 13px; color: var(--text-faint); margin-bottom: 14px; }
+.guide .guide-crumbs a { color: var(--text-muted); }
+.guide .guide-lead { font-size: 18px; line-height: 1.65; color: var(--text); margin-bottom: 8px; }
+.guide p, .guide li { font-size: 16px; line-height: 1.75; }
+.guide h2 { font-size: 22px; margin-top: 40px; }
+.guide code { font-size: 14px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; color: var(--text); }
+.guide em { color: var(--text); }
+.guide strong { color: var(--text); }
+.guide-nav-link { color: var(--text-muted); font-size: 14px; margin-right: 18px; }
+.guide-nav-link:hover { color: var(--text); }
+.guide-callout { margin: 48px 0 8px; padding: 28px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; }
+.guide-callout h2 { margin-top: 0; }
+.guide-callout .btn-primary { color: #0a0a0f; opacity: 1; }
+.guide-sources a { word-break: break-word; }
+.guide-updated { font-size: 13px !important; color: var(--text-faint) !important; margin-top: 14px; }
+.guide-index { list-style: none; padding: 0; margin: 28px 0; }
+.guide-index li { padding: 18px 0; border-bottom: 1px solid var(--border); }
+.guide-index li a { display: block; font-size: 18px; margin-bottom: 4px; }
+.guide-index li span { color: var(--text-muted); font-size: 15px; }
+@media (max-width: 640px) { .guide h1 { font-size: 27px; } .legal-page.guide { padding-top: 110px; } .guide-nav-link { display: none; } }

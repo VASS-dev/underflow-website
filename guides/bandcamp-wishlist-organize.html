@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organize Your Bandcamp Wishlist Into a Buy List — Underflow</title>
+  <meta name="description" content="A wishlist is a place where tracks go to be forgotten. A simple workflow to sort a Bandcamp wishlist, separate maybes from purchases, and the community tools people use when the built-in options are not enough.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://underflow.music/guides/bandcamp-wishlist-organize.html">
+  <meta property="og:title" content="Organize Your Bandcamp Wishlist Into a Buy List — Underflow">
+  <meta property="og:description" content="A wishlist is a place where tracks go to be forgotten. A simple workflow to sort a Bandcamp wishlist, separate maybes from purchases, and the community tools people use when the built-in options are not enough.">
+  <meta property="og:image" content="https://underflow.music/og-image.png">
+  <meta property="og:url" content="https://underflow.music/guides/bandcamp-wishlist-organize.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Bandcamp wishlist: how to organize it and turn it into a buy list",
+  "description": "A wishlist is a place where tracks go to be forgotten. A simple workflow to sort a Bandcamp wishlist, separate maybes from purchases, and the community tools people use when the built-in options are not enough.",
+  "inLanguage": "en",
+  "datePublished": "2026-11-11",
+  "dateModified": "2026-11-11",
+  "mainEntityOfPage": "https://underflow.music/guides/bandcamp-wishlist-organize.html",
+  "author": {
+    "@type": "Organization",
+    "name": "Underflow",
+    "url": "https://underflow.music"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Underflow",
+    "url": "https://underflow.music",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://underflow.music/logo-white.png"
+    }
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Underflow",
+      "item": "https://underflow.music/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://underflow.music/guides/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Bandcamp wishlist: how to organize it and turn it into a buy list",
+      "item": "https://underflow.music/guides/bandcamp-wishlist-organize.html"
+    }
+  ]
+}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/guides/guide.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo"><img src="/logo-white.png" alt="Underflow" class="logo-icon">Underflow</a>
+      <div class="nav-right">
+        <a href="/guides/" class="guide-nav-link">Guides</a>
+        <a href="/#download" class="nav-cta">Download</a>
+      </div>
+    </div>
+  </nav>
+  <section class="legal-page guide">
+    <div class="container" style="max-width: 760px;">
+      <p class="guide-crumbs"><a href="/guides/">Guides</a> / Bandcamp wishlist: how to organize it and turn it into a buy list</p>
+      <h1>Bandcamp wishlist: how to organize it and turn it into a buy list</h1>
+      <p class="guide-lead">A wishlist is easy to fill and hard to use. After a few months it holds hundreds of items with no order, no notes and no difference between &quot;interesting&quot; and &quot;buy this week&quot;. Here is a workflow that keeps it useful.</p>
+
+      <h2>Why a wishlist stops working</h2>
+      <p>Saving a release takes one click, so you save everything. What is missing is the second step: deciding. Without a way to mark what is for a specific set, what is a maybe and what is already decided, the list becomes a backlog you never open.</p>
+
+      <h2>A three-stage workflow</h2>
+      <ol>
+        <li><strong>Wishlist = maybe.</strong> Anything that sounded good. No pressure to buy.</li>
+        <li><strong>Buy list = decided.</strong> Review the wishlist on a fixed day, move the tracks you are sure about, and drop the rest.</li>
+        <li><strong>Collection = bought.</strong> Move items once purchased, so you never pay twice for the same track.</li>
+      </ol>
+      <p>Whatever tool you use, keep the stages separate. The point is that "I like this" and "I will pay for this" are different decisions.</p>
+
+      <h2>Tags that match how you play</h2>
+      <p>Tag by what you will do with the track, not only by genre: a set name, a mood, a tempo range, a key. Genre is already in the store; your own tags are the part nobody else can give you.</p>
+
+      <h2>Community tools</h2>
+      <p>People have built tools around Bandcamp's collection pages. Two we found: the userscript <em>Bandcamp Collection Filters</em> (adds filtering), and <em>bandcamp-collection-sorter</em> on GitHub, which reorders a collection using Last.fm listening data and, per its description, overwrites the previous order when run. We have not tested either, so read their pages and make a backup before using anything that changes your collection.</p>
+
+      <h2>Doing this across several stores</h2>
+      <p>If you also buy on Beatport, Juno Records or Decks.de, a Bandcamp-only wishlist cannot hold the whole list. In Underflow you heart a track from any of the five stores, move it to a buy list, and mark it as owned once purchased. Your tags, wishlists and collection live in a local SQLite database on your own machine and can be exported to CSV.</p>
+
+      <div class="guide-callout">
+        <h2>Search all five stores at once</h2>
+        <p>Underflow is a free desktop app for DJs and collectors. Type an artist and get results from Bandcamp, Juno Records, Beatport, Decks.de and Discogs in one list, listen through them, tag what you like and keep a buy list. It is free during the open beta, with daily limits.</p>
+        <p><a class="btn btn-primary guide-cta" href="/index.html#download">Download Underflow</a> &nbsp; <a href="/explore.html">Try the artist map in your browser</a></p>
+      </div>
+      <h2>Sources</h2>
+      <ul class="guide-sources">
+        <li><a href="https://openuserjs.org/scripts/squeek502/Bandcamp_Collection_Filters" rel="noopener" target="_blank">Bandcamp Collection Filters (userscript)</a></li>
+        <li><a href="https://awesome.ecosyste.ms/projects/github.com%2Fdarnfish%2Fbandcamp-collection-sorter" rel="noopener" target="_blank">bandcamp-collection-sorter (GitHub project)</a></li>
+      </ul>
+      <p class="guide-updated">Last updated: 11 November 2026. Facts about third-party sites are as we found them on that date and can change.</p>
+      <h2>More guides</h2>
+      <ul>
+        <li><a href="/guides/bandcamp-search.html">How to search Bandcamp by genre, tag, location and format</a></li>
+        <li><a href="/guides/crate-digging-workflow.html">A repeatable digital crate-digging workflow for DJs</a></li>
+        <li><a href="/guides/bandcamp-vs-beatport-for-djs.html">Bandcamp vs Beatport for DJs: which store for what</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <a href="/" class="footer-logo"><img src="/logo-white.png" alt="Underflow" class="logo-icon">Underflow</a>
+        <div class="footer-links">
+          <a href="/#features">Features</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/pricing.html">Pricing</a>
+          <a href="/guides/">Guides</a>
+          <a href="mailto:hello@underflow.music">Contact</a>
+          <a href="https://t.me/underflow_app" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <div class="footer-legal-links">
+          <a href="/terms.html">Terms</a>
+          <a href="/privacy.html">Privacy</a>
+        </div>
+        <div class="footer-entity">
+          <a href="mailto:hello@underflow.music" class="footer-email-link">hello@underflow.music</a>
+        </div>
+      </div>
+      <div class="footer-copy">&copy; Underflow 2026</div>
+    </div>
+  </footer>
+
+  <script>
+    window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };
+    document.querySelectorAll('a.guide-cta, a.nav-cta').forEach(function (a) {
+      a.addEventListener('click', function () {
+        try { window.plausible('Download CTA', { props: { location: 'guide' } }); } catch (e) {}
+      });
+    });
+  </script>
+  <script defer data-domain="underflow.music" src="https://plausible.io/js/script.js"></script>
+</body>
+</html>
