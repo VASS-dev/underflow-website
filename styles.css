@@ -1474,6 +1474,9 @@ a { color: inherit; text-decoration: none; }
 .gallery-caption h3 { font-size: 21px; font-weight: 600; letter-spacing: -0.015em; margin-bottom: 8px; }
 .gallery-caption p { font-size: 15px; line-height: 1.7; color: var(--text-muted); }
 .gallery-cta { text-align: center; margin-top: 48px; }
+.gallery-more { display: inline-block; margin-left: 22px; font-size: 15px; color: var(--accent); }
+.gallery-more:hover { opacity: 0.8; }
+@media (max-width: 560px) { .gallery-more { display: block; margin: 16px 0 0; } }
 
 .gallery-lightbox {
   width: min(96vw, 2200px);
