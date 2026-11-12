@@ -436,6 +436,7 @@ body.embed-mode .node-group {
 
 html:has(body.bg-mode),
 body.bg-mode { background: transparent; }
-body.bg-mode .labels-layer { opacity: 0.62; }
+body.bg-mode .labels-layer { opacity: 0.95; }
+body.bg-mode .node-label { fill: #fff; paint-order: stroke; stroke: rgba(10,10,15,0.85); stroke-width: 3px; stroke-linejoin: round; }
 body.bg-mode .node-circle { opacity: 0.92; }
 body.bg-mode #graph-svg { cursor: default; }
