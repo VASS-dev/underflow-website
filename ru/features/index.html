@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Возможности Underflow: поиск по пяти магазинам сразу</title>
-  <meta name="description" content="Живые записи экрана Underflow: массовый поиск артистов, пять магазинов в одном списке, связанные артисты, лейблы, метка OWNED и список покупок.">
+  <meta name="description" content="Всё, что умеет Underflow, на реальных записях экрана: массовый поиск, пять магазинов в одном списке, связанные артисты, плеер, теги, история и список покупок.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://underflow.music/ru/features/">
   <link rel="alternate" hreflang="en" href="https://underflow.music/features/">
   <link rel="alternate" hreflang="ru" href="https://underflow.music/ru/features/">
   <link rel="alternate" hreflang="x-default" href="https://underflow.music/features/">
   <meta property="og:title" content="Возможности Underflow: поиск по пяти магазинам сразу">
-  <meta property="og:description" content="Живые записи экрана Underflow: массовый поиск артистов, пять магазинов в одном списке, связанные артисты, лейблы, метка OWNED и список покупок.">
+  <meta property="og:description" content="Всё, что умеет Underflow, на реальных записях экрана: массовый поиск, пять магазинов в одном списке, связанные артисты, плеер, теги, история и список покупок.">
   <meta property="og:image" content="https://underflow.music/og-image.png">
   <meta property="og:url" content="https://underflow.music/ru/features/">
   <meta property="og:type" content="website">
@@ -23,7 +23,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Возможности Underflow: поиск по пяти магазинам сразу",
-  "description": "Живые записи экрана Underflow: массовый поиск артистов, пять магазинов в одном списке, связанные артисты, лейблы, метка OWNED и список покупок.",
+  "description": "Всё, что умеет Underflow, на реальных записях экрана: массовый поиск, пять магазинов в одном списке, связанные артисты, плеер, теги, история и список покупок.",
   "url": "https://underflow.music/ru/features/",
   "inLanguage": "ru",
   "dateModified": "2026-11-12",
@@ -57,9 +57,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=20261112e">
-  <link rel="stylesheet" href="/guides/guide.css?v=20261112e">
-  <link rel="stylesheet" href="/features/features.css?v=20261112e">
+  <link rel="stylesheet" href="/styles.css?v=20261112f">
+  <link rel="stylesheet" href="/guides/guide.css?v=20261112f">
+  <link rel="stylesheet" href="/features/features.css?v=20261112f">
 </head>
 <body>
 
@@ -78,21 +78,40 @@
       <div class="container">
         <p class="guide-crumbs"><a href="/">Underflow</a> / Возможности</p>
         <h1>Что умеет Underflow</h1>
-        <p class="feat-lead">Короткие ролики из настоящего приложения, без макетов. В каждом одно действие из тех, что вы делаете, когда ищете музыку.</p>
-        <ul class="feat-chips">
-          <li><a href="#mass">Массовый поиск</a></li>
-          <li><a href="#stores">Пять магазинов</a></li>
-          <li><a href="#related">Связанные артисты</a></li>
-          <li><a href="#labels">Лейблы</a></li>
-          <li><a href="#owned">Уже есть</a></li>
-          <li><a href="#buylist">Список покупок</a></li>
-        </ul>
+        <p class="feat-lead">Короткие ролики из настоящего приложения, без макетов. В каждом одно действие из тех, что вы делаете, когда ищете музыку. Нажмите на ролик, чтобы увеличить.</p>
+        <div class="feat-chipgroups">
+          <div class="feat-chipgroup"><span class="feat-chipgroup-name">Поиск</span><ul class="feat-chips">
+            <li><a href="#mass">Массовый поиск</a></li>
+            <li><a href="#stores">Пять магазинов</a></li>
+            <li><a href="#activity">Активность</a></li>
+            <li><a href="#labels">Лейблы</a></li>
+          </ul></div>
+          <div class="feat-chipgroup"><span class="feat-chipgroup-name">Находки</span><ul class="feat-chips">
+            <li><a href="#related">Связанные артисты</a></li>
+            <li><a href="#relatedadd">Расширяйте библиотеку</a></li>
+            <li><a href="#similar">Похожие треки</a></li>
+          </ul></div>
+          <div class="feat-chipgroup"><span class="feat-chipgroup-name">Прослушивание</span><ul class="feat-chips">
+            <li><a href="#player">Плеер</a></li>
+            <li><a href="#mini">Мини-плеер</a></li>
+          </ul></div>
+          <div class="feat-chipgroup"><span class="feat-chipgroup-name">Порядок</span><ul class="feat-chips">
+            <li><a href="#history">История</a></li>
+            <li><a href="#daterange">Период</a></li>
+            <li><a href="#tags">Теги</a></li>
+            <li><a href="#sort">Сортировка</a></li>
+          </ul></div>
+          <div class="feat-chipgroup"><span class="feat-chipgroup-name">Покупки</span><ul class="feat-chips">
+            <li><a href="#owned">Уже есть</a></li>
+            <li><a href="#buylist">Список покупок</a></li>
+          </ul></div>
+        </div>
       </div>
     </section>
     <section class="feat" id="mass">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">01 &middot; Массовый поиск</p>
+          <p class="feat-eyebrow">01 &middot; Поиск · Массовый поиск</p>
           <h2>Поиск по многим артистам за раз</h2>
           <p>Отметьте несколько артистов, нажмите «Массовый поиск», и их треки из Bandcamp, Beatport, Decks и других магазинов придут одним списком. В ролике четыре новых артиста дают 557 треков, начиная с пустой базы.</p>
           <ul>
@@ -101,16 +120,17 @@
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/gallery-motion-poster.webp" width="880" height="474" aria-label="Запись экрана: Поиск по многим артистам за раз">
+          <video muted loop playsinline preload="none" poster="/screens/gallery-motion-poster.webp" width="880" height="474" aria-label="Запись экрана: Поиск по многим артистам за раз" data-hd="/screens/gallery-motion.webm">
             <source src="/screens/gallery-motion.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
       </div>
     </section>
     <section class="feat feat--flip" id="stores">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">02 &middot; Пять магазинов</p>
+          <p class="feat-eyebrow">02 &middot; Поиск · Пять магазинов</p>
           <h2>Пять магазинов, один список</h2>
           <p>Bandcamp, Decks.de, Beatport, Juno Records и Discogs рядом. Значок на каждом треке показывает, где он найден, а одно меню фильтрует по магазинам.</p>
           <ul>
@@ -119,34 +139,36 @@
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/features/feat-stores-poster.webp" width="880" height="474" aria-label="Запись экрана: Пять магазинов, один список">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-stores-poster.webp" width="880" height="474" aria-label="Запись экрана: Пять магазинов, один список" data-hd="/screens/features/feat-stores-hd.webm">
             <source src="/screens/features/feat-stores.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
       </div>
     </section>
-    <section class="feat" id="related">
+    <section class="feat" id="activity">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">03 &middot; Связанные артисты</p>
-          <h2>Кто кого ремиксовал</h2>
-          <p>Связанные артисты с типом связи рядом с каждым именем, построенные по самим трекам. Нажмите на имя, чтобы увидеть треки артиста и пойти дальше по сцене.</p>
+          <p class="feat-eyebrow">03 &middot; Поиск · Активность</p>
+          <h2>Смотрите на каждый поиск в реальном времени</h2>
+          <p>Панель активности пишет каждый поиск: какой артист, сколько треков найдено и сколько из них новых. Если какой-то источник не ответил, можно повторить поиск только по нему.</p>
           <ul>
-            <li>C: соавтор, R: ремиксер, F: featuring, O: оригинал.</li>
-            <li>Выберите артиста, нажмите «Найти связи», и панель справа заполнится.</li>
+            <li>Одна строка на артиста.</li>
+            <li>Свежие треки считаются отдельно, так что видно, что изменилось с прошлого скана.</li>
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/features/feat-related-poster.webp" width="880" height="474" aria-label="Запись экрана: Кто кого ремиксовал">
-            <source src="/screens/features/feat-related.webm" type="video/webm">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-activity-poster.webp" width="880" height="474" aria-label="Запись экрана: Смотрите на каждый поиск в реальном времени" data-hd="/screens/features/feat-activity-hd.webm">
+            <source src="/screens/features/feat-activity.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
       </div>
     </section>
     <section class="feat feat--flip" id="labels">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">04 &middot; Лейблы</p>
+          <p class="feat-eyebrow">04 &middot; Поиск · Лейблы</p>
           <h2>Лейблы, а не только артисты</h2>
           <p>Просматривайте и по лейблам: любимые лейблы и их релизы одним списком, рядом с артистами.</p>
           <ul>
@@ -155,16 +177,188 @@
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/features/feat-labels-poster.webp" width="880" height="474" aria-label="Запись экрана: Лейблы, а не только артисты">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-labels-poster.webp" width="880" height="474" aria-label="Запись экрана: Лейблы, а не только артисты" data-hd="/screens/features/feat-labels-hd.webm">
             <source src="/screens/features/feat-labels.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
       </div>
     </section>
-    <section class="feat" id="owned">
+    <section class="feat" id="related">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">05 &middot; Уже есть</p>
+          <p class="feat-eyebrow">05 &middot; Находки · Связанные артисты</p>
+          <h2>Кто кого ремиксовал</h2>
+          <p>Связанные артисты с типом связи рядом с каждым именем, построенные по самим трекам. Нажмите на имя, чтобы увидеть треки артиста и пойти дальше по сцене.</p>
+          <ul>
+            <li>C: соавтор, R: ремиксер, F: featuring, O: оригинал.</li>
+            <li>Выберите артиста, нажмите «Найти связи», и панель справа заполнится.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-related-poster.webp" width="880" height="474" aria-label="Запись экрана: Кто кого ремиксовал" data-hd="/screens/features/feat-related-hd.webm">
+            <source src="/screens/features/feat-related.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat feat--flip" id="relatedadd">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">06 &middot; Находки · Расширяйте библиотеку</p>
+          <h2>Добавляйте связанных артистов одним кликом</h2>
+          <p>Оставьте в списке только тех, кого у вас ещё нет, отметьте понравившихся и добавьте в библиотеку. Дальше ищите их треки, их связи и идите дальше.</p>
+          <ul>
+            <li>Три вида: все связанные, уже в вашем списке или новые.</li>
+            <li>Добавленные артисты попадают в левый список и готовы к массовому поиску.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-relatedadd-poster.webp" width="880" height="474" aria-label="Запись экрана: Добавляйте связанных артистов одним кликом" data-hd="/screens/features/feat-relatedadd-hd.webm">
+            <source src="/screens/features/feat-relatedadd.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat" id="similar">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">07 &middot; Находки · Похожие треки</p>
+          <h2>Находите треки, которые звучат похоже</h2>
+          <p>Запустите трек, нажмите кнопку Similar в плеере, и справа откроется список похожих треков. Похожие треки берутся с cosine.club.</p>
+          <ul>
+            <li>Работает для трека, который играет прямо сейчас.</li>
+            <li>Кнопка обновления спросит ещё раз.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-similar-poster.webp" width="880" height="474" aria-label="Запись экрана: Находите треки, которые звучат похоже" data-hd="/screens/features/feat-similar-hd.webm">
+            <source src="/screens/features/feat-similar.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat feat--flip" id="player">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">08 &middot; Прослушивание · Плеер</p>
+          <h2>Плеер с живым спектром</h2>
+          <p>Превью играют прямо в приложении, без новой вкладки на каждый релиз. Полоса за кнопками показывает спектр в реальном времени, а клик по ней перематывает трек.</p>
+          <ul>
+            <li>Предыдущий, следующий, пауза, громкость.</li>
+            <li>Кнопка возвращает список к играющему сейчас треку.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-player-poster.webp" width="880" height="474" aria-label="Запись экрана: Плеер с живым спектром" data-hd="/screens/features/feat-player-hd.webm">
+            <source src="/screens/features/feat-player.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat" id="mini">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">09 &middot; Прослушивание · Мини-плеер</p>
+          <h2>Мини-плеер, который остаётся поверх окон</h2>
+          <p>Переключитесь на мини-плеер и слушайте дальше, пока работаете в других окнах. Он остаётся поверх всего и держит основные кнопки под рукой.</p>
+          <ul>
+            <li>Перемотка, предыдущий и следующий, громкость, пауза.</li>
+            <li>Сердечко, список покупок и теги доступны прямо в мини-плеере.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-mini-poster.webp" width="880" height="474" aria-label="Запись экрана: Мини-плеер, который остаётся поверх окон" data-hd="/screens/features/feat-mini-hd.webm">
+            <source src="/screens/features/feat-mini.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat feat--flip" id="history">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">10 &middot; Порядок · История</p>
+          <h2>Помните, что уже слушали</h2>
+          <p>Underflow хранит историю прослушивания. Откройте её, чтобы увидеть, что вы играли, или оставьте в списке только прослушанные треки.</p>
+          <ul>
+            <li>История прослушивания в один клик.</li>
+            <li>Фильтр по трекам, которые вы уже слушали.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-history-poster.webp" width="880" height="474" aria-label="Запись экрана: Помните, что уже слушали" data-hd="/screens/features/feat-history-hd.webm">
+            <source src="/screens/features/feat-history.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat" id="daterange">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">11 &middot; Порядок · Период</p>
+          <h2>Фильтр по дате</h2>
+          <p>Выберите период в календаре, чтобы увидеть только то, что вышло или было добавлено в вашу библиотеку в этом окне.</p>
+          <ul>
+            <li>Переключайтесь между датой релиза и датой добавления.</li>
+            <li>Удобно для того, что появилось после прошлой копки.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-daterange-poster.webp" width="880" height="474" aria-label="Запись экрана: Фильтр по дате" data-hd="/screens/features/feat-daterange-hd.webm">
+            <source src="/screens/features/feat-daterange.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat feat--flip" id="tags">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">12 &middot; Порядок · Теги</p>
+          <h2>Теги под ваш способ копать</h2>
+          <p>Создавайте свои группы тегов с цветами: настроение, применение, тональность, жанр, как вам удобно. Отмечайте треки в списке и потом фильтруйте по ним.</p>
+          <ul>
+            <li>До 7 групп и по 15 тегов в каждой.</li>
+            <li>Фильтр с логикой AND или OR.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-tags-poster.webp" width="880" height="474" aria-label="Запись экрана: Теги под ваш способ копать" data-hd="/screens/features/feat-tags-hd.webm">
+            <source src="/screens/features/feat-tags.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat" id="sort">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">13 &middot; Порядок · Сортировка</p>
+          <h2>Порядок в списке артистов</h2>
+          <p>Сортируйте артистов по имени, последнему массовому поиску, последним связям, дате добавления, числу треков или числу прослушанных. Закрепляйте нужных наверху.</p>
+          <ul>
+            <li>Можно показать только артистов, по которым ещё не искали.</li>
+            <li>По возрастанию или по убыванию, как удобно.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-sort-poster.webp" width="880" height="474" aria-label="Запись экрана: Порядок в списке артистов" data-hd="/screens/features/feat-sort-hd.webm">
+            <source src="/screens/features/feat-sort.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat feat--flip" id="owned">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">14 &middot; Покупки · Уже есть</p>
           <h2>Знайте, что у вас уже есть</h2>
           <p>Треки, совпавшие с вашими локальными файлами, получают метку OWNED с форматом файла, чтобы вы не покупали один релиз дважды.</p>
           <ul>
@@ -173,16 +367,17 @@
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/features/feat-owned-poster.webp" width="880" height="474" aria-label="Запись экрана: Знайте, что у вас уже есть">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-owned-poster.webp" width="880" height="474" aria-label="Запись экрана: Знайте, что у вас уже есть" data-hd="/screens/features/feat-owned-hd.webm">
             <source src="/screens/features/feat-owned.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
       </div>
     </section>
-    <section class="feat feat--flip" id="buylist">
+    <section class="feat" id="buylist">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">06 &middot; Список покупок</p>
+          <p class="feat-eyebrow">15 &middot; Покупки · Список покупок</p>
           <h2>Список покупок вместо кучи вкладок</h2>
           <p>Отметьте трек один раз, и он ждёт в списке покупок со значком магазина. Просмотрите список и покупайте магазин за магазином.</p>
           <ul>
@@ -191,10 +386,28 @@
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/features/feat-buylist-poster.webp" width="880" height="474" aria-label="Запись экрана: Список покупок вместо кучи вкладок">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-buylist-poster.webp" width="880" height="474" aria-label="Запись экрана: Список покупок вместо кучи вкладок" data-hd="/screens/features/feat-buylist-hd.webm">
             <source src="/screens/features/feat-buylist.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
+      </div>
+    </section>
+    <section class="feat-more-sec">
+      <div class="container">
+        <h2>И не только</h2>
+        <ul class="feat-cards">
+          <li><h3>Горячие клавиши</h3><p>Пауза, предыдущий и следующий, громкость, поиск, панели, избранное и настройки с клавиатуры.</p></li>
+          <li><h3>Экспорт в CSV</h3><p>Экспорт видимых или выбранных треков в CSV с лейблом, датой релиза и пометками избранного и списка покупок.</p></li>
+          <li><h3>Импорт и экспорт артистов</h3><p>Загрузите список артистов из текстового файла и выгрузите артистов и лейблы в файлы.</p></li>
+          <li><h3>Поиск по лейблам</h3><p>Выберите лейблы и найдите все треки на них, так же как ищете артистов.</p></li>
+          <li><h3>Локальная библиотека</h3><p>Добавьте папки с музыкой и просканируйте их. Совпавшие файлы играют вместо превью и получают метку OWNED.</p></li>
+          <li><h3>Несколько баз данных</h3><p>Создавайте, импортируйте и переключайте отдельные коллекции.</p></li>
+          <li><h3>Переход в магазин</h3><p>Из любого трека можно перейти на его страницу в Bandcamp, Beatport, Juno Records, Decks.de или Discogs.</p></li>
+          <li><h3>YouTube как запасной вариант</h3><p>Если у магазина нет превью, один клик ищет трек на YouTube.</p></li>
+          <li><h3>Настройки вида</h3><p>Компактный режим, обложки вкл и выкл, число треков на странице, спектр вкл и выкл.</p></li>
+          <li><h3>Встроенный тур</h3><p>Кнопка помощи запускает короткий тур по всему циклу работы.</p></li>
+        </ul>
       </div>
     </section>
     <section class="feat-end">
@@ -214,6 +427,11 @@
       </div>
     </section>
   </main>
+
+  <dialog class="feat-lightbox" id="feat-lightbox" aria-label="Увеличить видео">
+    <button type="button" class="feat-lightbox-close" aria-label="Закрыть">&times;</button>
+    <video controls loop muted playsinline></video>
+  </dialog>
 
   <footer class="footer">
     <div class="container footer-inner">
@@ -251,14 +469,39 @@
     (function () {
       var vids = document.querySelectorAll('.feat-media video');
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce || !('IntersectionObserver' in window)) { vids.forEach(function (v) { v.controls = true; }); return; }
-      var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          var v = e.target;
-          if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
-        });
-      }, { threshold: 0.45 });
-      vids.forEach(function (v) { io.observe(v); });
+      if (reduce || !('IntersectionObserver' in window)) { vids.forEach(function (v) { v.controls = true; }); }
+      else {
+        var io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            var v = e.target;
+            if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
+          });
+        }, { threshold: 0.45 });
+        vids.forEach(function (v) { io.observe(v); });
+      }
+      // enlarge: opens the larger recording in a dialog
+      var dlg = document.getElementById('feat-lightbox');
+      if (!dlg || typeof dlg.showModal !== 'function') { document.querySelectorAll('.feat-zoom').forEach(function (b) { b.hidden = true; }); return; }
+      var big = dlg.querySelector('video');
+      function open(media) {
+        var v = media.querySelector('video');
+        v.pause();
+        big.poster = v.getAttribute('poster') || '';
+        big.src = v.getAttribute('data-hd') || v.currentSrc;
+        dlg.showModal();
+        var p = big.play(); if (p && p.catch) p.catch(function () {});
+        try { window.plausible('Feature Zoom', { props: { feature: media.closest('.feat').id } }); } catch (e) {}
+      }
+      function cleanup() { big.pause(); big.removeAttribute('src'); big.load(); }
+      function close() { if (dlg.open) dlg.close(); cleanup(); }
+      dlg.addEventListener('close', cleanup);
+      dlg.addEventListener('cancel', function () { setTimeout(cleanup, 0); });
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+      dlg.querySelector('.feat-lightbox-close').addEventListener('click', close);
+      document.querySelectorAll('.feat-media').forEach(function (m) {
+        m.querySelector('.feat-zoom').addEventListener('click', function () { open(m); });
+        m.querySelector('video').addEventListener('click', function () { open(m); });
+      });
     })();
   </script>
   <script defer data-domain="underflow.music" src="https://plausible.io/js/script.js"></script>

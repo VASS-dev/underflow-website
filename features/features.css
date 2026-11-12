@@ -47,3 +47,41 @@
   .feat--flip .feat-text, .feat--flip .feat-media { order: initial; }
   .feat-page { padding-top: 104px; }
 }
+
+/* chip groups */
+.feat-chipgroups { display: grid; gap: 12px; margin-top: 28px; }
+.feat-chipgroup { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.feat-chipgroup-name { min-width: 120px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+.feat-chipgroup .feat-chips { margin-top: 0; }
+
+/* enlarge button + lightbox */
+.feat-media { position: relative; }
+.feat-media video { cursor: zoom-in; }
+.feat-zoom {
+  position: absolute; right: 12px; bottom: 12px; display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(10, 10, 15, 0.72); color: #fff; cursor: pointer; backdrop-filter: blur(6px);
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.feat-zoom:hover, .feat-zoom:focus-visible { background: var(--accent); border-color: var(--accent); transform: scale(1.06); outline: none; }
+.feat-lightbox { border: 0; padding: 0; background: transparent; max-width: none; max-height: none; width: 100vw; height: 100vh; overflow: hidden; }
+.feat-lightbox::backdrop { background: rgba(5, 5, 9, 0.92); }
+.feat-lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.feat-lightbox video { max-width: 96vw; max-height: 92vh; width: auto; height: auto; border-radius: 10px; background: #000; box-shadow: 0 30px 120px rgba(0, 0, 0, 0.6); }
+.feat-lightbox-close {
+  position: fixed; top: 16px; right: 20px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(20, 20, 28, 0.85); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; z-index: 2;
+}
+.feat-lightbox-close:hover { background: var(--accent); border-color: var(--accent); }
+
+/* and more */
+.feat-more-sec { padding: 56px 0 24px; border-top: 1px solid var(--border); }
+.feat-more-sec h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.015em; margin-bottom: 28px; }
+.feat-cards { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; max-width: 1080px; }
+.feat-cards li { padding: 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-card); }
+.feat-cards h3 { font-size: 16px; margin-bottom: 8px; }
+.feat-cards p { font-size: 14px; line-height: 1.6; color: var(--text-muted); }
+
+@media (max-width: 860px) {
+  .feat-chipgroup-name { min-width: 0; width: 100%; }
+}

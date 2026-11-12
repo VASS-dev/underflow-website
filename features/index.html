@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Underflow Features: Search Five Music Stores at Once</title>
-  <meta name="description" content="Real screen recordings of Underflow: mass artist search, five stores in one list, related artists, labels, OWNED badges and a buy list.">
+  <meta name="description" content="Everything Underflow does, in real screen recordings: mass search, five stores in one list, related artists, player, tags, history and a buy list.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://underflow.music/features/">
   <link rel="alternate" hreflang="en" href="https://underflow.music/features/">
   <link rel="alternate" hreflang="ru" href="https://underflow.music/ru/features/">
   <link rel="alternate" hreflang="x-default" href="https://underflow.music/features/">
   <meta property="og:title" content="Underflow Features: Search Five Music Stores at Once">
-  <meta property="og:description" content="Real screen recordings of Underflow: mass artist search, five stores in one list, related artists, labels, OWNED badges and a buy list.">
+  <meta property="og:description" content="Everything Underflow does, in real screen recordings: mass search, five stores in one list, related artists, player, tags, history and a buy list.">
   <meta property="og:image" content="https://underflow.music/og-image.png">
   <meta property="og:url" content="https://underflow.music/features/">
   <meta property="og:type" content="website">
@@ -23,7 +23,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Underflow Features: Search Five Music Stores at Once",
-  "description": "Real screen recordings of Underflow: mass artist search, five stores in one list, related artists, labels, OWNED badges and a buy list.",
+  "description": "Everything Underflow does, in real screen recordings: mass search, five stores in one list, related artists, player, tags, history and a buy list.",
   "url": "https://underflow.music/features/",
   "inLanguage": "en",
   "dateModified": "2026-11-12",
@@ -57,9 +57,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=20261112e">
-  <link rel="stylesheet" href="/guides/guide.css?v=20261112e">
-  <link rel="stylesheet" href="/features/features.css?v=20261112e">
+  <link rel="stylesheet" href="/styles.css?v=20261112f">
+  <link rel="stylesheet" href="/guides/guide.css?v=20261112f">
+  <link rel="stylesheet" href="/features/features.css?v=20261112f">
 </head>
 <body>
 
@@ -78,21 +78,40 @@
       <div class="container">
         <p class="guide-crumbs"><a href="/">Underflow</a> / Features</p>
         <h1>What Underflow does</h1>
-        <p class="feat-lead">Short clips from the real app, no mockups. Each one shows a single thing you do while digging for music.</p>
-        <ul class="feat-chips">
-          <li><a href="#mass">Mass search</a></li>
-          <li><a href="#stores">Five stores</a></li>
-          <li><a href="#related">Related artists</a></li>
-          <li><a href="#labels">Labels</a></li>
-          <li><a href="#owned">Already owned</a></li>
-          <li><a href="#buylist">Buy list</a></li>
-        </ul>
+        <p class="feat-lead">Short clips from the real app, no mockups. Each one shows a single thing you do while digging for music. Click a clip to enlarge it.</p>
+        <div class="feat-chipgroups">
+          <div class="feat-chipgroup"><span class="feat-chipgroup-name">Search</span><ul class="feat-chips">
+            <li><a href="#mass">Mass search</a></li>
+            <li><a href="#stores">Five stores</a></li>
+            <li><a href="#activity">Live activity</a></li>
+            <li><a href="#labels">Labels</a></li>
+          </ul></div>
+          <div class="feat-chipgroup"><span class="feat-chipgroup-name">Discover</span><ul class="feat-chips">
+            <li><a href="#related">Related artists</a></li>
+            <li><a href="#relatedadd">Grow your library</a></li>
+            <li><a href="#similar">Similar tracks</a></li>
+          </ul></div>
+          <div class="feat-chipgroup"><span class="feat-chipgroup-name">Listen</span><ul class="feat-chips">
+            <li><a href="#player">Player</a></li>
+            <li><a href="#mini">Mini player</a></li>
+          </ul></div>
+          <div class="feat-chipgroup"><span class="feat-chipgroup-name">Organize</span><ul class="feat-chips">
+            <li><a href="#history">History</a></li>
+            <li><a href="#daterange">Date range</a></li>
+            <li><a href="#tags">Tags</a></li>
+            <li><a href="#sort">Sort and pin</a></li>
+          </ul></div>
+          <div class="feat-chipgroup"><span class="feat-chipgroup-name">Buy</span><ul class="feat-chips">
+            <li><a href="#owned">Already owned</a></li>
+            <li><a href="#buylist">Buy list</a></li>
+          </ul></div>
+        </div>
       </div>
     </section>
     <section class="feat" id="mass">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">01 &middot; Mass search</p>
+          <p class="feat-eyebrow">01 &middot; Search · Mass search</p>
           <h2>Search many artists in one go</h2>
           <p>Tick several artists, press Mass search, and their tracks from Bandcamp, Beatport, Decks and more arrive in one list. In this clip, four new artists give 557 tracks, starting from an empty database.</p>
           <ul>
@@ -101,16 +120,17 @@
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/gallery-motion-poster.webp" width="880" height="474" aria-label="Screen recording: Search many artists in one go">
+          <video muted loop playsinline preload="none" poster="/screens/gallery-motion-poster.webp" width="880" height="474" aria-label="Screen recording: Search many artists in one go" data-hd="/screens/gallery-motion.webm">
             <source src="/screens/gallery-motion.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
       </div>
     </section>
     <section class="feat feat--flip" id="stores">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">02 &middot; Five stores</p>
+          <p class="feat-eyebrow">02 &middot; Search · Five stores</p>
           <h2>Five stores, one list</h2>
           <p>Bandcamp, Decks.de, Beatport, Juno Records and Discogs side by side. A badge on every track shows where it was found, and one menu filters by store.</p>
           <ul>
@@ -119,34 +139,36 @@
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/features/feat-stores-poster.webp" width="880" height="474" aria-label="Screen recording: Five stores, one list">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-stores-poster.webp" width="880" height="474" aria-label="Screen recording: Five stores, one list" data-hd="/screens/features/feat-stores-hd.webm">
             <source src="/screens/features/feat-stores.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
       </div>
     </section>
-    <section class="feat" id="related">
+    <section class="feat" id="activity">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">03 &middot; Related artists</p>
-          <h2>Who remixed whom</h2>
-          <p>Related artists with the relation type next to each name, built from the tracks themselves. Click a name to see that artist’s tracks and follow the scene.</p>
+          <p class="feat-eyebrow">03 &middot; Search · Live activity</p>
+          <h2>Watch every search as it happens</h2>
+          <p>The Activity panel logs each search: which artist, how many tracks it found and how many of them are new. If a source did not answer, you can retry just that source.</p>
           <ul>
-            <li>C for collaborator, R for remixer, F for featuring, O for original.</li>
-            <li>Select an artist, press Find relations, and the panel on the right fills in.</li>
+            <li>One line per artist.</li>
+            <li>Fresh tracks are counted separately, so you see at a glance what changed since the last scan.</li>
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/features/feat-related-poster.webp" width="880" height="474" aria-label="Screen recording: Who remixed whom">
-            <source src="/screens/features/feat-related.webm" type="video/webm">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-activity-poster.webp" width="880" height="474" aria-label="Screen recording: Watch every search as it happens" data-hd="/screens/features/feat-activity-hd.webm">
+            <source src="/screens/features/feat-activity.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
       </div>
     </section>
     <section class="feat feat--flip" id="labels">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">04 &middot; Labels</p>
+          <p class="feat-eyebrow">04 &middot; Search · Labels</p>
           <h2>Labels, not only artists</h2>
           <p>Browse by label too: your favourite labels and their releases in one list, next to your artists.</p>
           <ul>
@@ -155,16 +177,188 @@
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/features/feat-labels-poster.webp" width="880" height="474" aria-label="Screen recording: Labels, not only artists">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-labels-poster.webp" width="880" height="474" aria-label="Screen recording: Labels, not only artists" data-hd="/screens/features/feat-labels-hd.webm">
             <source src="/screens/features/feat-labels.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
       </div>
     </section>
-    <section class="feat" id="owned">
+    <section class="feat" id="related">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">05 &middot; Already owned</p>
+          <p class="feat-eyebrow">05 &middot; Discover · Related artists</p>
+          <h2>Who remixed whom</h2>
+          <p>Related artists with the relation type next to each name, built from the tracks themselves. Click a name to see that artist’s tracks and follow the scene.</p>
+          <ul>
+            <li>C for collaborator, R for remixer, F for featuring, O for original.</li>
+            <li>Select an artist, press Find relations, and the panel on the right fills in.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-related-poster.webp" width="880" height="474" aria-label="Screen recording: Who remixed whom" data-hd="/screens/features/feat-related-hd.webm">
+            <source src="/screens/features/feat-related.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat feat--flip" id="relatedadd">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">06 &middot; Discover · Grow your library</p>
+          <h2>Add related artists in one click</h2>
+          <p>Filter the related list to artists you do not have yet, tick the ones you like and add them to your library. Then search them, find their relations, and keep going.</p>
+          <ul>
+            <li>Three views: all related artists, already in your list, or new.</li>
+            <li>Added artists join the left list and are ready for a mass search.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-relatedadd-poster.webp" width="880" height="474" aria-label="Screen recording: Add related artists in one click" data-hd="/screens/features/feat-relatedadd-hd.webm">
+            <source src="/screens/features/feat-relatedadd.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat" id="similar">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">07 &middot; Discover · Similar tracks</p>
+          <h2>Find tracks that sound alike</h2>
+          <p>Play a track, press the Similar button in the player, and a list of similar tracks opens in the right panel. Similar tracks come from cosine.club.</p>
+          <ul>
+            <li>Works on whatever is playing right now.</li>
+            <li>Use the refresh button to ask again.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-similar-poster.webp" width="880" height="474" aria-label="Screen recording: Find tracks that sound alike" data-hd="/screens/features/feat-similar-hd.webm">
+            <source src="/screens/features/feat-similar.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat feat--flip" id="player">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">08 &middot; Listen · Player</p>
+          <h2>A player with a live spectrum</h2>
+          <p>Previews play right in the app, with no new tab per release. The bar behind the controls is a live spectrum analyzer, and clicking it jumps to that point in the track.</p>
+          <ul>
+            <li>Previous, next, play and pause, volume.</li>
+            <li>A button scrolls the list back to the track that is playing.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-player-poster.webp" width="880" height="474" aria-label="Screen recording: A player with a live spectrum" data-hd="/screens/features/feat-player-hd.webm">
+            <source src="/screens/features/feat-player.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat" id="mini">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">09 &middot; Listen · Mini player</p>
+          <h2>A mini player that stays on top</h2>
+          <p>Switch to the mini player and keep listening while you work in other windows. It stays above everything else and keeps the main controls close.</p>
+          <ul>
+            <li>Seek, previous and next, volume and play or pause.</li>
+            <li>Heart a track, add it to the buy list or tag it from the mini player.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-mini-poster.webp" width="880" height="474" aria-label="Screen recording: A mini player that stays on top" data-hd="/screens/features/feat-mini-hd.webm">
+            <source src="/screens/features/feat-mini.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat feat--flip" id="history">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">10 &middot; Organize · History</p>
+          <h2>Remember what you have listened to</h2>
+          <p>Underflow keeps your listening history. Open it to see what you played, or filter the list to listened tracks only.</p>
+          <ul>
+            <li>Listening history in one click.</li>
+            <li>Filter to tracks you have already listened to.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-history-poster.webp" width="880" height="474" aria-label="Screen recording: Remember what you have listened to" data-hd="/screens/features/feat-history-hd.webm">
+            <source src="/screens/features/feat-history.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat" id="daterange">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">11 &middot; Organize · Date range</p>
+          <h2>Filter by date</h2>
+          <p>Pick a period on the calendar to see only what was released, or only what was added to your library, in that window.</p>
+          <ul>
+            <li>Switch between release date and date added.</li>
+            <li>Handy for what is new since your last dig.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-daterange-poster.webp" width="880" height="474" aria-label="Screen recording: Filter by date" data-hd="/screens/features/feat-daterange-hd.webm">
+            <source src="/screens/features/feat-daterange.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat feat--flip" id="tags">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">12 &middot; Organize · Tags</p>
+          <h2>Tags that fit how you dig</h2>
+          <p>Create your own tag groups with colors: mood, use, key, genre, whatever fits your workflow. Tag tracks from the list and filter by them later.</p>
+          <ul>
+            <li>Up to 7 groups and 15 tags in each group.</li>
+            <li>Filter with AND or OR logic.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-tags-poster.webp" width="880" height="474" aria-label="Screen recording: Tags that fit how you dig" data-hd="/screens/features/feat-tags-hd.webm">
+            <source src="/screens/features/feat-tags.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat" id="sort">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">13 &middot; Organize · Sort and pin</p>
+          <h2>Keep the artist list in order</h2>
+          <p>Sort artists by name, latest mass search, latest relations, date added, track count or listened count. Pin the ones you follow to the top.</p>
+          <ul>
+            <li>Show only artists that have not been searched yet.</li>
+            <li>Ascending or descending, your choice.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-sort-poster.webp" width="880" height="474" aria-label="Screen recording: Keep the artist list in order" data-hd="/screens/features/feat-sort-hd.webm">
+            <source src="/screens/features/feat-sort.webm" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section class="feat feat--flip" id="owned">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">14 &middot; Buy · Already owned</p>
           <h2>Know what you already own</h2>
           <p>Tracks matched to your local files get an OWNED badge with the file format, so you do not buy the same release twice.</p>
           <ul>
@@ -173,16 +367,17 @@
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/features/feat-owned-poster.webp" width="880" height="474" aria-label="Screen recording: Know what you already own">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-owned-poster.webp" width="880" height="474" aria-label="Screen recording: Know what you already own" data-hd="/screens/features/feat-owned-hd.webm">
             <source src="/screens/features/feat-owned.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
       </div>
     </section>
-    <section class="feat feat--flip" id="buylist">
+    <section class="feat" id="buylist">
       <div class="container feat-row">
         <div class="feat-text">
-          <p class="feat-eyebrow">06 &middot; Buy list</p>
+          <p class="feat-eyebrow">15 &middot; Buy · Buy list</p>
           <h2>A buy list, not a pile of tabs</h2>
           <p>Mark a track once and it waits on your buy list with its store badge. Review the list, then buy store by store.</p>
           <ul>
@@ -191,10 +386,28 @@
           </ul>
         </div>
         <div class="feat-media">
-          <video muted loop playsinline preload="none" poster="/screens/features/feat-buylist-poster.webp" width="880" height="474" aria-label="Screen recording: A buy list, not a pile of tabs">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-buylist-poster.webp" width="880" height="474" aria-label="Screen recording: A buy list, not a pile of tabs" data-hd="/screens/features/feat-buylist-hd.webm">
             <source src="/screens/features/feat-buylist.webm" type="video/webm">
           </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
         </div>
+      </div>
+    </section>
+    <section class="feat-more-sec">
+      <div class="container">
+        <h2>And more</h2>
+        <ul class="feat-cards">
+          <li><h3>Keyboard shortcuts</h3><p>Play and pause, previous and next, volume, search, panels, favorites and settings, all from the keyboard.</p></li>
+          <li><h3>Export to CSV</h3><p>Export the visible or selected tracks to a CSV file, with label, release date and wishlist and buy list flags.</p></li>
+          <li><h3>Import and export artists</h3><p>Load a list of artists from a text file, and export your artists and labels to files.</p></li>
+          <li><h3>Label search</h3><p>Select labels and search every track on them, the same way you search artists.</p></li>
+          <li><h3>Local library</h3><p>Add folders with your music and scan them. Matched files play instead of the preview and get the OWNED badge.</p></li>
+          <li><h3>Several databases</h3><p>Create, import and switch between separate collections.</p></li>
+          <li><h3>Open in the store</h3><p>Jump from any track to its page on Bandcamp, Beatport, Juno Records, Decks.de or Discogs.</p></li>
+          <li><h3>YouTube fallback</h3><p>When a store has no preview, one click searches the track on YouTube.</p></li>
+          <li><h3>Display options</h3><p>Compact mode, covers on or off, tracks per page, spectrum on or off.</p></li>
+          <li><h3>Built-in tour</h3><p>The help button replays a short guided walk-through of the whole cycle.</p></li>
+        </ul>
       </div>
     </section>
     <section class="feat-end">
@@ -214,6 +427,11 @@
       </div>
     </section>
   </main>
+
+  <dialog class="feat-lightbox" id="feat-lightbox" aria-label="Enlarge video">
+    <button type="button" class="feat-lightbox-close" aria-label="Close">&times;</button>
+    <video controls loop muted playsinline></video>
+  </dialog>
 
   <footer class="footer">
     <div class="container footer-inner">
@@ -251,14 +469,39 @@
     (function () {
       var vids = document.querySelectorAll('.feat-media video');
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce || !('IntersectionObserver' in window)) { vids.forEach(function (v) { v.controls = true; }); return; }
-      var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          var v = e.target;
-          if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
-        });
-      }, { threshold: 0.45 });
-      vids.forEach(function (v) { io.observe(v); });
+      if (reduce || !('IntersectionObserver' in window)) { vids.forEach(function (v) { v.controls = true; }); }
+      else {
+        var io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            var v = e.target;
+            if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
+          });
+        }, { threshold: 0.45 });
+        vids.forEach(function (v) { io.observe(v); });
+      }
+      // enlarge: opens the larger recording in a dialog
+      var dlg = document.getElementById('feat-lightbox');
+      if (!dlg || typeof dlg.showModal !== 'function') { document.querySelectorAll('.feat-zoom').forEach(function (b) { b.hidden = true; }); return; }
+      var big = dlg.querySelector('video');
+      function open(media) {
+        var v = media.querySelector('video');
+        v.pause();
+        big.poster = v.getAttribute('poster') || '';
+        big.src = v.getAttribute('data-hd') || v.currentSrc;
+        dlg.showModal();
+        var p = big.play(); if (p && p.catch) p.catch(function () {});
+        try { window.plausible('Feature Zoom', { props: { feature: media.closest('.feat').id } }); } catch (e) {}
+      }
+      function cleanup() { big.pause(); big.removeAttribute('src'); big.load(); }
+      function close() { if (dlg.open) dlg.close(); cleanup(); }
+      dlg.addEventListener('close', cleanup);
+      dlg.addEventListener('cancel', function () { setTimeout(cleanup, 0); });
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+      dlg.querySelector('.feat-lightbox-close').addEventListener('click', close);
+      document.querySelectorAll('.feat-media').forEach(function (m) {
+        m.querySelector('.feat-zoom').addEventListener('click', function () { open(m); });
+        m.querySelector('video').addEventListener('click', function () { open(m); });
+      });
     })();
   </script>
   <script defer data-domain="underflow.music" src="https://plausible.io/js/script.js"></script>
