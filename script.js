@@ -377,12 +377,13 @@ function initGallery() {
   const panels = [...root.querySelectorAll('.gallery-panel')];
   if (!tabs.length || tabs.length !== panels.length) return;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let idx = 0, timer = null, manual = false;
+  let idx = 0, timer = null, manual = false, inView = false, lastVideo = null;
 
   function show(i, byUser) {
     idx = (i + tabs.length) % tabs.length;
     tabs.forEach((t, k) => { t.setAttribute('aria-selected', String(k === idx)); t.tabIndex = k === idx ? 0 : -1; });
     panels.forEach((p, k) => { p.hidden = k !== idx; });
+    syncVideo();
     if (byUser) {
       manual = true;
       stop();
@@ -390,6 +391,23 @@ function initGallery() {
     }
   }
   function stop() { if (timer) { clearTimeout(timer); timer = null; } }
+
+  // The recording only plays while its tab is open and the gallery is on screen.
+  function syncVideo() {
+    panels.forEach((p, k) => {
+      const v = p.querySelector('video');
+      if (!v) return;
+      if (reduce) { v.controls = true; v.pause(); return; }
+      if (k === idx && inView) {
+        if (lastVideo !== v) { try { v.currentTime = 0; } catch { /* not seekable yet */ } lastVideo = v; }
+        v.preload = 'auto';
+        const p2 = v.play(); if (p2 && p2.catch) p2.catch(() => {});
+      } else {
+        v.pause();
+        if (k !== idx && lastVideo === v) lastVideo = null;
+      }
+    });
+  }
   function dwell() { return Number(panels[idx].dataset.dwell) || 7000; }
   function tick() { timer = setTimeout(() => { show(idx + 1, false); tick(); }, dwell()); }
   function start() { if (reduce || manual || timer) return; tick(); }
@@ -413,6 +431,8 @@ function initGallery() {
     let preloaded = false;
     new IntersectionObserver(entries => {
       const visible = entries[0].isIntersecting;
+      inView = visible;
+      syncVideo();
       if (visible && !preloaded) {
         preloaded = true;
         root.querySelectorAll('img[loading="lazy"]').forEach(img => { img.loading = 'eager'; });
@@ -441,6 +461,7 @@ function initGallery() {
   root.querySelectorAll('.gallery-shot').forEach(shot => {
     shot.addEventListener('click', () => {
       const img = shot.querySelector('img');
+      if (!img) return;
       openZoom(img.currentSrc || img.src, img.alt);
     });
   });

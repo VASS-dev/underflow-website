@@ -103,7 +103,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261111f">
+  <link rel="stylesheet" href="styles.css?v=20261112a">
 </head>
 <body>
 
@@ -234,14 +234,15 @@
       <div class="gallery-stage">
         <div class="gallery-window">
           <div class="gallery-chrome" aria-hidden="true"><i></i><i></i><i></i><span>Underflow</span></div>
-        <figure class="gallery-panel" data-dwell="21000" role="tabpanel" id="gpanel-motion" aria-labelledby="gtab-motion">
-          <div class="gallery-shot">
-            <img src="screens/gallery-motion.webp" width="1120" height="604" loading="lazy" decoding="async" alt="Looping screen recording of Underflow: selecting four artists, running a mass search, new tracks arriving, then filtering the collection, playing a track, opening the store menu and switching to labels" data-i18n-alt="gallery.alt_motion">
-            <button type="button" class="gallery-zoom" aria-label="Enlarge screenshot" data-i18n-aria-label="gallery.zoom"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+        <figure class="gallery-panel" data-dwell="36500" role="tabpanel" id="gpanel-motion" aria-labelledby="gtab-motion">
+          <div class="gallery-shot gallery-shot--video">
+            <video muted loop playsinline preload="none" width="960" height="518" poster="screens/gallery-motion-poster.webp" aria-label="Screen recording of Underflow: an empty database, four artists added by name, Mass search, and 557 tracks arriving in one list that is then scrolled through" data-i18n-aria-label="gallery.alt_motion">
+              <source src="screens/gallery-motion.webm" type="video/webm">
+            </video>
           </div>
           <figcaption class="gallery-caption">
             <h3 data-i18n="gallery.h_motion">A real session</h3>
-            <p data-i18n="gallery.d_motion">Select artists, press Mass search and their tracks land in one list. Then filter, play, open the store menu and switch to labels.</p>
+            <p data-i18n="gallery.d_motion">Start from an empty database: add four artists, press Mass search, and their 557 tracks arrive in one list. Repeat searches are fast; the first scan of a new artist takes longer.</p>
           </figcaption>
         </figure>
 
@@ -617,7 +618,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261111f"></script>
+  <script src="script.js?v=20261112a"></script>
   <script defer data-domain="underflow.music" src="https://plausible.io/js/script.js"></script>
 </body>
 </html>
