@@ -113,8 +113,23 @@ const _params = new URLSearchParams(window.location.search);
 const IS_EMBED = _params.get('embed') === '1';
 const AUTO_ARTIST = _params.get('artist');
 
+// Background mode: the landing page uses this page as the living backdrop of its
+// hero (?embed=1&bg=1). cx / cy move the centre of the graph so it does not sit
+// under the headline; labels are dimmed, the graph keeps a slow drift, wheel
+// zoom is off (so the page still scrolls) and it listens to postMessage from the
+// parent (load another artist, pause when off screen).
+const IS_BG = IS_EMBED && _params.get('bg') === '1';
+const _clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+const BG_CX = _clamp(parseFloat(_params.get('cx')) || 0.5, 0.2, 0.85);
+const BG_CY = _clamp(parseFloat(_params.get('cy')) || 0.5, 0.25, 0.75);
+const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const DRIFT = IS_BG && !REDUCE_MOTION ? 0.018 : 0;
+const cxPos = () => width * (IS_BG ? BG_CX : 0.5);
+const cyPos = () => height * (IS_BG ? BG_CY : 0.5);
+
 if (IS_EMBED) {
   document.body.classList.add('embed-mode');
+  if (IS_BG) document.body.classList.add('bg-mode');
 }
 
 // ---- Analytics (Plausible) ----
@@ -307,6 +322,7 @@ function setupSVG() {
     });
 
   svg.call(zoom);
+  if (IS_BG) svg.on('.zoom', null); // no wheel/drag zoom in the hero: the page must keep scrolling
 
   // Main group for everything (zoom/pan target)
   g = svg.append('g');
@@ -317,7 +333,7 @@ function setupSVG() {
     height = window.innerHeight;
     svg.attr('width', width).attr('height', height);
     if (simulation) {
-      simulation.force('center', d3.forceCenter(width / 2, height / 2));
+      simulation.force('center', d3.forceCenter(cxPos(), cyPos()));
       simulation.alpha(0.3).restart();
     }
   });
@@ -369,7 +385,7 @@ function setupEvents() {
 // API base URL
 const API_BASE = 'https://api.underflow.music/api/public';
 
-const USE_MOCK = false; // Set true to use mock data instead of API
+const USE_MOCK = _params.get('mock') === '1'; // ?mock=1 uses the bundled sample data (local testing)
 
 // ---- Data Fetching ----
 
@@ -483,8 +499,8 @@ async function loadArtist(artistName, isInitial = false) {
     relationType: 'center',
     radius: CENTER_RADIUS,
     trackCount: 0,
-    x: width / 2,
-    y: height / 2
+    x: cxPos(),
+    y: cyPos()
   };
   nodes.push(centerNode);
 
@@ -583,18 +599,19 @@ function updateGraph(isInitial) {
   simulation = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(links)
       .id(d => d.id)
-      .distance(d => 120 + (MAX_RADIUS - scaleRadius(d.trackCount)))
+      .distance(d => (120 + (MAX_RADIUS - scaleRadius(d.trackCount))) * (IS_BG ? 1.35 : 1))
       .strength(0.6)
     )
     .force('charge', d3.forceManyBody()
       .strength(d => d.isCenter ? -600 : -250)
     )
-    .force('center', d3.forceCenter(width / 2, height / 2).strength(0.05))
+    .force('center', d3.forceCenter(cxPos(), cyPos()).strength(IS_BG ? 0.04 : 0.05))
     .force('collision', d3.forceCollide()
       .radius(d => d.radius + 8)
       .strength(0.8)
     )
-    .alphaDecay(0.02)
+    .alphaDecay(IS_BG ? 0.012 : 0.02)
+    .alphaTarget(DRIFT)
     .velocityDecay(0.3);
 
   // ---- Links ----
@@ -809,7 +826,7 @@ function dragged(event, d) {
 }
 
 function dragEnded(event, d) {
-  if (!event.active) simulation.alphaTarget(0);
+  if (!event.active) simulation.alphaTarget(DRIFT);
   if (!d.isCenter) {
     d.fx = null;
     d.fy = null;
@@ -831,6 +848,22 @@ function scaleLabel(radius) {
   // named `ratio`, not `t`, so it does not shadow the t() translation helper
   const ratio = (radius - MIN_RADIUS) / (MAX_RADIUS - MIN_RADIUS);
   return Math.round(LABEL_SIZE_MIN + ratio * (LABEL_SIZE_MAX - LABEL_SIZE_MIN)) + 'px';
+}
+
+// ---- Background mode: messages from the landing page ----
+
+if (IS_BG) {
+  window.addEventListener('message', e => {
+    if (e.origin !== window.location.origin) return;
+    const m = e.data || {};
+    if (m.type === 'uf-load' && typeof m.artist === 'string') loadArtist(m.artist);
+    else if (m.type === 'uf-pause' && simulation) simulation.stop();
+    else if (m.type === 'uf-resume' && simulation) simulation.alpha(0.25).restart();
+  });
+  // Tell the parent when a visitor touches the graph, so it stops swapping artists.
+  window.addEventListener('pointerdown', () => {
+    try { window.parent.postMessage({ type: 'uf-interact' }, window.location.origin); } catch { /* ignore */ }
+  });
 }
 
 // ---- Start ----

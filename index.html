@@ -103,7 +103,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261112a">
+  <link rel="stylesheet" href="styles.css?v=20261112c">
 </head>
 <body>
 
@@ -134,9 +134,14 @@
   </nav>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero hero--graph">
+    <div class="hero-bg" aria-hidden="true">
+      <iframe id="hero-graph" class="hero-bg-iframe" title="" tabindex="-1" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+      <div class="hero-bg-fade"></div>
+    </div>
     <div class="hero-glow"></div>
     <div class="container">
+      <div class="hero-copy">
       <div class="badge" data-i18n="hero.badge">Music Discovery for DJs & Collectors</div>
       <h1 class="hero-title"><span data-i18n="hero.title_1">Dig deeper.</span><br><span class="accent" data-i18n="hero.title_2">Find more.</span></h1>
       <p class="hero-sub" data-i18n="hero.sub">One search instead of ten tabs. Type an artist and get results from Bandcamp, Juno, Beatport, Decks.de and Discogs — digital and vinyl — then listen, tag and save, all in one app.</p>
@@ -144,6 +149,7 @@
         <a href="#download" class="btn btn-primary" data-i18n="hero.btn_download">Download Free</a>
         <a href="#features" class="btn btn-ghost" data-i18n="hero.btn_features">See Features</a>
       </div>
+      <a href="explore.html" class="hero-graph-cta hero-explore-link" data-i18n="hero.explore_cta">Explore artist connections &rarr;</a>
       <div class="hero-platforms">
         <span>Bandcamp</span>
         <span class="dot">·</span>
@@ -155,40 +161,36 @@
         <span class="dot">·</span>
         <span>Discogs</span>
       </div>
-      <div class="hero-screenshot">
-        <iframe
-          id="hero-graph"
-          class="hero-graph-iframe"
-          loading="lazy"
-          title="Interactive artist connections graph demo"
-          allowtransparency="true"
-          frameborder="0"
-          scrolling="no">
-        </iframe>
-        <script>
-          (function() {
-            var a = [
-              'Octave','Enzo Leep','Ricardo Villalobos','Fedo','Herck','Nima Gorji',
-              'Silat Beksi','Traumer','Dubphone','wAFF','Andrey Djackonda','Sepp',
-              'CL-ljud','Guy From Downstairs','Janeret','Dubfound','Matheiu',
-              'Max Jacobson','Cap','Cosmin Horatiu','Alffie','Wyro','dOP','Nu Zau',
-              'Swoy','Patrick Weblin','Miroloja','Etzu Mahkayah','Nibaaldo',
-              'Constratti','Mene','rares','Pedro','Rominimal','Giuseppe Cennamo',
-              'Claudio PRC','Tripmastaz','SIT','Wareika','Daniel Broesecke',
-              'Timid Boy','Vera','Franco Cinelli','David Gtronic','Luis Bravo',
-              'Guti','Priku','Ray Mono','Yulia Niko','Cristi Cons','Los Suruba',
-              'Sade','Stiven Escarraga','Martinez','Mancini','DeWalta',
-              'Cesare vs Disorder','Meet','Neverdogs'
-            ];
-            document.getElementById('hero-graph').src =
-              'explore.html?embed=1&artist=' + encodeURIComponent(a[Math.floor(Math.random()*a.length)]);
-          })();
-        </script>
-        <div class="hero-graph-footer">
-          <a href="explore.html" class="hero-graph-cta" data-i18n="hero.explore_cta">Explore artist connections &rarr;</a>
-        </div>
       </div>
     </div>
+    <script>
+      (function () {
+        var frame = document.getElementById('hero-graph');
+        var local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+        var artists = local ? ['Rhadoo', 'Priku', 'Petre Inspirescu', 'Raresh'] : ['Octave','Enzo Leep','Ricardo Villalobos','Fedo','Herck','Nima Gorji','Silat Beksi','Traumer','Dubphone','wAFF','Andrey Djackonda','Sepp','CL-ljud','Guy From Downstairs','Janeret','Dubfound','Matheiu','Max Jacobson','Cap','Cosmin Horatiu','Alffie','Wyro','dOP','Nu Zau','Swoy','Patrick Weblin','Miroloja','Etzu Mahkayah','Nibaaldo','Constratti','Mene','rares','Pedro','Rominimal','Giuseppe Cennamo','Claudio PRC','Tripmastaz','SIT','Wareika','Daniel Broesecke','Timid Boy','Vera','Franco Cinelli','David Gtronic','Luis Bravo','Guti','Priku','Ray Mono','Yulia Niko','Cristi Cons','Los Suruba','Sade','Stiven Escarraga','Martinez','Mancini','DeWalta','Cesare vs Disorder','Meet','Neverdogs'];
+        var wide = window.innerWidth >= 860;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var i = Math.floor(Math.random() * artists.length);
+        frame.src = 'explore.html?embed=1&bg=1&cx=' + (wide ? '0.7' : '0.5') + '&cy=' + (wide ? '0.5' : '0.62') +
+          (local ? '&mock=1' : '') + '&artist=' + encodeURIComponent(artists[i]);
+        var timer = null, touched = false;
+        function send(m) { try { frame.contentWindow.postMessage(m, location.origin); } catch (e) { /* not ready */ } }
+        function next() { i = (i + 1) % artists.length; send({ type: 'uf-load', artist: artists[i] }); }
+        function start() { if (!reduce && !touched && !timer) timer = setInterval(next, 18000); }
+        function stop() { clearInterval(timer); timer = null; }
+        window.addEventListener('message', function (e) {
+          if (e.origin === location.origin && e.data && e.data.type === 'uf-interact') {
+            touched = true; stop();
+            setTimeout(function () { touched = false; start(); }, 60000);
+          }
+        });
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(function (en) {
+            if (en[0].isIntersecting) { send({ type: 'uf-resume' }); start(); } else { send({ type: 'uf-pause' }); stop(); }
+          }, { threshold: 0.05 }).observe(document.querySelector('.hero'));
+        } else { start(); }
+      })();
+    </script>
   </section>
 
   <!-- Trust Strip -->
@@ -618,7 +620,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261112a"></script>
+  <script src="script.js?v=20261112c"></script>
   <script defer data-domain="underflow.music" src="https://plausible.io/js/script.js"></script>
 </body>
 </html>
