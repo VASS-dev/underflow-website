@@ -85,3 +85,18 @@
 @media (max-width: 860px) {
   .feat-chipgroup-name { min-width: 0; width: 100%; }
 }
+
+/* sticky download bar (growth.js) */
+.dl-bar {
+  position: fixed; left: 50%; bottom: 16px; z-index: 40; display: flex; align-items: center; gap: 16px;
+  max-width: min(720px, calc(100vw - 32px)); padding: 10px 12px 10px 20px; border-radius: 14px;
+  background: rgba(18, 18, 26, 0.94); border: 1px solid var(--border); backdrop-filter: blur(10px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5); transform: translate(-50%, 140%); opacity: 0; pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.dl-bar.is-on { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
+.dl-bar p { margin: 0; font-size: 14px; line-height: 1.4; color: var(--text-muted); }
+.dl-bar .btn { white-space: nowrap; }
+.dl-bar-close { background: none; border: 0; color: var(--text-faint); font-size: 22px; line-height: 1; cursor: pointer; padding: 4px 8px; }
+.dl-bar-close:hover { color: var(--text); }
+@media (max-width: 600px) { .dl-bar { flex-wrap: wrap; gap: 8px 12px; padding: 12px 14px; } .dl-bar p { flex: 1 1 100%; } }

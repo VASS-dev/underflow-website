@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underflow share kit</title>
+  <meta name="description" content="Ready-to-post texts and videos for sharing Underflow.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://underflow.music/share/">
+  <meta property="og:title" content="Underflow share kit">
+  <meta property="og:description" content="Ready-to-post texts and videos for sharing Underflow.">
+  <meta property="og:image" content="https://underflow.music/og-image.png">
+  <meta property="og:url" content="https://underflow.music/share/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=20261112j">
+  <link rel="stylesheet" href="/guides/guide.css?v=20261112j">
+  <link rel="stylesheet" href="/dj/dj.css?v=20261113a">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo"><img src="/logo-white.png" alt="Underflow" class="logo-icon">Underflow</a>
+      <div class="nav-right">
+        <a href="/guides/" class="guide-nav-link">Guides</a>
+        <a href="/#download" class="nav-cta">Download</a>
+      </div>
+    </div>
+  </nav>
+  <main class="dj-page"><div class="container"><div class="kit">
+    <h1>Share kit</h1>
+    <p class="kit-lead">Everything for telling people about Underflow: texts with tracked links (the part after <code>utm_source=</code> shows in our analytics, so we see which post works), and the clips to attach. Videos are silent loops of the real app.</p>
+    <h2>Texts to copy</h2>
+    <div class="kit-post"><header><span>Reddit (r/DJs, r/Beatmatch, r/bandcamp): English</span><button type="button" class="kit-copy">Copy</button></header><pre>We built a free app that searches Bandcamp, Juno, Beatport, Decks.de and Discogs at once (open beta)
+
+Digging used to mean ten tabs for me, so we made Underflow. Type up to 10 artists and get their tracks from five stores in one list. It also has related artists, similar tracks, a built-in player and mini player, tags, a buy list, and OWNED badges for tracks you already have.
+
+Windows and macOS, free during the open beta. Honest feedback from other diggers is exactly what we are after.
+
+https://underflow.music/dj/?utm_source=reddit</pre></div>
+    <div class="kit-post"><header><span>Instagram / X caption: English</span><button type="button" class="kit-copy">Copy</button></header><pre>Ten tabs to dig for music? Not anymore. Underflow searches Bandcamp, Juno, Beatport, Decks.de and Discogs in one go. Free during the open beta (Windows and macOS).
+
+https://underflow.music/dj/?utm_source=social</pre></div>
+    <div class="kit-post"><header><span>Telegram / VK: русский</span><button type="button" class="kit-copy">Copy</button></header><pre>Сделали бесплатное приложение для диджеев и коллекционеров: Underflow ищет сразу по Bandcamp, Juno, Beatport, Decks.de и Discogs. Вводите до 10 артистов и получаете треки одним списком. Есть связанные артисты, похожие треки, плеер, теги, список покупок и значок OWNED для того, что у вас уже есть.
+
+Windows и macOS. Бесплатно на время открытой беты. Буду рад честным отзывам.
+
+https://underflow.music/ru/dj/?utm_source=telegram</pre></div>
+    <div class="kit-post"><header><span>Личное сообщение коллеге: русский</span><button type="button" class="kit-copy">Copy</button></header><pre>Слушай, мы запустили приложение для поиска музыки: один поиск по Bandcamp, Juno, Beatport, Decks.de и Discogs. Бесплатно в бете, глянь и скажи, что думаешь:
+https://underflow.music/ru/dj/?utm_source=dm</pre></div>
+    <h2>Videos and images</h2>
+    <ul class="kit-assets">
+    <li><a href="/og-image.png" download>Social preview image</a><span>1200x630 PNG</span></li>
+    <li><a href="/screens/gallery-motion.webm" download>Mass search, full tour (video)</a><span>960x528, 5 MB</span></li>
+    <li><a href="/screens/features/feat-stores-hd.webm" download>Five stores in one list</a><span>1280 video</span></li>
+    <li><a href="/screens/features/feat-related-hd.webm" download>Related artists</a><span>1280 video</span></li>
+    <li><a href="/screens/features/feat-player-hd.webm" download>Player and spectrum</a><span>1280 video</span></li>
+    <li><a href="/screens/features/feat-mini-hd.webm" download>Mini player</a><span>1280 video</span></li>
+    <li><a href="/screens/features/feat-buylist-hd.webm" download>Buy list</a><span>1280 video</span></li>
+    <li><a href="/screens/features/feat-tags-hd.webm" download>Tags</a><span>1280 video</span></li>
+    </ul>
+    <h2>What works</h2>
+    <ul class="kit-tips">
+      <li>Post as a person who digs for music, not as an ad. Say what annoyed you and what changed.</li>
+      <li>Attach one short clip, not all of them. Mass search or Five stores is the clearest.</li>
+      <li>Answer every comment in the first hours. Ask what people would want next.</li>
+      <li>Read each community's rules before posting; several forbid self-promotion except in set threads.</li>
+      <li>Replace <code>utm_source=</code> with the place you post, for example <code>utm_source=beatport-forum</code>.</li>
+    </ul>
+  </div></div></main>
+  <script>
+    document.querySelectorAll('.kit-copy').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var pre = b.closest('.kit-post').querySelector('pre');
+        (navigator.clipboard ? navigator.clipboard.writeText(pre.textContent) : Promise.reject()).then(function () {
+          b.textContent = 'Copied'; b.classList.add('ok'); setTimeout(function () { b.textContent = 'Copy'; b.classList.remove('ok'); }, 1600);
+        }).catch(function () { var r = document.createRange(); r.selectNodeContents(pre); var s = getSelection(); s.removeAllRanges(); s.addRange(r); });
+      });
+    });
+  </script>
+  <script defer data-domain="underflow.music" src="https://plausible.io/js/script.js"></script>
+  <script>(function(){var n=document.querySelector('.nav');if(!n)return;function f(){n.classList.toggle('scrolled',window.scrollY>20)}window.addEventListener('scroll',f,{passive:true});f()})();</script>
+  <script defer src="/growth.js?v=20261112j"></script>
+</body>
+</html>

@@ -22,7 +22,9 @@ function track(name, props) {
 // ---- i18n ----
 
 const DEFAULT_LANG = navigator.language.startsWith('ru') ? 'ru' : 'en';
-let currentLang = localStorage.getItem('uf-lang') || DEFAULT_LANG;
+// A page that ships its content pre-translated (e.g. /ru/) pins the language via <html data-lang-fixed>.
+const FIXED_LANG = document.documentElement.dataset.langFixed || null;
+let currentLang = FIXED_LANG || localStorage.getItem('uf-lang') || DEFAULT_LANG;
 let translations = {};
 
 async function loadTranslations(lang) {
@@ -33,7 +35,7 @@ async function loadTranslations(lang) {
     // around an English card. cache: 'no-cache' revalidates against the
     // ETag on every load: a 304 when nothing changed, fresh copy when it
     // did. These files are a few KB, so the round trip costs nothing.
-    const res = await fetch(`i18n/${lang}.json`, { cache: 'no-cache' });
+    const res = await fetch(`/i18n/${lang}.json`, { cache: 'no-cache' });
     if (!res.ok) return;
     translations = await res.json();
 
@@ -63,7 +65,7 @@ async function loadTranslations(lang) {
     });
 
     document.documentElement.lang = lang;
-    document.querySelectorAll('[data-localized-href]').forEach(a => a.setAttribute('href', (lang === 'ru' ? 'ru/' : '') + a.dataset.localizedHref));
+    document.querySelectorAll('[data-localized-href]').forEach(a => a.setAttribute('href', (lang === 'ru' ? '/ru/' : '/') + a.dataset.localizedHref));
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
@@ -77,6 +79,7 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     currentLang = btn.dataset.lang;
     localStorage.setItem('uf-lang', currentLang);
     track('Language Switch', { lang: currentLang });
+    if (FIXED_LANG && currentLang !== FIXED_LANG) { window.location.href = '/'; return; }
     loadTranslations(currentLang);
     // Keep currency in sync with visible language unless user chose a currency tab manually
     if (localStorage.getItem(CURRENCY_MANUAL_KEY) !== '1') {
