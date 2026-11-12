@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как выгрузить список треков в CSV и открыть его в Excel — Underflow</title>
+  <meta name="description" content="Превратите сессию диггинга в таблицу: что должно быть в выгрузке треков, как отфильтровать перед экспортом и что делать, если Excel сваливает всё в один столбец.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://underflow.music/ru/guides/export-dj-tracks-to-csv.html">
+  <meta property="og:title" content="Как выгрузить список треков в CSV и открыть его в Excel — Underflow">
+  <meta property="og:description" content="Превратите сессию диггинга в таблицу: что должно быть в выгрузке треков, как отфильтровать перед экспортом и что делать, если Excel сваливает всё в один столбец.">
+  <meta property="og:image" content="https://underflow.music/og-image.png">
+  <meta property="og:url" content="https://underflow.music/ru/guides/export-dj-tracks-to-csv.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en" href="https://underflow.music/guides/export-dj-tracks-to-csv.html">
+  <link rel="alternate" hreflang="ru" href="https://underflow.music/ru/guides/export-dj-tracks-to-csv.html">
+  <link rel="alternate" hreflang="x-default" href="https://underflow.music/guides/export-dj-tracks-to-csv.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Как выгрузить список треков в CSV и открыть его в Excel",
+  "description": "Превратите сессию диггинга в таблицу: что должно быть в выгрузке треков, как отфильтровать перед экспортом и что делать, если Excel сваливает всё в один столбец.",
+  "inLanguage": "ru",
+  "datePublished": "2026-11-13",
+  "dateModified": "2026-11-13",
+  "mainEntityOfPage": "https://underflow.music/ru/guides/export-dj-tracks-to-csv.html",
+  "author": {
+    "@type": "Organization",
+    "name": "Underflow",
+    "url": "https://underflow.music"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Underflow",
+    "url": "https://underflow.music",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://underflow.music/logo-white.png"
+    }
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Underflow",
+      "item": "https://underflow.music/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Гайды",
+      "item": "https://underflow.music/ru/guides/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Как выгрузить список треков в CSV и открыть его в Excel",
+      "item": "https://underflow.music/ru/guides/export-dj-tracks-to-csv.html"
+    }
+  ]
+}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=20261112j">
+  <link rel="stylesheet" href="/guides/guide.css?v=20261112j">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo"><img src="/logo-white.png" alt="Underflow" class="logo-icon">Underflow</a>
+      <div class="nav-right">
+        <a href="/guides/export-dj-tracks-to-csv.html" class="guide-lang" hreflang="en" lang="en">EN</a>
+        <a href="/ru/guides/" class="guide-nav-link">Гайды</a>
+        <a href="/#download" class="nav-cta">Скачать</a>
+      </div>
+    </div>
+  </nav>
+  <section class="legal-page guide">
+    <div class="container" style="max-width: 760px;">
+      <p class="guide-crumbs"><a href="/ru/guides/">Гайды</a> / Как выгрузить список треков в CSV и открыть его в Excel</p>
+      <h1>Как выгрузить список треков в CSV и открыть его в Excel</h1>
+      <p class="guide-lead">Список треков, который можно сортировать, фильтровать и отправлять, лучше груды вкладок браузера. CSV-файл — самый простой способ вынести такой список из любого приложения.</p>
+
+      <h2>1. Сначала фильтр, потом экспорт</h2>
+      <p>Выгружайте то, что хотите сохранить, а не всю библиотеку. Сузьте список по магазину, диапазону дат или тегам, чтобы в файле был один круг покупок или одна идея для сета.</p>
+
+      <h2>2. Знайте, что должно быть в файле</h2>
+      <p>Полезные столбцы: исполнитель, название, лейбл, дата релиза, когда вы добавили трек и на каком он этапе: вишлист, список покупок, скачан, прослушан. В Underflow кнопка экспорта на панели сохраняет именно эти столбцы для треков, которые сейчас в списке.</p>
+
+      <h2>3. Откройте в Excel без кракозябр</h2>
+      <p>Файл Underflow в UTF-8 с точкой с запятой между столбцами, и Excel открывает его правильно во многих региональных настройках. Если всё попало в один столбец, выберите Данные, Из текста/CSV и укажите разделитель «точка с запятой».</p>
+
+      <h2>4. Используйте таблицу там, где приложения слабы</h2>
+      <p>Отсортируйте по лейблу, чтобы планировать покупку лейбл за лейблом, отфильтруйте список покупок по дате или отправьте список другу или в магазин пластинок. Таблица также работает как резервная копия ваших находок.</p>
+
+      <h2>5. Выгружайте заново, когда список меняется</h2>
+      <p>Относитесь к файлу как к снимку. После новой сессии диггинга отфильтруйте и выгрузите снова, а не правьте старый файл вручную.</p>
+
+      <div class="guide-callout">
+        <h2>Ищите по всем магазинам сразу</h2>
+        <p>Underflow выгружает треки из вашего списка в CSV-файл с лейблом, датой релиза и отметками вишлиста и списка покупок. Бесплатно на время открытой беты.</p>
+        <p><a class="btn btn-primary guide-cta" href="/index.html#download">Скачать Underflow</a> &nbsp; <a href="/explore.html">Попробовать карту артистов в браузере</a></p>
+      </div>
+      <p class="guide-updated">Обновлено: 13 ноября 2026.</p>
+      <h2>Ещё гайды</h2>
+      <ul>
+        <li><a href="/ru/guides/crate-digging-workflow.html">Повторяемый процесс цифрового диггинга для диджеев</a></li>
+        <li><a href="/ru/guides/bandcamp-wishlist-organize.html">Вишлист Bandcamp: как навести порядок и превратить его в список покупок</a></li>
+        <li><a href="/ru/guides/avoid-buying-duplicate-tracks.html">Как диджею не покупать один и тот же трек дважды</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <a href="/" class="footer-logo"><img src="/logo-white.png" alt="Underflow" class="logo-icon">Underflow</a>
+        <div class="footer-links">
+          <a href="/ru/features/">Возможности</a>
+          <a href="/#faq">Вопросы</a>
+          <a href="/pricing.html">Цены</a>
+          <a href="/ru/guides/">Гайды</a>
+          <a href="mailto:hello@underflow.music">Контакты</a>
+          <a href="https://t.me/underflow_app" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <div class="footer-legal-links">
+          <a href="/terms.html">Условия</a>
+          <a href="/privacy.html">Конфиденциальность</a>
+        </div>
+        <div class="footer-entity">
+          <a href="mailto:hello@underflow.music" class="footer-email-link">hello@underflow.music</a>
+        </div>
+      </div>
+      <div class="footer-copy">&copy; Underflow 2026</div>
+    </div>
+  </footer>
+
+  <script>
+    window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };
+    document.querySelectorAll('a.guide-cta, a.nav-cta').forEach(function (a) {
+      a.addEventListener('click', function () {
+        try { window.plausible('Download CTA', { props: { location: 'guide' } }); } catch (e) {}
+      });
+    });
+  </script>
+  <script defer data-domain="underflow.music" src="https://plausible.io/js/script.js"></script>
+  <script>(function(){var n=document.querySelector('.nav');if(!n)return;function f(){n.classList.toggle('scrolled',window.scrollY>20)}window.addEventListener('scroll',f,{passive:true});f()})();</script>
+  <script defer src="/growth.js?v=20261112j"></script>
+</body>
+</html>

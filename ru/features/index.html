@@ -177,6 +177,14 @@
       "thumbnailUrl": "https://underflow.music/screens/features/feat-buylist-poster.webp",
       "contentUrl": "https://underflow.music/screens/features/feat-buylist.webm",
       "uploadDate": "2026-11-12"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Выгрузите треки в таблицу",
+      "description": "Нажмите кнопку экспорта на панели и сохраните список в CSV-файл. Сначала отфильтруйте по магазину, дате или тегам, затем выгружайте ровно то, что видите.",
+      "thumbnailUrl": "https://underflow.music/screens/features/feat-export-poster.webp?v=20261113b",
+      "contentUrl": "https://underflow.music/screens/features/feat-export.webm?v=20261113b",
+      "uploadDate": "2026-11-13"
     }
   ]
 }
@@ -231,6 +239,7 @@
           <div class="feat-chipgroup"><span class="feat-chipgroup-name">Покупки</span><ul class="feat-chips">
             <li><a href="#owned">Уже есть</a></li>
             <li><a href="#buylist">Список покупок</a></li>
+            <li><a href="#export">Экспорт в CSV</a></li>
           </ul></div>
         </div>
       </div>
@@ -520,12 +529,31 @@
         </div>
       </div>
     </section>
+    <section class="feat feat--flip" id="export">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">16 &middot; Покупки · Экспорт</p>
+          <h2>Выгрузите треки в таблицу</h2>
+          <p>Нажмите кнопку экспорта на панели и сохраните список в CSV-файл. Сначала отфильтруйте по магазину, дате или тегам, затем выгружайте ровно то, что видите.</p>
+          <ul>
+            <li>Столбцы: исполнитель, исполнители трека, название, лейбл, дата релиза, дата добавления, отметки вишлиста и списка покупок с датами, скачан ли трек, дата прослушивания и превью.</li>
+            <li>Файл в UTF-8 с разделителем «;», поэтому Excel открывает его с правильными символами.</li>
+            <li>После сохранения приложение предлагает открыть файл.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-export-poster.webp?v=20261113b" width="880" height="480" aria-label="Запись экрана: Выгрузите треки в таблицу" data-hd="/screens/features/feat-export-hd.webm?v=20261113b">
+            <source src="/screens/features/feat-export.webm?v=20261113b" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Увеличить видео" title="Увеличить видео"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
     <section class="feat-more-sec">
       <div class="container">
         <h2>И не только</h2>
         <ul class="feat-cards">
           <li><h3>Горячие клавиши</h3><p>Пауза, предыдущий и следующий, громкость, поиск, панели, избранное и настройки с клавиатуры.</p></li>
-          <li><h3>Экспорт в CSV</h3><p>Экспорт видимых или выбранных треков в CSV с лейблом, датой релиза и пометками избранного и списка покупок.</p></li>
           <li><h3>Импорт и экспорт артистов</h3><p>Загрузите список артистов из текстового файла и выгрузите артистов и лейблы в файлы.</p></li>
           <li><h3>Поиск по лейблам</h3><p>Выберите лейблы и найдите все треки на них, так же как ищете артистов.</p></li>
           <li><h3>Локальная библиотека</h3><p>Добавьте папки с музыкой и просканируйте их. Совпавшие файлы играют вместо превью и получают метку OWNED.</p></li>

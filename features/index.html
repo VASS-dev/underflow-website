@@ -177,6 +177,14 @@
       "thumbnailUrl": "https://underflow.music/screens/features/feat-buylist-poster.webp",
       "contentUrl": "https://underflow.music/screens/features/feat-buylist.webm",
       "uploadDate": "2026-11-12"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Take your tracks to a spreadsheet",
+      "description": "Press the export button in the toolbar and save the list as a CSV file. Filter first by store, date or tags, then export exactly what you see.",
+      "thumbnailUrl": "https://underflow.music/screens/features/feat-export-poster.webp?v=20261113b",
+      "contentUrl": "https://underflow.music/screens/features/feat-export.webm?v=20261113b",
+      "uploadDate": "2026-11-13"
     }
   ]
 }
@@ -231,6 +239,7 @@
           <div class="feat-chipgroup"><span class="feat-chipgroup-name">Buy</span><ul class="feat-chips">
             <li><a href="#owned">Already owned</a></li>
             <li><a href="#buylist">Buy list</a></li>
+            <li><a href="#export">Export to CSV</a></li>
           </ul></div>
         </div>
       </div>
@@ -520,12 +529,31 @@
         </div>
       </div>
     </section>
+    <section class="feat feat--flip" id="export">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <p class="feat-eyebrow">16 &middot; Buy · Export</p>
+          <h2>Take your tracks to a spreadsheet</h2>
+          <p>Press the export button in the toolbar and save the list as a CSV file. Filter first by store, date or tags, then export exactly what you see.</p>
+          <ul>
+            <li>Columns: artist, track artists, title, label, release date, added date, wishlist and buy list flags with their dates, downloaded, listened date and preview.</li>
+            <li>The file is semicolon-separated UTF-8, so Excel opens it with the right characters.</li>
+            <li>After saving, the app offers to open the file.</li>
+          </ul>
+        </div>
+        <div class="feat-media">
+          <video muted loop playsinline preload="none" poster="/screens/features/feat-export-poster.webp?v=20261113b" width="880" height="480" aria-label="Screen recording: Take your tracks to a spreadsheet" data-hd="/screens/features/feat-export-hd.webm?v=20261113b">
+            <source src="/screens/features/feat-export.webm?v=20261113b" type="video/webm">
+          </video>
+          <button type="button" class="feat-zoom" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+    </section>
     <section class="feat-more-sec">
       <div class="container">
         <h2>And more</h2>
         <ul class="feat-cards">
           <li><h3>Keyboard shortcuts</h3><p>Play and pause, previous and next, volume, search, panels, favorites and settings, all from the keyboard.</p></li>
-          <li><h3>Export to CSV</h3><p>Export the visible or selected tracks to a CSV file, with label, release date and wishlist and buy list flags.</p></li>
           <li><h3>Import and export artists</h3><p>Load a list of artists from a text file, and export your artists and labels to files.</p></li>
           <li><h3>Label search</h3><p>Select labels and search every track on them, the same way you search artists.</p></li>
           <li><h3>Local library</h3><p>Add folders with your music and scan them. Matched files play instead of the preview and get the OWNED badge.</p></li>
