@@ -11,6 +11,9 @@
 .guide strong { color: var(--text); }
 .guide-nav-link { color: var(--text-muted); font-size: 14px; margin-right: 18px; }
 .guide-nav-link:hover { color: var(--text); }
+.guide-lang { color: var(--text-muted); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; border: 1px solid var(--border); border-radius: 6px; padding: 3px 8px; margin-right: 14px; }
+.guide-lang:hover { color: var(--text); border-color: var(--border-hover); }
+.guide-note { font-size: 14px !important; color: var(--text-muted) !important; margin-top: 8px; }
 .guide-callout { margin: 48px 0 8px; padding: 28px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; }
 .guide-callout h2 { margin-top: 0; }
 .guide-callout .btn-primary { color: #0a0a0f; opacity: 1; }
