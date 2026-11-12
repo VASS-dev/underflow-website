@@ -31,7 +31,7 @@
   border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: #000;
   box-shadow: 0 30px 80px -30px rgba(224, 85, 136, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.02);
 }
-.feat-media video { display: block; width: 100%; height: auto; aspect-ratio: 880 / 474; background: #000; }
+.feat-media video { display: block; width: 100%; height: auto; background: #000; }
 
 .feat-end { padding: 24px 0 40px; border-top: 1px solid var(--border); }
 .feat-end .guide-note { margin: 28px 0 0; }
