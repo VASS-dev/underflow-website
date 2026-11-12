@@ -63,6 +63,7 @@ async function loadTranslations(lang) {
     });
 
     document.documentElement.lang = lang;
+    document.querySelectorAll('[data-localized-href]').forEach(a => a.setAttribute('href', (lang === 'ru' ? 'ru/' : '') + a.dataset.localizedHref));
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
