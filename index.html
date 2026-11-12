@@ -103,7 +103,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261112g">
+  <link rel="stylesheet" href="styles.css?v=20261112i">
 </head>
 <body>
 
@@ -119,9 +119,10 @@
     <div class="nav-inner">
       <a href="index.html" class="logo"><img src="logo-white.png" alt="Underflow" class="logo-icon">Underflow</a>
       <div class="nav-links">
-        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="features/" data-localized-href="features/" data-i18n="nav.features">Features</a>
         <a href="pricing.html" data-i18n="footer.pricing">Pricing</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="guides/" data-localized-href="guides/" data-i18n="nav.guides">Guides</a>
       </div>
       <div class="nav-right">
         <div class="lang-switch">
@@ -147,7 +148,7 @@
       <p class="hero-sub" data-i18n="hero.sub">One search instead of ten tabs. Type an artist and get results from Bandcamp, Juno, Beatport, Decks.de and Discogs — digital and vinyl — then listen, tag and save, all in one app.</p>
       <div class="hero-actions">
         <a href="#download" class="btn btn-primary" data-i18n="hero.btn_download">Download Free</a>
-        <a href="#features" class="btn btn-ghost" data-i18n="hero.btn_features">See Features</a>
+        <a href="features/" data-localized-href="features/" class="btn btn-ghost btn-watch"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span data-i18n="hero.btn_features">Watch it in action</span></a>
       </div>
       <a href="explore.html" class="hero-graph-cta hero-explore-link" data-i18n="hero.explore_cta">Explore artist connections &rarr;</a>
       <div class="hero-platforms">
@@ -327,7 +328,7 @@
 
       <div class="gallery-cta">
         <a href="#download" class="btn btn-primary" data-i18n="gallery.cta">Download Free</a>
-        <a href="features/" class="gallery-more" data-i18n="gallery.more">See every feature in action &rarr;</a>
+        <a href="features/" data-localized-href="features/" class="gallery-more" data-i18n="gallery.more">See every feature in action &rarr;</a>
       </div>
     </div>
   </section>
@@ -394,57 +395,7 @@
           <p data-i18n="features.card6_desc">Your collection lives on your machine in a SQLite database — searchable, exportable to CSV, and yours. No cloud lock-in.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- More Features -->
-  <section class="section section-dark" id="more-features">
-    <div class="container">
-      <h2 class="section-title" data-i18n="more.title">And more...</h2>
-      <div class="more-grid">
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.5-4.5"/></svg></span>
-          <div>
-            <strong data-i18n="more.batch_title">Batch Search</strong>
-            <p data-i18n="more.batch_desc">Search up to 10 artists at once</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><path d="M1 14h6M9 8h6M17 16h6"/></svg></span>
-          <div>
-            <strong data-i18n="more.filters_title">Advanced Filters</strong>
-            <p data-i18n="more.filters_desc">Date range, source, tags, preview, AND/OR logic</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h1M10 10h1M14 10h1M18 10h1M8 14h8"/></svg></span>
-          <div>
-            <strong data-i18n="more.keyboard_title">Keyboard Shortcuts</strong>
-            <p data-i18n="more.keyboard_desc">20+ hotkeys for full keyboard control</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14,2 14,8 20,8"/></svg></span>
-          <div>
-            <strong data-i18n="more.export_title">CSV Export</strong>
-            <p data-i18n="more.export_desc">Export your entire collection with metadata</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span>
-          <div>
-            <strong data-i18n="more.import_title">Artist Import</strong>
-            <p data-i18n="more.import_desc">Bulk import artists from text files</p>
-          </div>
-        </div>
-        <div class="more-item">
-          <span class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 17 12 22l10-5"/><path d="M2 12l10 5 10-5"/><path d="M12 2 2 7l10 5 10-5L12 2Z"/></svg></span>
-          <div>
-            <strong data-i18n="more.multidb_title">Multi-Database</strong>
-            <p data-i18n="more.multidb_desc">Switch between multiple collections</p>
-          </div>
-        </div>
-      </div>
+      <div class="features-more"><a href="features/" data-localized-href="features/" class="gallery-more" data-i18n="gallery.more">See every feature in action &rarr;</a></div>
     </div>
   </section>
 
@@ -556,7 +507,7 @@
   <section class="section section-dark" id="download">
     <div class="container">
       <h2 class="section-title" data-i18n="download.title">Download Underflow</h2>
-      <p class="section-sub" data-i18n="download.sub">Free to download. Available for Windows and macOS.</p>
+      <p class="section-sub" data-i18n="download.sub">Free during the open beta; terms may change after it. Windows and macOS.</p>
       <div class="download-card">
         <div class="download-version" id="dl-version">Loading...</div>
         <div class="download-buttons">

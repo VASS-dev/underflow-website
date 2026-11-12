@@ -7,6 +7,7 @@
   "nav": {
     "features": "Features",
     "faq": "FAQ",
+    "guides": "Guides",
     "download": "Download"
   },
   "hero": {
@@ -15,7 +16,7 @@
     "title_2": "Find more.",
     "sub": "One search instead of ten tabs. Type an artist and get results from Bandcamp, Juno, Beatport, Decks.de and Discogs — digital and vinyl — then listen, tag and save, all in one app.",
     "btn_download": "Download Free",
-    "btn_features": "See Features",
+    "btn_features": "Watch it in action",
     "screenshot_placeholder": "App screenshot coming soon",
     "explore_cta": "Explore artist connections →"
   },
@@ -117,7 +118,7 @@
   },
   "download": {
     "title": "Download Underflow",
-    "sub": "Free to download. Available for Windows and macOS.",
+    "sub": "Free during the open beta; terms may change after it. Windows and macOS.",
     "win_label": "Download for Windows",
     "mac_label": "Download for Mac",
     "notify_text": "Not ready to download? Get notified of updates.",
