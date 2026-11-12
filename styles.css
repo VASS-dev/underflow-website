@@ -1553,6 +1553,11 @@ a { color: inherit; text-decoration: none; }
 .hero--graph .hero-sub { margin-left: 0; margin-right: 0; max-width: 520px; }
 .hero--graph .hero-actions { justify-content: flex-start; margin-bottom: 20px; }
 .hero--graph .hero-platforms { justify-content: flex-start; margin-top: 36px; }
+.hero--graph .hero-title { font-size: clamp(40px, 5.2vw, 68px); }
+@media (min-width: 861px) {
+  .hero-copy { max-width: 680px; }
+  .hero--graph .hero-title span { white-space: nowrap; }
+}
 .hero-explore-link { display: inline-block; font-size: 15px; color: var(--accent); }
 .hero-explore-link:hover { opacity: 0.8; }
 
