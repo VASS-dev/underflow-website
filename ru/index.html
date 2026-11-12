@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html data-lang-fixed="ru" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Underflow — поиск музыки для диджеев и коллекционеров</title>
+<meta content="Ищите по Bandcamp, Beatport, Juno, Decks.de и Discogs одновременно. Слушайте результаты, ставьте теги и ведите список покупок в одном бесплатном приложении для диджеев." name="description"/>
+<!-- Open Graph -->
+<meta content="Underflow — поиск по 5 музыкальным площадкам сразу" property="og:title"/>
+<meta content="Один поиск вместо десяти вкладок. Bandcamp, Juno, Beatport, Decks.de, Discogs — ищите, слушайте, ставьте теги и покупайте в одном приложении." property="og:description"/>
+<meta content="https://underflow.music/og-image.png" property="og:image"/>
+<meta content="https://underflow.music/ru/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Underflow — поиск музыки для диджеев и коллекционеров" name="twitter:title"/>
+<meta content="Один поиск вместо десяти вкладок. Пять площадок, одно приложение для диджеев и коллекционеров." name="twitter:description"/>
+<meta content="https://underflow.music/og-image.png" name="twitter:image"/>
+<!-- SEO -->
+<meta content="index, follow" name="robots"/>
+<link href="https://underflow.music/ru/" rel="canonical"/><link href="https://underflow.music/" hreflang="en" rel="alternate"/><link href="https://underflow.music/ru/" hreflang="ru" rel="alternate"/><link href="https://underflow.music/" hreflang="x-default" rel="alternate"/>
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Underflow",
+  "operatingSystem": "Windows 10, Windows 11, macOS",
+  "applicationCategory": "MusicApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Music discovery tool for DJs and record collectors. Searches Bandcamp, Juno Records, Beatport, Decks.de and Discogs simultaneously.",
+  "inLanguage": "ru"
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Underflow бесплатный?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Во время открытой беты Underflow бесплатен, пока мы собираем отзывы, действуют дневные лимиты."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Underflow продаёт музыку?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. Underflow — это инструмент поиска и обнаружения. Сервис не хранит и не распространяет музыку. Аудиопревью воспроизводятся напрямую с серверов площадок (Bandcamp, Juno, Beatport, Decks.de, Discogs). Когда находишь нужный трек — переходишь к покупке прямо на соответствующей платформе."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как работает автопоиск исполнителей?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Алгоритм анализирует метаданные треков и находит ремиксеров, коллабораторов и featured-исполнителей. Ты получаешь визуальную сеть связей с цветными бэджами: R (ремиксер), F (featuring), C (коллаборация), O (оригинал)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "По каким платформам идёт поиск?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bandcamp, Juno Records, Beatport, Decks.de и Discogs. Все пять ищутся одновременно с единым результатом."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Где хранятся мои данные?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Локально на твоём компьютере в SQLite базе. Теги, вишлисты и коллекция никуда не уходят. Поисковые запросы идут через наш сервер для скорости и совместимости."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие ОС поддерживаются?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Windows 10/11 (x64), macOS с процессорами Intel, и macOS с Apple Silicon (M1/M2/M3)."
+      }
+    }
+  ]
+}
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="/styles.css?v=20261112j" rel="stylesheet"/>
+</head>
+<body>
+<!-- Nav -->
+<nav class="nav">
+<div aria-labelledby="beta-banner-title" class="beta-banner-row" id="beta-banner" role="region">
+<div class="beta-banner-inner">
+<span class="beta-banner-badge" data-i18n="beta_banner.badge" id="beta-banner-title">Бета</span>
+<p class="beta-banner-msg" data-i18n="beta_banner.message" data-i18n-html=""><strong>Открытая бета:</strong> Underflow бесплатен, пока мы собираем отзывы. Действуют дневные лимиты.</p>
+<button aria-label="Скрыть плашку о бета-тесте" class="beta-banner-close" data-i18n-aria-label="beta_banner.aria_close" type="button">×</button>
+</div>
+</div>
+<div class="nav-inner">
+<a class="logo" href="/"><img alt="Underflow" class="logo-icon" src="/logo-white.png"/>Underflow</a>
+<div class="nav-links">
+<a data-i18n="nav.features" data-localized-href="features/" href="/ru/features/">Возможности</a>
+<a data-i18n="footer.pricing" href="/pricing.html">Цены</a>
+<a data-i18n="nav.faq" href="#faq">Вопросы</a>
+<a data-i18n="nav.guides" data-localized-href="guides/" href="/ru/guides/">Гайды</a>
+</div>
+<div class="nav-right">
+<div class="lang-switch">
+<button class="lang-btn active" data-lang="en">EN</button>
+<button class="lang-btn" data-lang="ru">RU</button>
+</div>
+<a class="nav-cta" data-i18n="nav.download" href="#download">Скачать</a>
+</div>
+</div>
+</nav>
+<!-- Hero -->
+<section class="hero hero--graph">
+<div aria-hidden="true" class="hero-bg">
+<iframe allowtransparency="true" class="hero-bg-iframe" frameborder="0" id="hero-graph" scrolling="no" tabindex="-1" title=""></iframe>
+<div class="hero-bg-fade"></div>
+</div>
+<div class="hero-glow"></div>
+<div class="container">
+<div class="hero-copy">
+<div class="badge" data-i18n="hero.badge">Поиск музыки для DJ и коллекционеров</div>
+<h1 class="hero-title"><span data-i18n="hero.title_1">Копай глубже.</span><br/><span class="accent" data-i18n="hero.title_2">Находи больше.</span></h1>
+<p class="hero-sub" data-i18n="hero.sub">Один поиск вместо десятка вкладок. Введи исполнителя — получи результаты из Bandcamp, Juno, Beatport, Decks.de и Discogs, цифру и винил, — а затем слушай, ставь теги и сохраняй в одном приложении.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" data-i18n="hero.btn_download" href="#download">Скачать бесплатно</a>
+<a class="btn btn-ghost btn-watch" data-localized-href="features/" href="/ru/features/"><svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16"><path d="M8 5.5v13l11-6.5z"></path></svg><span data-i18n="hero.btn_features">Смотреть в действии</span></a>
+</div>
+<a class="hero-graph-cta hero-explore-link" data-i18n="hero.explore_cta" href="/explore.html">Исследовать связи исполнителей →</a>
+<div class="hero-platforms">
+<span>Bandcamp</span>
+<span class="dot">·</span>
+<span>Juno Records</span>
+<span class="dot">·</span>
+<span>Beatport</span>
+<span class="dot">·</span>
+<span>Decks.de</span>
+<span class="dot">·</span>
+<span>Discogs</span>
+</div>
+</div>
+</div>
+<script>
+      (function () {
+        var frame = document.getElementById('hero-graph');
+        var local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+        var artists = local ? ['Rhadoo', 'Priku', 'Petre Inspirescu', 'Raresh'] : ['Octave','Enzo Leep','Ricardo Villalobos','Fedo','Herck','Nima Gorji','Silat Beksi','Traumer','Dubphone','wAFF','Andrey Djackonda','Sepp','CL-ljud','Guy From Downstairs','Janeret','Dubfound','Matheiu','Max Jacobson','Cap','Cosmin Horatiu','Alffie','Wyro','dOP','Nu Zau','Swoy','Patrick Weblin','Miroloja','Etzu Mahkayah','Nibaaldo','Constratti','Mene','rares','Pedro','Rominimal','Giuseppe Cennamo','Claudio PRC','Tripmastaz','SIT','Wareika','Daniel Broesecke','Timid Boy','Vera','Franco Cinelli','David Gtronic','Luis Bravo','Guti','Priku','Ray Mono','Yulia Niko','Cristi Cons','Los Suruba','Sade','Stiven Escarraga','Martinez','Mancini','DeWalta','Cesare vs Disorder','Meet','Neverdogs'];
+        var wide = window.innerWidth >= 860;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var i = Math.floor(Math.random() * artists.length);
+        frame.src = '/explore.html?embed=1&bg=1&cx=' + (wide ? '0.7' : '0.5') + '&cy=' + (wide ? '0.5' : '0.62') +
+          (local ? '&mock=1' : '') + '&artist=' + encodeURIComponent(artists[i]);
+        var timer = null, touched = false;
+        function send(m) { try { frame.contentWindow.postMessage(m, location.origin); } catch (e) { /* not ready */ } }
+        function next() { i = (i + 1) % artists.length; send({ type: 'uf-load', artist: artists[i] }); }
+        function start() { if (!reduce && !touched && !timer) timer = setInterval(next, 18000); }
+        function stop() { clearInterval(timer); timer = null; }
+        window.addEventListener('message', function (e) {
+          if (e.origin === location.origin && e.data && e.data.type === 'uf-interact') {
+            touched = true; stop();
+            setTimeout(function () { touched = false; start(); }, 60000);
+          }
+        });
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(function (en) {
+            if (en[0].isIntersecting) { send({ type: 'uf-resume' }); start(); } else { send({ type: 'uf-pause' }); stop(); }
+          }, { threshold: 0.05 }).observe(document.querySelector('.hero'));
+        } else { start(); }
+      })();
+    </script>
+</section>
+<!-- Trust Strip -->
+<div class="trust-strip">
+<div class="trust-item">
+<div class="trust-number">5</div>
+<div class="trust-label" data-i18n="trust.platforms">Платформ для поиска</div>
+</div>
+<div class="trust-item">
+<div class="trust-number">100x</div>
+<div class="trust-label" data-i18n="trust.faster">Быстрее ручного поиска*</div>
+</div>
+<div class="trust-item">
+<div class="trust-number" data-i18n="trust.tracks_number">1 000+</div>
+<div class="trust-label" data-i18n="trust.tracks_label">Треков за сессию поиска</div>
+</div>
+<div class="trust-item">
+<div class="trust-number" data-i18n="trust.free_number">Бесплатно</div>
+<div class="trust-label" data-i18n="trust.free_label">Для старта</div>
+</div>
+</div>
+<div class="trust-note" data-i18n="trust.note">* Приблизительное увеличение скорости и качества поиска относительно ручного</div>
+<!-- Product tour / app gallery -->
+<section class="section gallery" id="gallery">
+<div class="container gallery-container">
+<div class="gallery-head">
+<span class="gallery-eyebrow" data-i18n="gallery.eyebrow">Обзор продукта</span>
+<h2 class="section-title" data-i18n="gallery.title">Смотрите, как это работает</h2>
+<p class="section-sub" data-i18n="gallery.sub">Реальные экраны приложения, без макетов.</p>
+</div>
+<div aria-label="Экраны приложения" class="gallery-tabs" data-i18n-aria-label="gallery.tabs_label" role="tablist">
+<button aria-controls="gpanel-motion" aria-selected="true" class="gallery-tab" id="gtab-motion" role="tab" type="button"><b>1</b><span data-i18n="gallery.tab_motion">В движении</span></button>
+<button aria-controls="gpanel-mass" aria-selected="false" class="gallery-tab" id="gtab-mass" role="tab" tabindex="-1" type="button"><b>2</b><span data-i18n="gallery.tab_mass">Массовый поиск</span></button>
+<button aria-controls="gpanel-stores" aria-selected="false" class="gallery-tab" id="gtab-stores" role="tab" tabindex="-1" type="button"><b>3</b><span data-i18n="gallery.tab_stores">Пять магазинов</span></button>
+<button aria-controls="gpanel-related" aria-selected="false" class="gallery-tab" id="gtab-related" role="tab" tabindex="-1" type="button"><b>4</b><span data-i18n="gallery.tab_related">Кто кого ремиксовал</span></button>
+<button aria-controls="gpanel-labels" aria-selected="false" class="gallery-tab" id="gtab-labels" role="tab" tabindex="-1" type="button"><b>5</b><span data-i18n="gallery.tab_labels">Лейблы</span></button>
+<button aria-controls="gpanel-owned" aria-selected="false" class="gallery-tab" id="gtab-owned" role="tab" tabindex="-1" type="button"><b>6</b><span data-i18n="gallery.tab_owned">Уже куплено</span></button>
+<button aria-controls="gpanel-buylist" aria-selected="false" class="gallery-tab" id="gtab-buylist" role="tab" tabindex="-1" type="button"><b>7</b><span data-i18n="gallery.tab_buylist">Buy list</span></button>
+</div>
+<div class="gallery-stage">
+<div class="gallery-window">
+<div aria-hidden="true" class="gallery-chrome"><i></i><i></i><i></i><span>Underflow</span></div>
+<figure aria-labelledby="gtab-motion" class="gallery-panel" data-dwell="36500" id="gpanel-motion" role="tabpanel">
+<div class="gallery-shot gallery-shot--video">
+<video aria-label="Запись экрана Underflow: пустая база, четыре артиста добавлены по имени, массовый поиск, и 557 треков приходят в один список, который затем прокручивается" data-i18n-aria-label="gallery.alt_motion" height="518" loop="" muted="" playsinline="" poster="/screens/gallery-motion-poster.webp" preload="none" width="960">
+<source src="/screens/gallery-motion.webm?v=20261112h" type="video/webm"/>
+</video>
+</div>
+<figcaption class="gallery-caption">
+<h3 data-i18n="gallery.h_motion">Настоящая сессия</h3>
+<p data-i18n="gallery.d_motion">Начните с пустой базы: добавьте четырёх артистов, нажмите Mass search, и их 557 треков придут в один список. Повторные поиски быстрые, первый скан нового артиста идёт дольше.</p>
+</figcaption>
+</figure>
+<figure aria-labelledby="gtab-mass" class="gallery-panel" hidden="" id="gpanel-mass" role="tabpanel">
+<div class="gallery-shot">
+<img alt="Underflow после массового поиска: четыре артиста в списке слева, треки Rhadoo из Bandcamp, Beatport и Decks в одном списке, связанные артисты справа и играющий плеер" data-i18n-alt="gallery.alt_mass" decoding="async" height="1078" loading="lazy" src="/screens/gallery-mass.webp" width="2000"/>
+<div class="gallery-pin" style="left:4.2%;top:62.5%"><i>1</i><span data-i18n="gallery.p_mass1">Четыре артиста, один поиск</span></div>
+<div class="gallery-pin" style="left:34.5%;top:17.5%"><i>2</i><span data-i18n="gallery.p_mass2">Магазин, где найден каждый трек</span></div>
+<div class="gallery-pin gallery-pin--l" style="left:92.8%;top:12.0%"><i>3</i><span data-i18n="gallery.p_mass3">Связанные артисты, посчитанные по трекам</span></div>
+<button aria-label="Увеличить скриншот" class="gallery-zoom" data-i18n-aria-label="gallery.zoom" type="button"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path></svg></button>
+</div>
+<figcaption class="gallery-caption">
+<h3 data-i18n="gallery.h_mass">Ищите сразу много артистов</h3>
+<p data-i18n="gallery.d_mass">Отметьте несколько артистов и нажмите Mass search: их треки из Bandcamp, Beatport, Decks и других магазинов приходят в один список. Тестовый запуск на четырёх артистах вернул 59, 88, 130 и 58 треков.</p>
+</figcaption>
+</figure>
+<figure aria-labelledby="gtab-stores" class="gallery-panel" hidden="" id="gpanel-stores" role="tabpanel">
+<div class="gallery-shot">
+<img alt="Underflow с открытым меню магазинов: Bandcamp, Decks.de, Beatport, Juno Records, Discogs и Local" data-i18n-alt="gallery.alt_stores" decoding="async" height="1078" loading="lazy" src="/screens/gallery-stores.webp" width="2000"/>
+<div class="gallery-pin" style="left:64.2%;top:22.0%"><i>1</i><span data-i18n="gallery.p_stores1">Пять магазинов и ваши локальные файлы</span></div>
+<button aria-label="Увеличить скриншот" class="gallery-zoom" data-i18n-aria-label="gallery.zoom" type="button"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path></svg></button>
+</div>
+<figcaption class="gallery-caption">
+<h3 data-i18n="gallery.h_stores">Пять магазинов в одном списке</h3>
+<p data-i18n="gallery.d_stores">Bandcamp, Decks.de, Beatport, Juno Records и Discogs рядом. Значки показывают, где найден трек, а одно меню фильтрует по магазину, винилу или цифре.</p>
+</figcaption>
+</figure>
+<figure aria-labelledby="gtab-related" class="gallery-panel" hidden="" id="gpanel-related" role="tabpanel">
+<div class="gallery-shot">
+<img alt="Underflow с панелью связанных артистов, где рядом с каждым именем стоит буква типа связи, и играющим плеером" data-i18n-alt="gallery.alt_related" decoding="async" height="1078" loading="lazy" src="/screens/gallery-related.webp" width="2000"/>
+<div class="gallery-pin gallery-pin--l" style="left:92.0%;top:20.0%"><i>1</i><span data-i18n="gallery.p_related1">C коллаборатор · R ремиксер · F фит</span></div>
+<button aria-label="Увеличить скриншот" class="gallery-zoom" data-i18n-aria-label="gallery.zoom" type="button"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path></svg></button>
+</div>
+<figcaption class="gallery-caption">
+<h3 data-i18n="gallery.h_related">Кто кого ремиксовал</h3>
+<p data-i18n="gallery.d_related">Связанные артисты с типом связи рядом с именем, посчитанные по самим трекам. Клик по имени, и вы идёте по сцене.</p>
+</figcaption>
+</figure>
+<figure aria-labelledby="gtab-labels" class="gallery-panel" hidden="" id="gpanel-labels" role="tabpanel">
+<div class="gallery-shot">
+<img alt="Underflow с открытой вкладкой «Лейблы» рядом с треками выбранного лейбла" data-i18n-alt="gallery.alt_labels" decoding="async" height="1078" loading="lazy" src="/screens/gallery-labels.webp" width="2000"/>
+<div class="gallery-pin" style="left:10.2%;top:7.4%"><i>1</i><span data-i18n="gallery.p_labels1">Листайте и по лейблам</span></div>
+<button aria-label="Увеличить скриншот" class="gallery-zoom" data-i18n-aria-label="gallery.zoom" type="button"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path></svg></button>
+</div>
+<figcaption class="gallery-caption">
+<h3 data-i18n="gallery.h_labels">Лейблы, а не только артисты</h3>
+<p data-i18n="gallery.d_labels">Листайте и по лейблам: любимые лейблы и их релизы в одном списке рядом с артистами.</p>
+</figcaption>
+</figure>
+<figure aria-labelledby="gtab-owned" class="gallery-panel" hidden="" id="gpanel-owned" role="tabpanel">
+<div class="gallery-shot">
+<img alt="Избранные треки в Underflow с плашками OWNED, где указан формат файла, например WAV или AIFF" data-i18n-alt="gallery.alt_owned" decoding="async" height="1078" loading="lazy" src="/screens/gallery-owned.webp" width="2000"/>
+<div class="gallery-pin gallery-pin--up" style="left:39.2%;top:38.4%"><i>1</i><span data-i18n="gallery.p_owned1">OWNED с форматом файла</span></div>
+<button aria-label="Увеличить скриншот" class="gallery-zoom" data-i18n-aria-label="gallery.zoom" type="button"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path></svg></button>
+</div>
+<figcaption class="gallery-caption">
+<h3 data-i18n="gallery.h_owned">Знайте, что у вас уже есть</h3>
+<p data-i18n="gallery.d_owned">Треки, найденные среди ваших локальных файлов, получают плашку OWNED с форматом файла, чтобы не купить один и тот же релиз дважды.</p>
+</figcaption>
+</figure>
+<figure aria-labelledby="gtab-buylist" class="gallery-panel" hidden="" id="gpanel-buylist" role="tabpanel">
+<div class="gallery-shot">
+<img alt="Вид Buy List в Underflow со значками магазинов и одним треком с плашкой OWNED" data-i18n-alt="gallery.alt_buylist" decoding="async" height="1078" loading="lazy" src="/screens/gallery-buylist.webp" width="2000"/>
+<div class="gallery-pin" style="left:16.8%;top:7.8%"><i>1</i><span data-i18n="gallery.p_buylist1">Ваш buy list</span></div>
+<div class="gallery-pin gallery-pin--up" style="left:37.2%;top:61.8%"><i>2</i><span data-i18n="gallery.p_buylist2">Уже есть? Приложение скажет</span></div>
+<button aria-label="Увеличить скриншот" class="gallery-zoom" data-i18n-aria-label="gallery.zoom" type="button"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path></svg></button>
+</div>
+<figcaption class="gallery-caption">
+<h3 data-i18n="gallery.h_buylist">Buy list вместо кучи вкладок</h3>
+<p data-i18n="gallery.d_buylist">Отметьте трек один раз, и он ждёт в buy list со значком магазина. Просмотрите список и покупайте магазин за магазином.</p>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="gallery-cta">
+<a class="btn btn-primary" data-i18n="gallery.cta" href="#download">Скачать бесплатно</a>
+<a class="gallery-more" data-i18n="gallery.more" data-localized-href="features/" href="/ru/features/">Все возможности в действии →</a>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="section section-dark" id="how-it-works">
+<div class="container">
+<h2 class="section-title" data-i18n="how.title">Как это работает</h2>
+<p class="section-sub" data-i18n="how.sub">От поиска до коллекции за три шага.</p>
+<div class="steps-grid">
+<div class="step-card">
+<div class="step-number">1</div>
+<h3 data-i18n="how.step1_title">Один поиск, а не десять</h3>
+<p data-i18n="how.step1_desc">Введи имя исполнителя. Underflow ищет по Bandcamp, Juno, Beatport, Decks.de и Discogs одновременно — без переключения между вкладками и поиска по каждому магазину отдельно.</p>
+</div>
+<div class="step-card">
+<div class="step-number">2</div>
+<h3 data-i18n="how.step2_title">Слушай подряд</h3>
+<p data-i18n="how.step2_desc">Воспроизводи превью одно за другим во встроенном плеере — без новой вкладки на каждый релиз. Сравнивай исполнителя на разных площадках и иди от ремиксеров и коллабораторов к именам, о которых не слышал.</p>
+</div>
+<div class="step-card">
+<div class="step-number">3</div>
+<h3 data-i18n="how.step3_title">Сохрани, пометь, купи</h3>
+<p data-i18n="how.step3_desc">Добавь трек в вишлист, поставь теги, перенеси в список покупок и перейди к покупке в нужном магазине. Вся коллекция остаётся доступной для поиска и экспортируется в CSV.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Features -->
+<section class="section" id="features">
+<div class="container">
+<h2 class="section-title" data-i18n="features.title">Всё что нужно — в одном месте</h2>
+<p class="section-sub" data-i18n="features.sub">Для DJ и коллекционеров, которые серьёзно относятся к своей музыке.</p>
+<div class="features-grid">
+<div class="card">
+<div class="card-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m21 21-4.5-4.5"></path><path d="M8 10.5h5M10.5 8v5"></path></svg></div>
+<h3 data-i18n="features.card1_title">Все магазины — одним поиском</h3>
+<p data-i18n="features.card1_desc">Введи имя исполнителя — получи результаты из Bandcamp, Juno, Beatport, Decks.de и Discogs в одном списке, включая винил-онли релизы, которых нет в цифровых магазинах.</p>
+</div>
+<div class="card">
+<div class="card-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="4.5" r="2.5"></circle><circle cx="4.5" cy="19.5" r="2.5"></circle><circle cx="19.5" cy="19.5" r="2.5"></circle><path d="m12 7-5.8 10M12 7l5.8 10"></path></svg></div>
+<h3 data-i18n="features.card2_title">Связи исполнителей — на карте</h3>
+<p data-i18n="features.card2_desc">Underflow анализирует каждый трек и строит карту ремиксеров, коллабораторов и featured-исполнителей с цветными бэджами связей (R/F/C/O). Иди по цепочке к исполнителям, которых вручную не найти.</p>
+</div>
+<div class="card">
+<div class="card-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"><path d="M3 18v-6a9 9 0 1 1 18 0v6"></path><rect height="5" rx="1" width="3" x="3" y="15"></rect><rect height="5" rx="1" width="3" x="18" y="15"></rect></svg></div>
+<h3 data-i18n="features.card3_title">Слушай, не выходя из приложения</h3>
+<p data-i18n="features.card3_desc">Воспроизводи превью прямо в приложении — без новой вкладки на каждый релиз. Полное управление воспроизведением, перемотка и громкость, мини-плеер поверх окон и спектр-анализатор в реальном времени.</p>
+</div>
+<div class="card">
+<div class="card-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"></path></svg></div>
+<h3 data-i18n="features.card4_title">Вишлист → Список покупок</h3>
+<p data-i18n="features.card4_desc">Нашёл трек — добавь в вишлист. Готов купить? Перемести в список покупок. Купил? Он в коллекции. Каждый шаг отслеживается — ничего не теряется между вкладками.</p>
+</div>
+<div class="card">
+<div class="card-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z"></path><circle cx="7" cy="7" r="1.5"></circle></svg></div>
+<h3 data-i18n="features.card5_title">Теги под твой способ копать</h3>
+<p data-i18n="features.card5_desc">Создавай группы тегов с цветами — настроение, темп, тональность, жанр, как удобно — и фильтруй по ним с логикой И/ИЛИ.</p>
+</div>
+<div class="card">
+<div class="card-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4.03 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"></path></svg></div>
+<h3 data-i18n="features.card6_title">Локальная база данных</h3>
+<p data-i18n="features.card6_desc">Коллекция хранится на твоём компьютере в SQLite — с поиском, экспортом в CSV, и она твоя. Без привязки к облаку.</p>
+</div>
+</div>
+<div class="features-more"><a class="gallery-more" data-i18n="gallery.more" data-localized-href="features/" href="/ru/features/">Все возможности в действии →</a></div>
+</div>
+</section>
+<!-- Comparison -->
+<section class="section" id="comparison">
+<div class="container">
+<h2 class="section-title" data-i18n="comparison.title">Хватит тратить время</h2>
+<p class="section-sub" data-i18n="comparison.sub">10 исполнителей. 5 платформ. Тот же субботний вечер.</p>
+<div class="comparison-table">
+<div class="comparison-row comparison-header">
+<div class="comparison-cell"></div>
+<div class="comparison-cell" data-i18n="comparison.col_manual">Вручную</div>
+<div class="comparison-cell comparison-highlight" data-i18n="comparison.col_underflow">Underflow</div>
+</div>
+<div class="comparison-row">
+<div class="comparison-cell comparison-label" data-i18n="comparison.row1_label">Поисковых запросов</div>
+<div class="comparison-cell" data-i18n="comparison.row1_manual">50 отдельных</div>
+<div class="comparison-cell comparison-highlight" data-i18n="comparison.row1_uf">1 пакетный</div>
+</div>
+<div class="comparison-row">
+<div class="comparison-cell comparison-label" data-i18n="comparison.row2_label">Страниц для просмотра</div>
+<div class="comparison-cell" data-i18n="comparison.row2_manual">150+ страниц</div>
+<div class="comparison-cell comparison-highlight" data-i18n="comparison.row2_uf">Только нужное</div>
+</div>
+<div class="comparison-row">
+<div class="comparison-cell comparison-label" data-i18n="comparison.row3_label">Треков собрано</div>
+<div class="comparison-cell" data-i18n="comparison.row3_manual">Пара в голове</div>
+<div class="comparison-cell comparison-highlight" data-i18n="comparison.row3_uf">~1 000 в базе</div>
+</div>
+<div class="comparison-row">
+<div class="comparison-cell comparison-label" data-i18n="comparison.row4_label">Связанные исполнители</div>
+<div class="comparison-cell" data-i18n="comparison.row4_manual">Часы дополнительного поиска</div>
+<div class="comparison-cell comparison-highlight" data-i18n="comparison.row4_uf">Уже найдены, один клик</div>
+</div>
+<div class="comparison-row">
+<div class="comparison-cell comparison-label" data-i18n="comparison.row5_label">Через неделю</div>
+<div class="comparison-cell" data-i18n="comparison.row5_manual">Вкладки закрыты, ничего нет</div>
+<div class="comparison-cell comparison-highlight" data-i18n="comparison.row5_uf">Коллекция с поиском и тегами</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="section section-dark" id="faq">
+<div class="container">
+<h2 class="section-title" data-i18n="faq.title">Вопросы</h2>
+<p class="section-sub" data-i18n="faq.sub">Всё что нужно знать перед скачиванием.</p>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-question" data-i18n="faq.q1">Underflow бесплатный?</summary>
+<p class="faq-answer" data-i18n="faq.a1">Да. Во время открытой беты Underflow бесплатен, пока мы собираем отзывы, действуют дневные лимиты.</p>
+</details>
+<details class="faq-item">
+<summary class="faq-question" data-i18n="faq.q2">Underflow продаёт музыку?</summary>
+<p class="faq-answer" data-i18n="faq.a2">Нет. Underflow — это инструмент поиска и обнаружения. Сервис не хранит и не распространяет музыку. Аудиопревью воспроизводятся напрямую с серверов площадок (Bandcamp, Juno, Beatport, Decks.de, Discogs). Когда находишь нужный трек — переходишь к покупке прямо на соответствующей платформе.</p>
+</details>
+<details class="faq-item">
+<summary class="faq-question" data-i18n="faq.q3">Как работает автопоиск исполнителей?</summary>
+<p class="faq-answer" data-i18n="faq.a3">Алгоритм анализирует метаданные треков и находит ремиксеров, коллабораторов и featured-исполнителей. Ты получаешь визуальную сеть связей с цветными бэджами: R (ремиксер), F (featuring), C (коллаборация), O (оригинал).</p>
+</details>
+<details class="faq-item">
+<summary class="faq-question" data-i18n="faq.q4">По каким платформам идёт поиск?</summary>
+<p class="faq-answer" data-i18n="faq.a4">Bandcamp, Juno Records, Beatport, Decks.de и Discogs. Все пять ищутся одновременно с единым результатом.</p>
+</details>
+<details class="faq-item">
+<summary class="faq-question" data-i18n="faq.q5">Где хранятся мои данные?</summary>
+<p class="faq-answer" data-i18n="faq.a5">Локально на твоём компьютере в SQLite базе. Теги, вишлисты и коллекция никуда не уходят. Поисковые запросы идут через наш сервер для скорости и совместимости.</p>
+</details>
+<details class="faq-item">
+<summary class="faq-question" data-i18n="faq.q6">Какие ОС поддерживаются?</summary>
+<p class="faq-answer" data-i18n="faq.a6">Windows 10/11 (x64), macOS с процессорами Intel, и macOS с Apple Silicon (M1/M2/M3).</p>
+</details>
+</div>
+</div>
+</section>
+<!-- Platforms -->
+<section class="section" id="platforms">
+<div class="container">
+<h2 class="section-title" data-i18n="platforms.title">Поддерживаемые платформы</h2>
+<p class="section-sub" data-i18n="platforms.sub">Один поиск по всем одновременно.</p>
+<div class="platforms-grid">
+<div class="platform-card">
+<div class="platform-name">Bandcamp</div>
+<div class="platform-desc" data-i18n="platforms.bandcamp">Независимая музыка напрямую от исполнителей</div>
+</div>
+<div class="platform-card">
+<div class="platform-name">Juno Records</div>
+<div class="platform-desc" data-i18n="platforms.juno">Специалист по электронной музыке с 1996</div>
+</div>
+<div class="platform-card">
+<div class="platform-name">Beatport</div>
+<div class="platform-desc" data-i18n="platforms.beatport">Крупнейший DJ-магазин в мире</div>
+</div>
+<div class="platform-card">
+<div class="platform-name">Decks.de</div>
+<div class="platform-desc" data-i18n="platforms.decks">Винил и цифра для серьёзных коллекционеров</div>
+</div>
+<div class="platform-card">
+<div class="platform-name">Discogs</div>
+<div class="platform-desc" data-i18n="platforms.discogs">Маркетплейс физических носителей</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Download -->
+<section class="section section-dark" id="download">
+<div class="container">
+<h2 class="section-title" data-i18n="download.title">Скачать Underflow</h2>
+<p class="section-sub" data-i18n="download.sub">Бесплатно на время открытой беты; условия могут измениться после неё. Windows и macOS.</p>
+<div class="download-card">
+<div class="download-version" id="dl-version">Loading...</div>
+<div class="download-buttons">
+<a class="btn btn-download btn-disabled" href="#" id="dl-win">
+<span class="btn-os-icon">⊞</span>
+<span>
+<span class="btn-label" data-i18n="download.win_label">Скачать для Windows</span>
+<span class="btn-note">Windows 10/11 · x64</span>
+</span>
+</a>
+<a class="btn btn-download btn-disabled" href="#" id="dl-mac-intel">
+<span class="btn-os-icon"></span>
+<span>
+<span class="btn-label" data-i18n="download.mac_label">Скачать для Mac</span>
+<span class="btn-note">macOS · Intel</span>
+</span>
+</a>
+<a class="btn btn-download btn-disabled" href="#" id="dl-mac-arm">
+<span class="btn-os-icon"></span>
+<span>
+<span class="btn-label" data-i18n="download.mac_label">Скачать для Mac</span>
+<span class="btn-note">macOS · Apple Silicon</span>
+</span>
+</a>
+</div>
+<div class="download-notify">
+<p data-i18n="download.notify_text">Не готов скачивать? Получи уведомление об обновлениях.</p>
+<form autocomplete="off" class="notify-form" id="notify-form">
+<input aria-hidden="true" autocomplete="off" class="notify-hp" name="website" tabindex="-1" type="text"/>
+<input class="notify-input" data-i18n="download.notify_placeholder" name="email" placeholder="you@email.ru" required="" type="email"/>
+<button class="btn btn-primary btn-small" data-i18n="download.notify_btn" type="submit">Уведомить</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container footer-inner">
+<div class="footer-top">
+<a class="footer-logo" href="/"><img alt="Underflow" class="logo-icon" src="/logo-white.png"/>Underflow</a>
+<div class="footer-links">
+<a data-i18n="nav.features" href="#features">Возможности</a>
+<a data-i18n="nav.faq" href="#faq">Вопросы</a>
+<a data-i18n="footer.pricing" href="/pricing.html">Цены</a>
+<a data-i18n="footer.guides" href="/ru/guides/">Гайды</a>
+<a data-i18n="footer.contact" href="mailto:hello@underflow.music">Контакты</a>
+<a href="https://t.me/underflow_app" target="_blank">Telegram</a>
+</div>
+</div>
+<div class="footer-legal">
+<div class="footer-legal-links">
+<a data-i18n="footer.terms" href="/terms.html">Оферта</a>
+<a data-i18n="footer.privacy" href="/privacy.html">Конфиденциальность</a>
+</div>
+<div class="footer-entity">
+<a class="footer-email-link" data-i18n="footer.legal_entity" href="mailto:hello@underflow.music">hello@underflow.music</a>
+</div>
+</div>
+<div class="footer-copy">© Underflow 2026</div>
+</div>
+</footer>
+<script src="/script.js?v=20261113a"></script>
+<script data-domain="underflow.music" defer="" src="https://plausible.io/js/script.js"></script>
+<script defer="" src="/growth.js?v=20261112j"></script>
+</body>
+</html>
