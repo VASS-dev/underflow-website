@@ -254,7 +254,7 @@
     "h_buylist": "A buy list, not a pile of tabs",
     "d_buylist": "Mark a track once and it waits on your buy list with its store badge. Review the list, then buy store by store.",
     "h_motion": "A real session",
-    "d_motion": "Start from an empty database: add four artists, press Mass search, and their 557 tracks arrive in one list. Repeat searches are fast; the first scan of a new artist takes longer.",
+    "d_motion": "Start from an empty database: add four artists, press Mass search, and their 1367 tracks arrive in one list. Repeat searches are fast; the first scan of a new artist takes longer.",
     "p_mass1": "Four artists, one search",
     "p_mass2": "The store each track came from",
     "p_mass3": "Related artists, built from the tracks",
@@ -270,7 +270,7 @@
     "alt_labels": "Underflow with the Labels tab open next to the tracks of the selected label",
     "alt_owned": "Favorite tracks in Underflow with OWNED badges showing the file format, such as WAV or AIFF",
     "alt_buylist": "The Buy List view in Underflow with store badges and one track marked OWNED",
-    "alt_motion": "Screen recording of Underflow: an empty database, four artists added by name, Mass search, and 557 tracks arriving in one list that is then scrolled through"
+    "alt_motion": "Screen recording of Underflow: an empty database, four artists added by name, Mass search, and 1367 tracks arriving in one list that is then scrolled through"
   },
   "explore": {
     "meta_title": "Explore Artist Connections — Underflow",
