@@ -125,7 +125,11 @@
     "notify_placeholder": "your@email.com",
     "notify_btn": "Notify Me",
     "notify_success": "You're on the list!",
-    "notify_error": "Could not send — try again later"
+    "notify_error": "Could not send — try again later",
+    "firstrun_summary": "First launch: your system may warn about an unknown developer",
+    "firstrun_intro": "Underflow is not code-signed yet, so Windows and macOS ask you to confirm the first launch once.",
+    "firstrun_win": "Windows: in the “Windows protected your PC” window click More info, then Run anyway.",
+    "firstrun_mac": "macOS: open the .dmg and drag Underflow to Applications. If it is blocked, open System Settings → Privacy & Security, scroll to Security and click Open Anyway next to Underflow. On macOS 14 and earlier, right-click the app and choose Open instead."
   },
   "pricing": {
     "title": "Pricing",

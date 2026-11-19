@@ -100,18 +100,11 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="/styles.css?v=20261112j" rel="stylesheet"/>
+<link href="/styles.css?v=20261119a" rel="stylesheet"/>
 </head>
 <body>
 <!-- Nav -->
 <nav class="nav">
-<div aria-labelledby="beta-banner-title" class="beta-banner-row" id="beta-banner" role="region">
-<div class="beta-banner-inner">
-<span class="beta-banner-badge" data-i18n="beta_banner.badge" id="beta-banner-title">Бета</span>
-<p class="beta-banner-msg" data-i18n="beta_banner.message" data-i18n-html=""><strong>Открытая бета:</strong> Underflow бесплатен, пока мы собираем отзывы. Действуют дневные лимиты.</p>
-<button aria-label="Скрыть плашку о бета-тесте" class="beta-banner-close" data-i18n-aria-label="beta_banner.aria_close" type="button">×</button>
-</div>
-</div>
 <div class="nav-inner">
 <a class="logo" href="/"><img alt="Underflow" class="logo-icon" src="/logo-white.png"/>Underflow</a>
 <div class="nav-links">
@@ -511,6 +504,14 @@
 </span>
 </a>
 </div>
+<details class="download-firstrun">
+<summary data-i18n="download.firstrun_summary">Первый запуск: система может предупредить о неизвестном разработчике</summary>
+<div class="download-firstrun-body">
+<p data-i18n="download.firstrun_intro">Приложение пока не имеет цифровой подписи, поэтому Windows и macOS один раз просят подтвердить запуск.</p>
+<p data-i18n="download.firstrun_win">Windows: в окне «Windows защитила ваш компьютер» нажмите «Подробнее», затем «Выполнить в любом случае».</p>
+<p data-i18n="download.firstrun_mac">macOS: откройте .dmg и перетащите Underflow в «Программы». Если запуск заблокирован, откройте «Системные настройки → Конфиденциальность и безопасность», прокрутите до раздела «Безопасность» и нажмите «Всё равно открыть» рядом с Underflow. На macOS 14 и старше вместо этого нажмите на приложение правой кнопкой и выберите «Открыть».</p>
+</div>
+</details>
 <div class="download-notify">
 <p data-i18n="download.notify_text">Не готов скачивать? Получи уведомление об обновлениях.</p>
 <form autocomplete="off" class="notify-form" id="notify-form">

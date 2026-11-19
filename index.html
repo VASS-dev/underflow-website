@@ -104,19 +104,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261112j">
+  <link rel="stylesheet" href="styles.css?v=20261119a">
 </head>
 <body>
 
   <!-- Nav -->
   <nav class="nav">
-    <div id="beta-banner" class="beta-banner-row" role="region" aria-labelledby="beta-banner-title">
-      <div class="beta-banner-inner">
-        <span id="beta-banner-title" class="beta-banner-badge" data-i18n="beta_banner.badge">Beta test</span>
-        <p class="beta-banner-msg" data-i18n="beta_banner.message" data-i18n-html><strong>Open beta:</strong> Underflow is free while we gather feedback. Daily limits apply.</p>
-        <button type="button" class="beta-banner-close" data-i18n-aria-label="beta_banner.aria_close" aria-label="Close">&times;</button>
-      </div>
-    </div>
     <div class="nav-inner">
       <a href="index.html" class="logo"><img src="logo-white.png" alt="Underflow" class="logo-icon">Underflow</a>
       <div class="nav-links">
@@ -534,6 +527,14 @@
             </span>
           </a>
         </div>
+        <details class="download-firstrun">
+        <summary data-i18n="download.firstrun_summary">First launch: your system may warn about an unknown developer</summary>
+        <div class="download-firstrun-body">
+        <p data-i18n="download.firstrun_intro">Underflow is not code-signed yet, so Windows and macOS ask you to confirm the first launch once.</p>
+        <p data-i18n="download.firstrun_win">Windows: in the “Windows protected your PC” window click More info, then Run anyway.</p>
+        <p data-i18n="download.firstrun_mac">macOS: open the .dmg and drag Underflow to Applications. If it is blocked, open System Settings → Privacy & Security, scroll to Security and click Open Anyway next to Underflow. On macOS 14 and earlier, right-click the app and choose Open instead.</p>
+        </div>
+        </details>
         <div class="download-notify">
           <p data-i18n="download.notify_text">Not ready to download? Get notified of updates.</p>
           <form class="notify-form" id="notify-form" autocomplete="off">
