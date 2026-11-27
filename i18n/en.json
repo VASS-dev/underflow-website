@@ -303,5 +303,20 @@
       "many": "{count} shared tracks"
     },
     "more": "+{count} more"
+  },
+  "popguides": {
+    "title": "Popular DJ Guides",
+    "sub": "Practical reads on digging for music across stores.",
+    "all": "See all guides.",
+    "g1_t": "Bandcamp vs Beatport for DJs",
+    "g1_d": "Which store for what, and where each one is weak",
+    "g2_t": "Find all remixes by an artist",
+    "g2_d": "Why remixes hide across stores and how to catch them",
+    "g3_t": "Search ten artists at once",
+    "g3_d": "Batch digging for DJs, in one run",
+    "g4_t": "A repeatable crate-digging workflow",
+    "g4_d": "Step by step, for DJs who buy from several stores",
+    "g5_t": "Where do DJs buy music?",
+    "g5_d": "Stores, record pools and streaming compared"
   }
 }
